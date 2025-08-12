@@ -1,441 +1,529 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aetherlyn | Medieval Fantasy RP</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Cormorant:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>World of Aetherlyn — Dawn Hero (Fixed Dropdown)</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
+
 <style>
-  /* ===== NAVBAR ===== */
-:root {
-  /* Colors */
-  --blood-red: #5e1914;
-  --gold: #d4af37;
-  --parchment: #f0e6d2;
-  --dark-wood: #3a2c1a;
-  --aether-purple: #4a2d7a;
-}
-
-/* Base Styles */
-body {
-  background-color: var(--parchment);
-  color: #333;
-  font-family: 'Cormorant', serif;
-  line-height: 1.6;
-}
-
-h1, h2, h3 {
-  font-family: 'Cinzel', serif;
-  letter-spacing: 1px;
-}
-
-/* Header */
-header {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), var(--blood-red));
-  color: var(--gold);
-  text-align: center;
-  padding: 3rem 0;
-  border-bottom: 3px solid var(--gold);
-}
-
-header h1 {
-  font-size: 3.5rem;
-  margin-bottom: 0.5rem;
-}
-
-/* Base Navbar */
-.nav-container {
-  background: var(--blood-red);
-  padding: 0.5rem 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-}
-
-/* Mobile Menu Button (Hidden on Desktop) */
-.mobile-menu-btn {
-  display: none;
-  background: none;
-  border: none;
-  color: var(--parchment);
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-/* Nav Links Container */
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-/* General Nav Items */
-.nav-links > a, .dropbtn {
-  color: var(--parchment);
-  text-decoration: none;
-  padding: 0.8rem 1rem;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  text-align: center;
-  font-family: 'Cormorant', serif;
-}
-
-/* Dropdown Button */
-.dropbtn {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-}
-
-.dropbtn i.fa-chevron-down {
-  font-size: 0.8rem;
-}
-
-/* Dropdown Container */
-.dropdown {
-  position: relative;
-}
-
-/* Dropdown Content */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background: var(--dark-wood);
-  min-width: 200px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-  z-index: 100;
-  border-top: 2px solid var(--gold);
-  left: 0;
-}
-
-.dropdown-content a {
-  color: var(--parchment);
-  padding: 0.8rem 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  border-left: 3px solid transparent;
-}
-
-.dropdown-content a:hover {
-  background: var(--blood-red);
-  border-left: 3px solid var(--gold);
-}
-
-/* CTA Button */
-.nav-cta {
-  background: var(--gold);
-  color: var(--blood-red) !important;
-  border-radius: 4px;
-  margin-left: 0.5rem;
-}
-
-.nav-cta:hover {
-  background: var(--aether-purple);
-  color: var(--gold) !important;
-}
-
-/* Show Dropdown on Hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* ===== MOBILE RESPONSIVE ===== */
-@media (max-width: 768px) {
-  /* Show Mobile Button */
-  .mobile-menu-btn {
-    display: block;
+  :root{
+    --blood-red:#5e1914;
+    --gold:#d4af37;
+    --parchment:#f0e6d2;
+    --dark-brown:#3a2c1a;
+    --muted:#8a6a4d;
+    --max-width:1200px;
   }
 
-  /* Hide Regular Nav Links */
-  .nav-links {
+  /* Basic reset */
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Playfair Display', serif;
+    background:var(--parchment);
+    color:var(--dark-brown);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    overflow-x:hidden;
+  }
+
+  /* Background layers */
+  #particles-canvas{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+  .hero-bg{
+    position:fixed;inset:0;
+    background-image:
+      linear-gradient(180deg, rgba(9,6,3,0.15), rgba(9,6,3,0.35)),
+      url('hero-img.png');
+    background-size:cover;background-position:center;
+    filter:contrast(0.98) saturate(0.98);
+    transform:scale(1.01);
+    z-index:1;
+  }
+  .hero-bg::after{content:'';position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(255,240,220,0.03), rgba(0,0,0,0.28));}
+
+  /* ========== FIXED NAVBAR ========== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--blood-red); /* solid color */
+}
+  
+  .nav-container {
+    background-color: var(--blood-red);
+    position: relative;
+    z-index: 1001;
+  }
+  
+  nav {
+    position: relative;
+    z-index: 1001;
+    background-color: rgba(94, 25, 20, 0.98);
+    backdrop-filter: blur(5px);
+  }
+
+  nav .nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+  .nav-list {
+  display: flex;
+  justify-content: center; /* center menu items horizontally */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+  .nav-item {
+    position: relative;
+  }
+
+  .nav-link {
+    display: block;
+    padding: 15px 20px;
+    color: var(--parchment);
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    transition: all 0.3s ease;
+  }
+
+  .nav-link:hover {
+    background-color: var(--gold);
+    color: var(--dark-brown);
+  }
+
+  /* DROPDOWN FIXES */
+  .dropdown {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
-    right: 0;
-    background: var(--blood-red);
-    flex-direction: column;
-    gap: 0;
-    z-index: 99;
-    border-top: 1px solid var(--gold);
+    background-color: rgba(58, 44, 26, 0.98);
+    min-width: 200px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    border-top: 2px solid var(--gold);
+    z-index: 1002;
+    animation: fadeIn 0.3s ease;
   }
 
-  /* Show when mobile menu is active */
-  .nav-links.active {
-    display: flex;
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
-  /* Full width items */
-  .nav-links > a, .dropdown {
-    width: 100%;
-    text-align: left;
+  .dropdown li {
+    position: relative;
   }
 
-  .dropbtn {
-    justify-content: space-between;
-    width: 100%;
+  .dropdown li a {
+    display: block;
+    padding: 12px 15px;
+    color: var(--parchment);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
   }
 
-  /* Stack dropdowns */
-  .dropdown-content {
-    position: static;
-    width: 100%;
-    box-shadow: none;
-    border-top: none;
-    border-left: 3px solid var(--gold);
+  .dropdown li a:hover {
+    background-color: var(--gold);
+    color: var(--dark-brown);
+    border-left-color: var(--blood-red);
+    padding-left: 20px;
+  }
+
+  .nav-item:hover .dropdown {
+    display: block;
+  }
+
+  /* Hero content fixes */
+  main {
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-text {
+    position: relative;
+    z-index: 3;
+  }
+
+  /* ========== REST OF YOUR STYLES ========== */
+  .topbar {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px;
+  gap: 12px;
+}
+  .brand{display:flex;align-items:center;gap:14px}
+  .logo{width:64px;height:64px;border-radius:10px;background:linear-gradient(135deg,var(--gold),var(--blood-red));display:grid;place-items:center;box-shadow:0 10px 30px rgba(94,25,20,0.25)}
+  .site-title{font-family:'Cinzel', serif;font-size:clamp(18px,2.6vw,26px);color:var(--parchment)}
+  .site-sub{font-size:12px;color:var(--gold)}
+
+  /* Hero content */
+  main{position:relative;z-index:200;max-width:var(--max-width);margin:0 auto;padding:80px 18px 40px}
+  .hero-top{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  .hero-left{max-width:720px}
+  .hero-title{font-family:'Cinzel';font-size:clamp(28px,6vw,56px);color:var(--parchment);text-shadow:0 8px 30px rgba(0,0,0,0.55);line-height:1.02}
+  .hero-sub{color:rgba(255,238,210,0.95);font-size:clamp(14px,2.6vw,18px);margin-top:10px}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+
+  .cta{display:inline-block;padding:12px 20px;border-radius:999px;background:linear-gradient(90deg,var(--blood-red),#7b2a21);color:var(--parchment);font-weight:800;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,0.06)}
+  .cta.secondary{background:transparent;border:1px solid rgba(255,255,255,0.08);color:var(--parchment)}
+
+  /* Quick patch preview */
+  .section{max-width:var(--max-width);margin:22px auto;padding:0 18px}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:14px}
+  .card{background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.92));border-radius:12px;padding:14px;border:1px solid rgba(58,44,26,0.06);box-shadow:0 8px 24px rgba(0,0,0,0.06);display:flex;flex-direction:column;gap:10px;transition:transform .26s ease,box-shadow .26s ease}
+  .card:hover{transform:translateY(-6px);box-shadow:0 18px 48px rgba(0,0,0,0.14)}
+  .card .meta{display:flex;align-items:center;gap:12px}
+  .card .icon{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--gold),var(--blood-red));display:grid;place-items:center;color:var(--parchment);font-weight:800}
+  .card h4{font-family:'Cinzel';font-size:16px}
+  .card p{color:var(--muted);font-size:14px}
+
+  /* Rules and guilds */
+  .rules-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px}
+  .rule{padding:14px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.92));border:1px solid rgba(58,44,26,0.06)}
+  .guilds{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:12px}
+  .guild{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.92));text-align:center;border:1px solid rgba(58,44,26,0.06);cursor:pointer}
+  .guild img{width:64px;height:64px;border-radius:12px;margin-bottom:8px}
+
+  /* Map teaser */
+  .map-teaser{margin-top:14px;border-radius:12px;overflow:hidden;border:1px solid rgba(58,44,26,0.06);position:relative}
+  .map-teaser img{width:100%;height:auto;display:block}
+  .map-overlay{position:absolute;bottom:8px;left:12px;padding:8px 12px;border-radius:8px;background:linear-gradient(90deg, rgba(0,0,0,0.2), rgba(0,0,0,0.45));color:var(--parchment);font-weight:700}
+
+  footer{max-width:var(--max-width);margin:28px auto;padding:18px;text-align:center;color:var(--muted)}
+
+  /* Mobile overlay */
+  .mobile-overlay{position:fixed;inset:0;background:linear-gradient(180deg, rgba(14,6,6,0.96), rgba(45,23,17,0.96));color:var(--parchment);display:none;flex-direction:column;z-index:2000;padding:24px;overflow:auto;backdrop-filter:blur(10px)}
+  .mobile-overlay.show{display:flex}
+  .mobile-menu{display:flex;flex-direction:column;gap:12px}
+  .mobile-item{background:transparent;padding:14px;border-radius:10px;font-weight:800;font-size:18px;border:1px solid rgba(255,255,255,0.04)}
+  .mobile-sub{display:none;flex-direction:column;padding:8px 18px;margin-top:6px;margin-bottom:6px;border-left:2px solid rgba(212,175,55,0.12)}
+  .mobile-sub a{padding:10px 0;color:var(--parchment);text-decoration:none;font-weight:600}
+  .mobile-item.open + .mobile-sub{display:flex}
+  .chev{float:right;transform:rotate(0);transition:transform 220ms}
+  .mobile-item.open .chev{transform:rotate(180deg)}
+
+  /* Responsive */
+  @media(max-width:1000px){ .cards{grid-template-columns:repeat(2,1fr)} .guilds{grid-template-columns:repeat(2,1fr)} }
+  @media(max-width:720px){
+    .cards{grid-template-columns:1fr}
+    .rules-grid{grid-template-columns:1fr}
+    .nav-list{display:none}
+    .hero{padding:60px 14px 30px}
+    .hero-title{font-size:clamp(24px,8vw,38px)}
+  }
+
+  /* Sembunyiin burger di desktop */
+@media (min-width: 721px) {
+  #openOverlay {
+    display: none !important;
   }
 }
 
-/* Hero Banner */
-.hero {
-  position: relative;
-  max-height: 70vh;
-  overflow: hidden;
-}
-
-.hero img {
-  width: 100%;
-  filter: brightness(0.7);
-}
-
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
-}
-
-.hero-text h2 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-/* Parchment Box */
-.parchment-box {
-  background: url('../images/parchment-texture.jpg');
-  background-size: cover;
-  padding: 2rem;
-  margin: 3rem auto;
-  max-width: 800px;
-  border: 1px solid var(--dark-wood);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Buttons */
-.button {
-  display: inline-block;
-  background: var(--gold);
-  color: var(--blood-red);
-  padding: 0.7rem 2rem;
-  margin-top: 1rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
-}
-
-.button:hover {
-  background: var(--dark-wood);
-  color: var(--gold);
-}
-
-.gold-button {
-  background: var(--gold);
-  color: var(--blood-red);
-  font-size: 1.2rem;
-}
-
-/* Features Grid */
-.features {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  padding: 3rem;
-  text-align: center;
-}
-
-.feature-card {
-  background: white;
-  padding: 2rem;
-  border: 1px solid var(--gold);
-}
-
-.feature-card i {
-  font-size: 2.5rem;
-  color: var(--blood-red);
-  margin-bottom: 1rem;
-}
-
-/* Footer */
-footer {
-  background: var(--blood-red);
-  color: var(--gold);
-  text-align: center;
-  padding: 2rem;
-  border-top: 2px solid var(--gold);
-}
+  @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
 </style>
-
+</head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="header-content">
-            <h1><i class="fas fa-crystal"></i> WORLD OF AETHERLYN</h1>
-            <p>Where Magic and Steel Collide</p>
-        </div>
-    </header>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <!-- Mobile Menu Button (Hidden on Desktop) -->
-            <button class="mobile-menu-btn" aria-label="Toggle Menu">
-                <i class="fas fa-bars"></i>
-            </button>
+  <!-- Particles (subtle gold motes) -->
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
 
-            <!-- Nav Links -->
-            <div class="nav-links">
-                <a href="home.html"><i class="fas fa-home"></i> Home</a>
-                
-                <!-- Dropdown Patch -->
-                <div class="dropdown">
-                    <button class="dropbtn"><i class="fas fa-code-branch"></i> Patch <i class="fas fa-chevron-down"></i></button>
-                    <div class="dropdown-content">
-                        <a href="race.html"><i class="fas fa-dna"></i> Race</a>
-                        <a href="element.html"><i class="fas fa-fire"></i> Element</a>
-                        <a href="class.html"><i class="fas fa-helmet-battle"></i> Class</a>
-                        <a href="skills.html"><i class="fas fa-scroll"></i> Skills</a>
-                        <a href="level.html"><i class="fas fa-level-up-alt"></i> Level</a>
-                        <a href="stats.html"><i class="fas fa-chart-bar"></i> Stats</a>
-                        <a href="rank.html"><i class="fas fa-star"></i> Rank</a>
-                        <a href="job.html"><i class="fas fa-briefcase"></i> Job</a>
-                    </div>
-                </div>
-                
-                <!-- Dropdown Roleplay -->
-                <div class="dropdown">
-                    <button class="dropbtn"><i class="fas fa-mask"></i> Roleplay <i class="fas fa-chevron-down"></i></button>
-                    <div class="dropdown-content">
-                        <a href="rpb.html"><i class="fas fa-swords"></i> RPB</a>
-                        <a href="rpl.html"><i class="fas fa-book-open"></i> RPL</a>
-                        <a href="rpr.html"><i class="fas fa-comments"></i> RPR</a>
-                    </div>
-                </div>
-                
-                <!-- Dropdown Rules -->
-                <div class="dropdown">
-                    <button class="dropbtn"><i class="fas fa-gavel"></i> Rules <i class="fas fa-chevron-down"></i></button>
-                    <div class="dropdown-content">
-                        <a href="general-rules.html"><i class="fas fa-list"></i> General Rules</a>
-                        <a href="ooc-rules.html"><i class="fas fa-user-friends"></i> OOC Rules</a>
-                        <a href="rpb-rules.html"><i class="fas fa-swords"></i> RPB Rules</a>
-                    </div>
-                </div>
-                
-                <!-- Dropdown Guild -->
-                <div class="dropdown">
-                    <button class="dropbtn"><i class="fas fa-users"></i> Guild <i class="fas fa-chevron-down"></i></button>
-                    <div class="dropdown-content">
-                        <a href="gon.html"><i class="fas fa-crown"></i> GoN</a>
-                        <a href="zenith.html"><i class="fas fa-sun"></i> Zenith</a>
-                        <a href="shadow-garden.html"><i class="fas fa-moon"></i> Shadow Garden</a>
-                        <a href="eclipse-luz.html"><i class="fas fa-eclipse"></i> Eclipse Luz</a>
-                    </div>
-                </div>
-                
-                <!-- Map -->
-                <a href="map.html"><i class="fas fa-map"></i> Map</a>
-                
-                <!-- Join CTA -->
-                <a href="join.html" class="nav-cta"><i class="fas fa-handshake"></i> Join</a>
-            </div>
-        </div>
-    </nav>
+  <!-- Hero background (dawn image) -->
+  <div class="hero-bg" aria-hidden="true"></div>
 
-    <!-- Rest of your content... -->
-     <!-- Hero Banner -->
-    <section class="hero">
-        <img src="images/castle-banner.jpg" alt="Aetherlyn's World">
-        <div class="hero-text">
-            <h2>Enter the Realm</h2>
-            <p>A land of warring kingdoms, ancient magic, and untold stories...</p>
-            <a href="#join" class="button">Begin Your Journey</a>
+  <!-- Header -->
+  <header>
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden>
+          <!-- simple heraldic svg -->
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.5 8H8.5L12 2Z" fill="white"/><path d="M5 9H19L12 22L5 9Z" fill="rgba(0,0,0,0.08)"/></svg>
         </div>
-    </section>
+        <div>
+          <div class="site-title">World of Aetherlyn</div>
+          <div class="site-sub">Where Legends Rise and Kingdoms Fall</div>
+        </div>
+      </div>
 
-    <!-- Quick Lore -->
-    <section id="lore" class="lore-section">
-        <div class="parchment-box">
-            <h2><i class="fas fa-dragon"></i> The World of Aetherlyn</h2>
-            <p>Lorem Ipsum Dolor sit Amet</p>
-            <a href="lore.html" class="button">Read Full Lore</a>
-        </div>
-    </section>
-
-    <!-- Featured Sections Grid -->
-    <section class="features">
-        <div class="feature-card">
-            <i class="fas fa-scroll"></i>
-            <h3>Rules</h3>
-            <p>Learn the laws of the realm</p>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-helmet-battle"></i>
-            <h3>Characters</h3>
-            <p>Create your legend</p>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-landmark"></i>
-            <h3>Gallery</h3>
-            <p>Witness our tales</p>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section id="join" class="cta">
-        <h2>Ready to Claim Your Destiny?</h2>
-        <a href="https://discord.gg/example" class="button gold-button">
-            <i class="fab fa-discord"></i> Join Our Discord
-        </a>
-    </section>
-
-    <script>
-      // Mobile Menu Toggle
-document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-  document.querySelector('.nav-links').classList.toggle('active');
+      <div style="display:flex;align-items:center;gap:10px">
+        <button id="openOverlay" class="menu-toggle" aria-label="Open menu" style="background:none;border:1px solid rgba(255,255,255,0.06);padding:10px;border-radius:8px;color:var(--parchment);font-size:18px">☰</button>
   
-  // Toggle icon between bars and X
-  const icon = this.querySelector('i');
-  if (icon.classList.contains('fa-bars')) {
-    icon.classList.remove('fa-bars');
-    icon.classList.add('fa-times');
-  } else {
-    icon.classList.remove('fa-times');
-    icon.classList.add('fa-bars');
-  }
-});
+        <a href="https://chat.whatsapp.com/H27JMGgxJyn2nxOGa6acTy" target="_blank" rel="noopener noreferrer" class="cta" id="enterBtn">Enter the Realm</a>
+      </div>
+    </div>
 
-// Close dropdowns when clicking outside (for mobile)
-document.addEventListener('click', function(e) {
-  if (!e.target.closest('.nav-container')) {
-    document.querySelector('.nav-links').classList.remove('active');
-    const icon = document.querySelector('.mobile-menu-btn i');
-    if (icon.classList.contains('fa-times')) {
-      icon.classList.remove('fa-times');
-      icon.classList.add('fa-bars');
+    <nav>
+      <div class="nav-inner">
+        <ul class="nav-list" id="navList">
+          <li class="nav-item">
+            <a class="nav-link">Patch ▾</a>
+            <ul class="dropdown">
+              <li><a href="#">Race</a></li>
+              <li><a href="#">Element</a></li>
+              <li><a href="#">Class</a></li>
+              <li><a href="#">Skills</a></li>
+              <li><a href="#">Level</a></li>
+              <li><a href="#">Stats</a></li>
+              <li><a href="#">Rank</a></li>
+              <li><a href="#">Job</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">Roleplay ▾</a>
+            <ul class="dropdown">
+              <li><a href="#">RPB</a></li>
+              <li><a href="#">RPL</a></li>
+              <li><a href="#">RPR</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">Rules ▾</a>
+            <ul class="dropdown">
+              <li><a href="#">General Rules</a></li>
+              <li><a href="#">OOC Rules</a></li>
+              <li><a href="#">RPB Rules</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">Guild ▾</a>
+            <ul class="dropdown">
+              <li><a href="#">GoN</a></li>
+              <li><a href="#">Zenith</a></li>
+              <li><a href="#">Shadow Garden</a></li>
+              <li><a href="#">Eclipse Luz</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">Map ▾</a>
+            <ul class="dropdown">
+              <li><a href="#">World Map</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile overlay -->
+  <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="logo" style="width:48px;height:48px"></div>
+        <div>
+          <div class="site-title" style="font-size:18px">World of Aetherlyn</div>
+          <div class="site-sub">Where Legends Rise and Kingdoms Fall</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <button id="overlayClose" class="cta" style="background:transparent;border:1px solid rgba(255,255,255,0.08);color:var(--parchment)">Close</button>
+      </div>
+    </div>
+
+    <nav class="mobile-menu" aria-label="Mobile menu">
+      <button class="mobile-item" data-target="m-patch">Patch <span class="chev">▾</span></button>
+      <div class="mobile-sub" id="m-patch"><a href="#race">Race</a><a href="#element">Element</a><a href="#class">Class</a><a href="#skills">Skills</a></div>
+
+      <button class="mobile-item" data-target="m-roleplay">Roleplay <span class="chev">▾</span></button>
+      <div class="mobile-sub" id="m-roleplay"><a href="#rpb">RPB</a><a href="#rpl">RPL</a><a href="#rpr">RPR</a></div>
+
+      <button class="mobile-item" data-target="m-rules">Rules <span class="chev">▾</span></button>
+      <div class="mobile-sub" id="m-rules"><a href="#rules-general">General Rules</a><a href="#rules-ooc">OOC Rules</a><a href="#rules-rpb">RPB Rules</a></div>
+
+      <button class="mobile-item" data-target="m-guild">Guild <span class="chev">▾</span></button>
+      <div class="mobile-sub" id="m-guild"><a href="#gon">GoN</a><a href="#zenith">Zenith</a><a href="#shadow">Shadow Garden</a><a href="#eclipse">Eclipse Luz</a></div>
+
+      <button class="mobile-item" data-target="m-map">Map <span class="chev">▾</span></button>
+      <div class="mobile-sub" id="m-map"><a href="#map-png">World Map (PNG)</a><a href="#map-download">Download .png</a></div>
+    </nav>
+  </div>
+
+  <!-- CONTENT: hero + hooks -->
+  <main>
+    <section class="hero">
+      <div class="hero-top">
+        <div class="hero-left">
+          <h1 class="hero-title">Stand upon the Ramparts. Shape a New Dawn.</h1>
+          <p class="hero-sub">Aetherlyn — a realm of noble conflict and majestic adventure. Claim ranks, join guilds, and write history on the battlefields of fate.</p>
+
+          <div class="hero-actions">
+            <button class="cta" id="joinBtn">Join the Realm</button>
+            <button class="cta secondary" id="patchBtn">Read Patch Notes</button>
+          </div>
+        </div>
+
+        <div style="min-width:240px;display:flex;flex-direction:column;gap:12px;align-items:flex-end">
+          <div style="background:rgba(0,0,0,0.18);padding:12px;border-radius:8px;color:var(--parchment);font-weight:700">Next Event: Siege of Greymoor — Sep 14</div>
+          <div style="background:linear-gradient(135deg,var(--gold),var(--blood-red));padding:8px 12px;border-radius:8px;color:var(--parchment);font-weight:800">New Class Preview: Bladewarden</div>
+        </div>
+      </div>
+
+      <!-- Quick Patch Preview -->
+      <div class="section">
+        <h3>Latest Patch Highlights</h3>
+        <div class="cards">
+          <div class="card">
+            <div class="meta">
+              <div class="icon">R</div>
+              <div>
+                <h4>New Race: Aelwyn</h4>
+                <p>Ancient wood-elves awakened with Aurora affinity and stealth bonuses.</p>
+              </div>
+            </div>
+            <div style="margin-top:auto;text-align:right"><small style="color:var(--muted)">2 days ago</small></div>
+          </div>
+
+          <div class="card">
+            <div class="meta">
+              <div class="icon">S</div>
+              <div>
+                <h4>Skill: Spinal Cleave Buff</h4>
+                <p>Royal Guillotine scales better with HP lost and grants temporary lifesteal.</p>
+              </div>
+            </div>
+            <div style="margin-top:auto;text-align:right"><small style="color:var(--muted)">5 days ago</small></div>
+          </div>
+
+          <div class="card">
+            <div class="meta">
+              <div class="icon">E</div>
+              <div>
+                <h4>Event: Bloodmoon Raid</h4>
+                <p>Co-op raid opening — rewards include unique helm & guild renown boosts.</p>
+              </div>
+            </div>
+            <div style="margin-top:auto;text-align:right"><small style="color:var(--muted)">1 week ago</small></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rules highlights -->
+      <div class="section">
+        <h3>Rules Highlights</h3>
+        <div class="rules-grid">
+          <div class="rule"><h5>General</h5><p>No griefing. Respect RP scenes. IC actions must remain believable.</p></div>
+          <div class="rule"><h5>OOC</h5><p>Keep meta-information OOC. Use OOC channels for planning, IC for roleplay.</p></div>
+          <div class="rule"><h5>RPB</h5><p>RP Battle rules: declare stakes, agree mechanics, and respect outcomes.</p></div>
+        </div>
+        <div style="margin-top:12px;text-align:right"><a href="#rules-general" class="cta secondary">See All Rules</a></div>
+      </div>
+
+      <!-- Featured guilds -->
+      <div class="section">
+        <h3>Featured Guilds</h3>
+        <div class="guilds">
+          <div class="guild"><img src="placeholder-guild.png" alt="GoN"><h6>Guardians of Night</h6></div>
+          <div class="guild"><img src="placeholder-guild.png" alt="Zenith"><h6>Zenith</h6></div>
+          <div class="guild"><img src="placeholder-guild.png" alt="Shadow Garden"><h6>Shadow Garden</h6></div>
+          <div class="guild"><img src="placeholder-guild.png" alt="Eclipse Luz"><h6>Eclipse Luz</h6></div>
+        </div>
+      </div>
+
+      <!-- Map teaser -->
+      <div class="section">
+        <h3>World Map</h3>
+        <div class="map-teaser">
+          <a href="placeholder-map.png" target="_blank" rel="noreferrer"><img src="placeholder-map.png" alt="World Map"></a>
+          <div class="map-overlay">Click to open full map (placeholder)</div>
+        </div>
+      </div>
+
+    </section>
+
+    <section id="about" class="card section" style="margin-top:18px">
+      <h3>About the Realm</h3>
+      <p class="muted">Aetherlyn is a high-fantasy RP world focused on noble courts, tactical PvP, and narrative-driven events. Use the Patch menu to view full notes, Rules for community standards, and Guild for faction lore.</p>
+    </section>
+
+  </main>
+
+  <footer>© World of Aetherlyn — Crafted with magic & pixels. • <a href="#" style="color:var(--muted)">Discord</a> • <a href="#" style="color:var(--muted)">WhatsApp</a></footer>
+
+<script>
+/* Lightweight particles (gold motes) */
+(function(){
+  const canvas = document.getElementById('particles-canvas');
+  const ctx = canvas.getContext('2d');
+  let W = canvas.width = innerWidth, H = canvas.height = innerHeight;
+  let particles = [];
+  const COUNT = Math.min(Math.max(Math.round(W/110), 10), 45);
+  function rand(a,b){return Math.random()*(b-a)+a}
+  function init(){particles=[]; for(let i=0;i<COUNT;i++){particles.push({x:rand(0,W), y:rand(0,H), r:rand(1.2,4), vx:rand(-0.12,0.12), vy:rand(-0.02,-0.45), alpha:rand(0.12,0.88), phase:rand(0,Math.PI*2), speed:rand(0.002,0.01)})}}
+  function resize(){W=canvas.width=innerWidth; H=canvas.height=innerHeight; init()}
+  addEventListener('resize', ()=>{clearTimeout(window._prt); window._prt=setTimeout(resize,160)})
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    for(const p of particles){
+      p.x+=p.vx; p.y+=p.vy; p.phase+=p.speed;
+      const a = p.alpha * (0.6 + 0.4 * Math.sin(p.phase));
+      if(p.x < -40) p.x = W + 40; if(p.x > W + 40) p.x = -40;
+      if(p.y < -80) p.y = H + 60; if(p.y > H + 80) p.y = -80;
+      const g = ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*6);
+      g.addColorStop(0, `rgba(212,175,55,${0.95*a})`);
+      g.addColorStop(0.3, `rgba(212,175,55,${0.35*a})`);
+      g.addColorStop(1, `rgba(212,175,55,0)`);
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill();
     }
+    requestAnimationFrame(draw);
   }
+  init(); requestAnimationFrame(draw);
+})();
+
+/* Mobile overlay open/close & accordion */
+(function(){
+  const openBtn = document.getElementById('openOverlay');
+  const closeBtn = document.getElementById('overlayClose');
+  const overlay = document.getElementById('mobileOverlay');
+  const body = document.body;
+  function openOverlay(){ overlay.classList.add('show'); overlay.setAttribute('aria-hidden','false'); body.style.overflow='hidden'; }
+  function closeOverlay(){ overlay.classList.remove('show'); overlay.setAttribute('aria-hidden','true'); body.style.overflow='auto'; }
+  openBtn && openBtn.addEventListener('click', openOverlay);
+  if(closeBtn) closeBtn.addEventListener('click', closeOverlay);
+
+  document.querySelectorAll('.mobile-item').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const target = btn.getAttribute('data-target');
+      const panel = document.getElementById(target);
+      const isOpen = btn.classList.contains('open');
+      document.querySelectorAll('.mobile-item').forEach(b=>b.classList.remove('open'));
+      document.querySelectorAll('.mobile-sub').forEach(s=>s.style.display='none');
+      if(!isOpen){ btn.classList.add('open'); if(panel) panel.style.display='flex'; }
+    });
+  });
+
+  overlay.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{ closeOverlay(); }));
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape'){ if(overlay.classList.contains('show')) closeOverlay(); }});
+})();
+
+/* Improved dropdown behavior */
+(function(){
+  document.querySelectorAll('.nav-item').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      item.querySelector('.dropdown').style.display = 'block';
+    });
+    
+    item.addEventListener('mouseleave', () => {
+      item.querySelector('.dropdown').style.display = 'none';
+    });
+  });
+})();
+
+/* Small interactions required for quick buttons */
+document.getElementById('joinBtn').addEventListener('click', ()=>{ alert('Join flow placeholder — replace with Discord/Signup link.'); });
+document.getElementById('patchBtn').addEventListener('click', ()=>{
+  const el = document.querySelector('.section h3');
+  if(el) el.scrollIntoView({behavior:'smooth',block:'center'});
 });
-    </script>
+</script>   
+
 </body>
 </html>
