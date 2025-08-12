@@ -387,7 +387,13 @@ header {
           <p class="hero-sub">Aetherlyn — a realm of noble conflict and majestic adventure. Claim ranks, join guilds, and write history on the battlefields of fate.</p>
 
           <div class="hero-actions">
-            <button class="cta" id="joinBtn">Join the Realm</button>
+          <a href="https://chat.whatsapp.com/GhkuUozCaeTG4PCfFFXwSo?mode=ac_t" 
+            class="cta" 
+            id="joinBtn"
+            target="_blank"
+            rel="noopener noreferrer">
+            Join the Realm
+            </a>
             <button class="cta secondary" id="patchBtn">Read Patch Notes</button>
           </div>
         </div>
@@ -428,8 +434,8 @@ header {
             <div class="meta">
               <div class="icon">E</div>
               <div>
-                <h4>Event: Bloodmoon Raid</h4>
-                <p>Co-op raid opening — rewards include unique helm & guild renown boosts.</p>
+                <h4>Event: Grand Quest</h4>
+                <p>Bergabunglah ke Grand Quest of Aetherlyn! Tunjukkan kelayakan mu bermain RP dan menangkan hadiah terbatas.</p>
               </div>
             </div>
             <div style="margin-top:auto;text-align:right"><small style="color:var(--muted)">1 week ago</small></div>
@@ -441,9 +447,9 @@ header {
       <div class="section">
         <h3>Rules Highlights</h3>
         <div class="rules-grid">
-          <div class="rule"><h5>General</h5><p>No griefing. Respect RP scenes. IC actions must remain believable.</p></div>
-          <div class="rule"><h5>OOC</h5><p>Keep meta-information OOC. Use OOC channels for planning, IC for roleplay.</p></div>
-          <div class="rule"><h5>RPB</h5><p>RP Battle rules: declare stakes, agree mechanics, and respect outcomes.</p></div>
+          <div class="rule"><h5>General</h5><p>Dilarang RP berbau 18+, RP Over Tech.</p></div>
+          <div class="rule"><h5>OOC</h5><p>Hindari terlalu banyak OOC di grup RP. OOC lah di grup yang disediakan</p></div>
+          <div class="rule"><h5>RPB</h5><p>Menggunakan mekanik Turn-Base dalam battle.</p></div>
         </div>
         <div style="margin-top:12px;text-align:right"><a href="#rules-general" class="cta secondary">See All Rules</a></div>
       </div>
@@ -452,7 +458,7 @@ header {
       <div class="section">
         <h3>Featured Guilds</h3>
         <div class="guilds">
-          <div class="guild"><img src="placeholder-guild.png" alt="GoN"><h6>Guardians of Night</h6></div>
+          <div class="guild"><img src="gon-logo.jpg" alt="GoN"><h6>Guardians of Night</h6></div>
           <div class="guild"><img src="placeholder-guild.png" alt="Zenith"><h6>Zenith</h6></div>
           <div class="guild"><img src="placeholder-guild.png" alt="Shadow Garden"><h6>Shadow Garden</h6></div>
           <div class="guild"><img src="placeholder-guild.png" alt="Eclipse Luz"><h6>Eclipse Luz</h6></div>
@@ -472,12 +478,12 @@ header {
 
     <section id="about" class="card section" style="margin-top:18px">
       <h3>About the Realm</h3>
-      <p class="muted">Aetherlyn is a high-fantasy RP world focused on noble courts, tactical PvP, and narrative-driven events. Use the Patch menu to view full notes, Rules for community standards, and Guild for faction lore.</p>
+      <p class="muted">Aetherlyn adalah dunia Roleplay yang mengangkat tema Fantasy berlatar waktu Medieval (Abad pertengahan). Bergabunglah, tulis cerita mu di dunia yang penuh sihir dan misteri.</p>
     </section>
 
   </main>
 
-  <footer>© World of Aetherlyn — Crafted with magic & pixels. • <a href="#" style="color:var(--muted)">Discord</a> • <a href="#" style="color:var(--muted)">WhatsApp</a></footer>
+  <footer>© World of Aetherlyn — Crafted with magic & pixels. • <a href="#" style="color:var(--muted)">Discord</a> • <a href="https://chat.whatsapp.com/GhkuUozCaeTG4PCfFFXwSo?mode=ac_t" style="color:var(--muted)">WhatsApp Comm</a></footer>
 
 <script>
 /* Lightweight particles (gold motes) */
@@ -549,7 +555,6 @@ header {
 })();
 
 /* Small interactions required for quick buttons */
-document.getElementById('joinBtn').addEventListener('click', ()=>{ alert('Join flow placeholder — replace with Discord/Signup link.'); });
 document.getElementById('patchBtn').addEventListener('click', ()=>{
   const el = document.querySelector('.section h3');
   if(el) el.scrollIntoView({behavior:'smooth',block:'center'});
@@ -558,4 +563,3 @@ document.getElementById('patchBtn').addEventListener('click', ()=>{
 
 </body>
 </html>
-
