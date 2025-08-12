@@ -72,41 +72,100 @@
   border-bottom: 1px solid rgba(58,44,26,0.06);
 }
 
+ /* Tambahkan ini di bagian mobile CSS */
+.mobile-item {
+  background: transparent;
+  padding: 14px;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 18px;
+  border: 1px solid rgba(255,255,255,0.04);
+  color: var(--parchment);
+  text-decoration: none;
+  text-align: left;
+  display: block;
+  width: 100%;
+  transition: all 0.2s ease;
+}
 
+.mobile-item:hover {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.08);
+}
+/* Untuk item yang memiliki dropdown */
+.mobile-item[data-target] {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+  /* Responsive */
+  @media(max-width:1000px){ .cards{grid-template-columns:repeat(2,1fr)} .guilds{grid-template-columns:repeat(2,1fr)} }
+  @media(max-width:720px){
+    .cards{grid-template-columns:1fr}
+    .rules-grid{grid-template-columns:1fr}
+    .nav-list{display:none}
+    .hero{padding:60px 14px 30px}
+    .hero-title{font-size:clamp(24px,8vw,38px)}
+  }
+
+  /* Sembunyiin burger di desktop */
+@media (min-width: 721px) {
+  #openOverlay {
+    display: none !important;
+  }
+}
+
+  @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
 </style>
 <body>
 
 <canvas id="particles-canvas"></canvas>
 <div class="hero-bg"></div>
 
-<header>
-  <div class="topbar">
-    <div class="brand">
-      <div class="logo">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.5 8H8.5L12 2Z" fill="white"/><path d="M5 9H19L12 22L5 9Z" fill="rgba(0,0,0,0.08)"/></svg>
+<!-- Particles (subtle gold motes) -->
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+  <!-- Hero background (dawn image) -->
+  <div class="hero-bg" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden>
+          <!-- simple heraldic svg -->
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.5 8H8.5L12 2Z" fill="white"/><path d="M5 9H19L12 22L5 9Z" fill="rgba(0,0,0,0.08)"/></svg>
+        </div>
+        <div>
+          <div class="site-title">World of Aetherlyn</div>
+          <div class="site-sub">Where Legends Rise and Kingdoms Fall</div>
+        </div>
       </div>
-      <div>
-        <div class="site-title">World of Aetherlyn</div>
-        <div class="site-sub">Where Legends Rise and Kingdoms Fall</div>
+
+      <div style="display:flex;align-items:center;gap:10px">
+        <button id="openOverlay" class="menu-toggle" aria-label="Open menu" style="background:none;border:1px solid rgba(255,255,255,0.06);padding:10px;border-radius:8px;color:var(--parchment);font-size:18px">☰</button>
+  
+        <a href="https://chat.whatsapp.com/GhkuUozCaeTG4PCfFFXwSo?mode=ac_t" target="_blank" rel="noopener noreferrer" class="cta" id="enterBtn">Enter the Realm</a>
       </div>
     </div>
-    <button id="openOverlay" style="background:none;border:1px solid rgba(255,255,255,0.06);padding:10px;border-radius:8px;color:var(--parchment);font-size:18px">☰</button>
-  </div>
-  <nav>
-    <div class="nav-inner">
-      <ul class="nav-list">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                  <li class="nav-item">
+
+    <nav>
+      <div class="nav-inner">
+        <ul class="nav-list" id="navList">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item">
             <a class="nav-link" href="patch.html">Patch ▾</a>
             <ul class="dropdown">
-              <li><a href="#">Race</a></li>
-              <li><a href="#">Element</a></li>
-              <li><a href="#">Class</a></li>
-              <li><a href="#">Skills</a></li>
-              <li><a href="#">Level</a></li>
-              <li><a href="#">Stats</a></li>
-              <li><a href="#">Rank</a></li>
-              <li><a href="#">Job</a></li>
+              <li><a href="patch.html">Race</a></li>
+              <li><a href="patch.html">Element</a></li>
+              <li><a href="patch.html">Class</a></li>
+              <li><a href="patch.html">Skills</a></li>
+              <li><a href="patch.html">Level</a></li>
+              <li><a href="patch.html">Stats</a></li>
+              <li><a href="patch.html">Rank</a></li>
+              <li><a href="patch.html">Job</a></li>
             </ul>
           </li>
           <li class="nav-item">
@@ -143,7 +202,46 @@
         </ul>
       </div>
     </nav>
-</header>
+  </header>
+
+  <!-- Mobile overlay -->
+  <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="logo" style="width:48px;height:48px"></div>
+        <div>
+          <div class="site-title" style="font-size:18px">World of Aetherlyn</div>
+          <div class="site-sub">Where Legends Rise and Kingdoms Fall</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <button id="overlayClose" class="cta" style="background:transparent;border:1px solid rgba(255,255,255,0.08);color:var(--parchment)">Close</button>
+      </div>
+    </div>
+
+    <nav class="mobile-menu" aria-label="Mobile menu">
+      <div class="mobile-item-container">
+  <a class="mobile-item" href="index.html">Home</a>
+</div>
+
+      <button class="mobile-item" data-target="m-patch">Patch <span class="chev">▾</span></button>
+      <div class="mobile-sub" id="m-patch"><a href="patch.html">Race</a><a href="patch.html">Element</a><a href="patch.html">Class</a><a href="patch.html">Skills</a></div>
+
+      <button class="mobile-item" data-target="m-roleplay">Roleplay <span class="chev">▾</span></button>
+      <div class="mobile-sub" id="m-roleplay"><a href="#rpb">RPB</a><a href="#rpl">RPL</a><a href="#rpr">RPR</a></div>
+
+      <button class="mobile-item" data-target="m-rules">Rules <span class="chev">▾</span></button>
+      <div class="mobile-sub" id="m-rules"><a href="#rules-general">General Rules</a><a href="#rules-ooc">OOC Rules</a><a href="#rules-rpb">RPB Rules</a></div>
+
+      <button class="mobile-item" data-target="m-guild">Guild <span class="chev">▾</span></button>
+      <div class="mobile-sub" id="m-guild"><a href="#gon">GoN</a><a href="#zenith">Zenith</a><a href="#shadow">Shadow Garden</a><a href="#eclipse">Eclipse Luz</a></div>
+
+      <button class="mobile-item" data-target="m-map">Map <span class="chev">▾</span></button>
+      <div class="mobile-sub" id="m-map"><a href="#map-png">World Map (PNG)</a><a href="#map-download">Download .png</a></div>
+    </nav>
+  </div>
+
+
 
 <main>
   <h1>Patch Notes 5.0</h1>
@@ -343,8 +441,53 @@ melakukan skill tersebut.
   addEventListener('resize',()=>{W=c.width=innerWidth;H=c.height=innerHeight;init()});
   init();draw();
 })();
+
+/* Mobile overlay open/close & accordion */
+(function(){
+  const openBtn = document.getElementById('openOverlay');
+  const closeBtn = document.getElementById('overlayClose');
+  const overlay = document.getElementById('mobileOverlay');
+  const body = document.body;
+  function openOverlay(){ overlay.classList.add('show'); overlay.setAttribute('aria-hidden','false'); body.style.overflow='hidden'; }
+  function closeOverlay(){ overlay.classList.remove('show'); overlay.setAttribute('aria-hidden','true'); body.style.overflow='auto'; }
+  openBtn && openBtn.addEventListener('click', openOverlay);
+  if(closeBtn) closeBtn.addEventListener('click', closeOverlay);
+
+  document.querySelectorAll('.mobile-item').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const target = btn.getAttribute('data-target');
+      const panel = document.getElementById(target);
+      const isOpen = btn.classList.contains('open');
+      document.querySelectorAll('.mobile-item').forEach(b=>b.classList.remove('open'));
+      document.querySelectorAll('.mobile-sub').forEach(s=>s.style.display='none');
+      if(!isOpen){ btn.classList.add('open'); if(panel) panel.style.display='flex'; }
+    });
+  });
+
+  overlay.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{ closeOverlay(); }));
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape'){ if(overlay.classList.contains('show')) closeOverlay(); }});
+})();
+
+/* Improved dropdown behavior */
+(function(){
+  document.querySelectorAll('.nav-item').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      item.querySelector('.dropdown').style.display = 'block';
+    });
+    
+    item.addEventListener('mouseleave', () => {
+      item.querySelector('.dropdown').style.display = 'none';
+    });
+  });
+})();
+
+/* Small interactions required for quick buttons */
+document.getElementById('joinBtn').addEventListener('click', ()=>{ alert('Join flow placeholder — replace with Discord/Signup link.'); });
+document.getElementById('patchBtn').addEventListener('click', ()=>{
+  const el = document.querySelector('.section h3');
+  if(el) el.scrollIntoView({behavior:'smooth',block:'center'});
+});
 </script>
 
 </body>
 </html>
-
