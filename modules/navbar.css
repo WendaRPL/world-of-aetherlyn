@@ -1,0 +1,78 @@
+/* navbar.css — header, nav, dropdown, animations */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--blood-red); /* solid header so hero won't show through */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+.nav-container { position: relative; z-index: 1001; background-color: var(--blood-red); }
+
+nav {
+  position: relative;
+  z-index: 1001;
+  background-color: rgba(94, 25, 20, 0.98);
+  backdrop-filter: blur(5px);
+}
+
+/* center nav inner */
+nav .nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* nav list */
+.nav-list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+/* items */
+.nav-item { position: relative; }
+.nav-link {
+  display: block;
+  padding: 15px 20px;
+  color: var(--parchment);
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  transition: all 0.25s ease;
+}
+.nav-link:hover { background-color: var(--gold); color: var(--dark-brown); }
+
+/* dropdown */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgba(58, 44, 26, 0.98);
+  min-width: 200px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  border-top: 2px solid var(--gold);
+  z-index: 1002;
+  animation: fadeIn 0.28s ease both;
+}
+.dropdown li { position: relative; }
+.dropdown li a {
+  display: block;
+  padding: 12px 15px;
+  color: var(--parchment);
+  text-decoration: none;
+  transition: all 0.18s ease;
+  border-left: 3px solid transparent;
+}
+.dropdown li a:hover {
+  background-color: var(--gold);
+  color: var(--dark-brown);
+  border-left-color: var(--blood-red);
+  padding-left: 20px;
+}
+
+/* show dropdown on hover (desktop) */
+.nav-item:hover .dropdown { display: block; }
+
+/* small touch fallback: JS will toggle display for mobile overlay */

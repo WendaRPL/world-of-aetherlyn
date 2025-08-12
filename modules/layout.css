@@ -1,0 +1,22 @@
+/* layout.css — topbar, containers, main, footer */
+.topbar {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px;
+  gap: 12px;
+}
+.brand{display:flex;align-items:center;gap:14px}
+.logo{
+  width:64px;height:64px;border-radius:10px;
+  background:linear-gradient(135deg,var(--gold),var(--blood-red));
+  display:grid;place-items:center;
+  box-shadow:0 10px 30px rgba(94,25,20,0.25)
+}
+.site-title{font-family:'Cinzel', serif;font-size:clamp(18px,2.6vw,26px);color:var(--parchment)}
+.site-sub{font-size:12px;color:var(--gold)}
+
+main{position:relative;z-index:200;max-width:var(--max-width);margin:0 auto;padding:80px 18px 40px}
+footer{max-width:var(--max-width);margin:28px auto;padding:18px;text-align:center;color:var(--muted)}
