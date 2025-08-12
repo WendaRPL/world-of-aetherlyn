@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>World of Aetherlyn — Home</title>
+<title>World of Aetherlyn — Dawn Hero (Fixed Dropdown)</title>
 
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
@@ -211,16 +211,33 @@ header {
 
   footer{max-width:var(--max-width);margin:28px auto;padding:18px;text-align:center;color:var(--muted)}
 
-  /* Mobile overlay */
-  .mobile-overlay{position:fixed;inset:0;background:linear-gradient(180deg, rgba(14,6,6,0.96), rgba(45,23,17,0.96));color:var(--parchment);display:none;flex-direction:column;z-index:2000;padding:24px;overflow:auto;backdrop-filter:blur(10px)}
-  .mobile-overlay.show{display:flex}
-  .mobile-menu{display:flex;flex-direction:column;gap:12px}
-  .mobile-item{background:transparent;padding:14px;border-radius:10px;font-weight:800;font-size:18px;border:1px solid rgba(255,255,255,0.04)}
-  .mobile-sub{display:none;flex-direction:column;padding:8px 18px;margin-top:6px;margin-bottom:6px;border-left:2px solid rgba(212,175,55,0.12)}
-  .mobile-sub a{padding:10px 0;color:var(--parchment);text-decoration:none;font-weight:600}
-  .mobile-item.open + .mobile-sub{display:flex}
-  .chev{float:right;transform:rotate(0);transition:transform 220ms}
-  .mobile-item.open .chev{transform:rotate(180deg)}
+  /* Tambahkan ini di bagian mobile CSS */
+.mobile-item {
+  background: transparent;
+  padding: 14px;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 18px;
+  border: 1px solid rgba(255,255,255,0.04);
+  color: var(--parchment);
+  text-decoration: none;
+  text-align: left;
+  display: block;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+.mobile-item:hover {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.08);
+}
+
+/* Untuk item yang memiliki dropdown */
+.mobile-item[data-target] {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
   /* Responsive */
   @media(max-width:1000px){ .cards{grid-template-columns:repeat(2,1fr)} .guilds{grid-template-columns:repeat(2,1fr)} }
@@ -278,14 +295,14 @@ header {
           <li class="nav-item">
             <a class="nav-link" href="patch.html">Patch ▾</a>
             <ul class="dropdown">
-              <li><a href="#">Race</a></li>
-              <li><a href="#">Element</a></li>
-              <li><a href="#">Class</a></li>
-              <li><a href="#">Skills</a></li>
-              <li><a href="#">Level</a></li>
-              <li><a href="#">Stats</a></li>
-              <li><a href="#">Rank</a></li>
-              <li><a href="#">Job</a></li>
+              <li><a href="patch.html">Race</a></li>
+              <li><a href="patch.html">Element</a></li>
+              <li><a href="patch.html">Class</a></li>
+              <li><a href="patch.html">Skills</a></li>
+              <li><a href="patch.html">Level</a></li>
+              <li><a href="patch.html">Stats</a></li>
+              <li><a href="patch.html">Rank</a></li>
+              <li><a href="patch.html">Job</a></li>
             </ul>
           </li>
           <li class="nav-item">
@@ -340,8 +357,12 @@ header {
     </div>
 
     <nav class="mobile-menu" aria-label="Mobile menu">
+      <div class="mobile-item-container">
+  <a class="mobile-item" href="index.html">Home</a>
+</div>
+
       <button class="mobile-item" data-target="m-patch">Patch <span class="chev">▾</span></button>
-      <div class="mobile-sub" id="m-patch"><a href="#race">Race</a><a href="#element">Element</a><a href="#class">Class</a><a href="#skills">Skills</a></div>
+      <div class="mobile-sub" id="m-patch"><a href="patch.html">Race</a><a href="patch.html">Element</a><a href="patch.html">Class</a><a href="patch.html">Skills</a></div>
 
       <button class="mobile-item" data-target="m-roleplay">Roleplay <span class="chev">▾</span></button>
       <div class="mobile-sub" id="m-roleplay"><a href="#rpb">RPB</a><a href="#rpl">RPL</a><a href="#rpr">RPR</a></div>
@@ -537,5 +558,3 @@ document.getElementById('patchBtn').addEventListener('click', ()=>{
 
 </body>
 </html>
-
-
