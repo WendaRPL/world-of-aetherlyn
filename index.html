@@ -3,10 +3,19 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>World of Aetherlyn</title>
+<title>World of Aetherlyn — Dawn Hero (Fixed Dropdown)</title>
 
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
+
+<!-- modular CSS -->
+<link rel="stylesheet" href="modules/theme.css">
+<link rel="stylesheet" href="modules/layout.css">
+<link rel="stylesheet" href="modules/navbar.css">
+<link rel="stylesheet" href="modules/hero.css">
+<link rel="stylesheet" href="modules/components.css">
+<link rel="stylesheet" href="modules/mobile.css">
+<link rel="stylesheet" href="modules/particles.css">
 
 <style>
   :root{
@@ -265,8 +274,9 @@ header {
     <nav>
       <div class="nav-inner">
         <ul class="nav-list" id="navList">
+          <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
           <li class="nav-item">
-            <a class="nav-link">Patch ▾</a>
+            <a class="nav-link" href="patch.html">Patch ▾</a>
             <ul class="dropdown">
               <li><a href="#">Race</a></li>
               <li><a href="#">Element</a></li>
@@ -527,5 +537,3 @@ document.getElementById('patchBtn').addEventListener('click', ()=>{
 
 </body>
 </html>
-
-
