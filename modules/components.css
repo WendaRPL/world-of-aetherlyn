@@ -1,0 +1,95 @@
+/* components.css — buttons, cards, guilds, map teaser, etc */
+
+/* CTA */
+.cta{
+  display:inline-block;padding:12px 20px;border-radius:999px;
+  background:linear-gradient(90deg,var(--blood-red),#7b2a21);
+  color:var(--parchment);font-weight:800;
+  position:relative;border:1px solid rgba(255,255,255,0.06);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.cta:hover{ transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.2); }
+.cta.secondary{ background:transparent; border:1px solid rgba(255,255,255,0.08); }
+
+/* cards */
+.section{max-width:var(--max-width);margin:22px auto;padding:0 18px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:14px}
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.92));
+  border-radius:12px;padding:14px;border:1px solid rgba(58,44,26,0.06);
+  box-shadow:0 8px 24px rgba(0,0,0,0.06);
+  display:flex;flex-direction:column;gap:10px;transition:transform .26s ease,box-shadow .26s ease;
+}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 48px rgba(0,0,0,0.14)}
+.card .meta{display:flex;align-items:center;gap:12px}
+.icon{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--gold),var(--blood-red));display:grid;place-items:center;color:var(--parchment);font-weight:800}
+.card h4{font-family:'Cinzel';font-size:16px}
+.card p{color:var(--muted);font-size:14px}
+
+/* rules & guilds */
+.rules-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px}
+.rule{padding:14px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.92));border:1px solid rgba(58,44,26,0.06)}
+.guilds{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:12px}
+.guild{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.92));text-align:center;border:1px solid rgba(58,44,26,0.06);cursor:pointer}
+.guild img{width:64px;height:64px;border-radius:12px;margin-bottom:8px}
+
+/* map teaser */
+.map-teaser{margin-top:14px;border-radius:12px;overflow:hidden;border:1px solid rgba(58,44,26,0.06);position:relative}
+.map-teaser img{width:100%;height:auto;display:block}
+.map-overlay{position:absolute;bottom:8px;left:12px;padding:8px 12px;border-radius:8px;background:linear-gradient(90deg, rgba(0,0,0,0.2), rgba(0,0,0,0.45));color:var(--parchment);font-weight:700}
+
+/* Card used for patch blocks (patch page) */
+.patch-block{background:linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.92));padding:20px;border-radius:12px;margin-bottom:24px;box-shadow:0 8px 24px rgba(0,0,0,0.06);}
+.patch-list{margin-left:20px;color:var(--muted)}
+
+/* H1 — Judul Utama Patch */
+main h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--parchment);
+  margin: 40px 0 20px;
+  position: relative;
+  padding: 10px 20px;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(4px);
+  border: 2px solid var(--gold);
+  display: inline-block;
+  border-radius: 8px;
+}
+main h1::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 4px;
+  background: var(--gold);
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+/* H2 — Judul Section */
+main h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--blood-red);
+  margin: 30px 0 15px;
+  position: relative;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--gold);
+}
+
+/* H3 — Subjudul */
+main h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--gold);
+  margin: 20px 0 10px;
+  position: relative;
+}
+main h3::before {
+  content: "✦ ";
+  color: var(--blood-red);
+}
