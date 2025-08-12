@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aetherlyn | Medieval Fantasy RP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Cormorant:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<style>
+  /* ===== NAVBAR ===== */
+:root {
+  /* Colors */
+  --blood-red: #5e1914;
+  --gold: #d4af37;
+  --parchment: #f0e6d2;
+  --dark-wood: #3a2c1a;
+  --aether-purple: #4a2d7a;
+}
+
+/* Base Styles */
+body {
+  background-color: var(--parchment);
+  color: #333;
+  font-family: 'Cormorant', serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 1px;
+}
+
+/* Header */
+header {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), var(--blood-red));
+  color: var(--gold);
+  text-align: center;
+  padding: 3rem 0;
+  border-bottom: 3px solid var(--gold);
+}
+
+header h1 {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Base Navbar */
+.nav-container {
+  background: var(--blood-red);
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+/* Mobile Menu Button (Hidden on Desktop) */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--parchment);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Nav Links Container */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* General Nav Items */
+.nav-links > a, .dropbtn {
+  color: var(--parchment);
+  text-decoration: none;
+  padding: 0.8rem 1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-align: center;
+  font-family: 'Cormorant', serif;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.dropbtn i.fa-chevron-down {
+  font-size: 0.8rem;
+}
+
+/* Dropdown Container */
+.dropdown {
+  position: relative;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: var(--dark-wood);
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  z-index: 100;
+  border-top: 2px solid var(--gold);
+  left: 0;
+}
+
+.dropdown-content a {
+  color: var(--parchment);
+  padding: 0.8rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-left: 3px solid transparent;
+}
+
+.dropdown-content a:hover {
+  background: var(--blood-red);
+  border-left: 3px solid var(--gold);
+}
+
+/* CTA Button */
+.nav-cta {
+  background: var(--gold);
+  color: var(--blood-red) !important;
+  border-radius: 4px;
+  margin-left: 0.5rem;
+}
+
+.nav-cta:hover {
+  background: var(--aether-purple);
+  color: var(--gold) !important;
+}
+
+/* Show Dropdown on Hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+  /* Show Mobile Button */
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  /* Hide Regular Nav Links */
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--blood-red);
+    flex-direction: column;
+    gap: 0;
+    z-index: 99;
+    border-top: 1px solid var(--gold);
+  }
+
+  /* Show when mobile menu is active */
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* Full width items */
+  .nav-links > a, .dropdown {
+    width: 100%;
+    text-align: left;
+  }
+
+  .dropbtn {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  /* Stack dropdowns */
+  .dropdown-content {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    border-top: none;
+    border-left: 3px solid var(--gold);
+  }
+}
+
+/* Hero Banner */
+.hero {
+  position: relative;
+  max-height: 70vh;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  filter: brightness(0.7);
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.hero-text h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* Parchment Box */
+.parchment-box {
+  background: url('../images/parchment-texture.jpg');
+  background-size: cover;
+  padding: 2rem;
+  margin: 3rem auto;
+  max-width: 800px;
+  border: 1px solid var(--dark-wood);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Buttons */
+.button {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--blood-red);
+  padding: 0.7rem 2rem;
+  margin-top: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background: var(--dark-wood);
+  color: var(--gold);
+}
+
+.gold-button {
+  background: var(--gold);
+  color: var(--blood-red);
+  font-size: 1.2rem;
+}
+
+/* Features Grid */
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 3rem;
+  text-align: center;
+}
+
+.feature-card {
+  background: white;
+  padding: 2rem;
+  border: 1px solid var(--gold);
+}
+
+.feature-card i {
+  font-size: 2.5rem;
+  color: var(--blood-red);
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+  background: var(--blood-red);
+  color: var(--gold);
+  text-align: center;
+  padding: 2rem;
+  border-top: 2px solid var(--gold);
+}
+</style>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <h1><i class="fas fa-crystal"></i> WORLD OF AETHERLYN</h1>
+            <p>Where Magic and Steel Collide</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <!-- Mobile Menu Button (Hidden on Desktop) -->
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Nav Links -->
+            <div class="nav-links">
+                <a href="home.html"><i class="fas fa-home"></i> Home</a>
+                
+                <!-- Dropdown Patch -->
+                <div class="dropdown">
+                    <button class="dropbtn"><i class="fas fa-code-branch"></i> Patch <i class="fas fa-chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="race.html"><i class="fas fa-dna"></i> Race</a>
+                        <a href="element.html"><i class="fas fa-fire"></i> Element</a>
+                        <a href="class.html"><i class="fas fa-helmet-battle"></i> Class</a>
+                        <a href="skills.html"><i class="fas fa-scroll"></i> Skills</a>
+                        <a href="level.html"><i class="fas fa-level-up-alt"></i> Level</a>
+                        <a href="stats.html"><i class="fas fa-chart-bar"></i> Stats</a>
+                        <a href="rank.html"><i class="fas fa-star"></i> Rank</a>
+                        <a href="job.html"><i class="fas fa-briefcase"></i> Job</a>
+                    </div>
+                </div>
+                
+                <!-- Dropdown Roleplay -->
+                <div class="dropdown">
+                    <button class="dropbtn"><i class="fas fa-mask"></i> Roleplay <i class="fas fa-chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="rpb.html"><i class="fas fa-swords"></i> RPB</a>
+                        <a href="rpl.html"><i class="fas fa-book-open"></i> RPL</a>
+                        <a href="rpr.html"><i class="fas fa-comments"></i> RPR</a>
+                    </div>
+                </div>
+                
+                <!-- Dropdown Rules -->
+                <div class="dropdown">
+                    <button class="dropbtn"><i class="fas fa-gavel"></i> Rules <i class="fas fa-chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="general-rules.html"><i class="fas fa-list"></i> General Rules</a>
+                        <a href="ooc-rules.html"><i class="fas fa-user-friends"></i> OOC Rules</a>
+                        <a href="rpb-rules.html"><i class="fas fa-swords"></i> RPB Rules</a>
+                    </div>
+                </div>
+                
+                <!-- Dropdown Guild -->
+                <div class="dropdown">
+                    <button class="dropbtn"><i class="fas fa-users"></i> Guild <i class="fas fa-chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="gon.html"><i class="fas fa-crown"></i> GoN</a>
+                        <a href="zenith.html"><i class="fas fa-sun"></i> Zenith</a>
+                        <a href="shadow-garden.html"><i class="fas fa-moon"></i> Shadow Garden</a>
+                        <a href="eclipse-luz.html"><i class="fas fa-eclipse"></i> Eclipse Luz</a>
+                    </div>
+                </div>
+                
+                <!-- Map -->
+                <a href="map.html"><i class="fas fa-map"></i> Map</a>
+                
+                <!-- Join CTA -->
+                <a href="join.html" class="nav-cta"><i class="fas fa-handshake"></i> Join</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Rest of your content... -->
+     <!-- Hero Banner -->
+    <section class="hero">
+        <img src="images/castle-banner.jpg" alt="Aetherlyn's World">
+        <div class="hero-text">
+            <h2>Enter the Realm</h2>
+            <p>A land of warring kingdoms, ancient magic, and untold stories...</p>
+            <a href="#join" class="button">Begin Your Journey</a>
+        </div>
+    </section>
+
+    <!-- Quick Lore -->
+    <section id="lore" class="lore-section">
+        <div class="parchment-box">
+            <h2><i class="fas fa-dragon"></i> The World of Aetherlyn</h2>
+            <p>Lorem Ipsum Dolor sit Amet</p>
+            <a href="lore.html" class="button">Read Full Lore</a>
+        </div>
+    </section>
+
+    <!-- Featured Sections Grid -->
+    <section class="features">
+        <div class="feature-card">
+            <i class="fas fa-scroll"></i>
+            <h3>Rules</h3>
+            <p>Learn the laws of the realm</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-helmet-battle"></i>
+            <h3>Characters</h3>
+            <p>Create your legend</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-landmark"></i>
+            <h3>Gallery</h3>
+            <p>Witness our tales</p>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="join" class="cta">
+        <h2>Ready to Claim Your Destiny?</h2>
+        <a href="https://discord.gg/example" class="button gold-button">
+            <i class="fab fa-discord"></i> Join Our Discord
+        </a>
+    </section>
+
+    <script>
+      // Mobile Menu Toggle
+document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+  document.querySelector('.nav-links').classList.toggle('active');
+  
+  // Toggle icon between bars and X
+  const icon = this.querySelector('i');
+  if (icon.classList.contains('fa-bars')) {
+    icon.classList.remove('fa-bars');
+    icon.classList.add('fa-times');
+  } else {
+    icon.classList.remove('fa-times');
+    icon.classList.add('fa-bars');
+  }
+});
+
+// Close dropdowns when clicking outside (for mobile)
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.nav-container')) {
+    document.querySelector('.nav-links').classList.remove('active');
+    const icon = document.querySelector('.mobile-menu-btn i');
+    if (icon.classList.contains('fa-times')) {
+      icon.classList.remove('fa-times');
+      icon.classList.add('fa-bars');
+    }
+  }
+});
+    </script>
+</body>
+</html>
