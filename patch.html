@@ -74,6 +74,70 @@
   border-bottom: 1px solid rgba(58,44,26,0.06);
 }
 
+.topbar {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.125rem; /* 16px 18px */
+  gap: 0.75rem; /* 12px */
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem; /* 14px */
+  transition: transform 0.2s ease;
+}
+
+.brand:hover {
+  transform: scale(1.02);
+}
+
+.logo {
+  width: 4rem; /* 64px */
+  height: 4rem; /* 64px */
+  border-radius: 0.625rem; /* 10px */
+  background: linear-gradient(135deg, var(--gold), var(--blood-red));
+  display: grid;
+  place-items: center;
+  box-shadow: 0 0.625rem 1.875rem rgba(94, 25, 20, 0.25); /* 10px 30px */
+  transition: all 0.3s ease;
+  overflow: hidden; /* Ensures rounded corners work with child elements */
+}
+
+.logo:hover {
+  transform: rotate(5deg);
+  box-shadow: 0 0.75rem 2rem rgba(94, 25, 20, 0.35);
+}
+
+.logo img,
+.logo svg {
+  width: 100%; /* Adjust based on your logo size */
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.site-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.125rem, 2.6vw, 1.625rem); /* 18px-26px */
+  color: var(--parchment);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 0.125rem; /* 2px */
+}
+
+.site-sub {
+  font-size: 0.75rem; /* 12px */
+  color: var(--gold);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  opacity: 0.9;
+}
+
  /* Tambahkan ini di bagian mobile CSS */
 .mobile-item {
   background: transparent;
@@ -159,7 +223,7 @@ html {
       <div class="brand">
         <div class="logo" aria-hidden>
           <!-- simple heraldic svg -->
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.5 8H8.5L12 2Z" fill="white"/><path d="M5 9H19L12 22L5 9Z" fill="rgba(0,0,0,0.08)"/></svg>
+          <img src="ae-logo.jpg" alt="Aetherlyn Logo" width="36" height="36">
         </div>
         <div>
           <a href="index.html" class="site-title">World of Aetherlyn</a>
@@ -231,7 +295,9 @@ html {
   <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
       <div style="display:flex;align-items:center;gap:12px">
-        <div class="logo" style="width:48px;height:48px"></div>
+        <div class="logo" style="width:48px;height:48px">
+          <img src="ae-logo.jpg" alt="Aetherlyn Logo" width="36" height="36">
+        </div>
         <div>
           <div class="site-title" style="font-size:18px">World of Aetherlyn</div>
           <div class="site-sub">Where Legends Rise and Kingdoms Fall</div>
