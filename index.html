@@ -17,6 +17,7 @@
 <link rel="stylesheet" href="modules/mobile.css">
 <link rel="stylesheet" href="modules/particles.css">
 <link rel="stylesheet" href="modules/transition.css">
+<link rel="stylesheet" href="modules/slider.css">
 <style>
   :root{
     --blood-red:#5e1914;
@@ -378,21 +379,22 @@ header {
         <ul class="nav-list" id="navList">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item">
-  <a class="nav-link" href="patch.html">Patch ▾</a>
+  <a class="nav-link" href="#">Patch ▾</a>
   <ul class="dropdown">
-    <li><a href="patch.html#race">Race</a></li>
-    <li><a href="patch.html#element">Element</a></li>
-    <li><a href="patch.html#class">Class</a></li>
-    <li><a href="patch.html#skills">Skills</a></li>
-    <li><a href="patch.html#level">Level</a></li>
-    <li><a href="patch.html#stats">Stats</a></li>
-    <li><a href="patch.html#rank">Rank</a></li>
-    <li><a href="patch.html#job">Job</a></li>
+    <li><a href="race.html">Race</a></li>
+    <li><a href="elements.html">Element</a></li>
+    <li><a href="class.html">Class</a></li>
+    <li><a href="skill.html">Skills</a></li>
+    <li><a href="level.html">Level</a></li>
+    <li><a href="stats.html">Stats</a></li>
+    <li><a href="rank.html">Rank</a></li>
+    <li><a href="job.html">Job</a></li>
   </ul>
 </li>
           <li class="nav-item">
             <a class="nav-link">Roleplay ▾</a>
             <ul class="dropdown">
+              <li><a href="roleplay.html">About</a></li>
               <li><a href="#">RPB</a></li>
               <li><a href="#">RPL</a></li>
               <li><a href="#">RPR</a></li>
@@ -450,14 +452,14 @@ header {
 
       <button class="mobile-item" data-target="m-patch">Patch <span class="chev">▾</span></button>
 <div class="mobile-sub" id="m-patch">
-  <a href="patch.html#race">Race</a>
-  <a href="patch.html#element">Element</a>
-  <a href="patch.html#class">Class</a>
-  <a href="patch.html#skills">Skills</a>
-  <a href="patch.html#level">Level</a>
-  <a href="patch.html#stats">Stats</a>
-  <a href="patch.html#rank">Rank</a>
-  <a href="patch.html#job">Job</a>
+  <a href="race.html">Race</a>
+  <a href="elements.html">Element</a>
+  <a href="class.html">Class</a>
+  <a href="skill.html">Skills</a>
+  <a href="level.html">Level</a>
+  <a href="stats.html">Stats</a>
+  <a href="rank.html">Rank</a>
+  <a href="job.html">Job</a>
 </div>
 
       <button class="mobile-item" data-target="m-roleplay">Roleplay <span class="chev">▾</span></button>
@@ -495,54 +497,48 @@ header {
       </div>
 
       <!-- Quick Patch Preview -->
-      <div class="section">
-        <h3>Latest Patch Highlights</h3>
-        <div class="cards">
-          <div class="card">
-            <div class="meta">
-              <div class="icon">R</div>
-              <div>
-                <h4>New Race: Aelwyn</h4>
-                <p>Ancient wood-elves awakened with Aurora affinity and stealth bonuses.</p>
-              </div>
-            </div>
-            <div style="margin-top:auto;text-align:right"><small style="color:var(--muted)">2 days ago</small></div>
-          </div>
-
-          <div class="card">
-            <div class="meta">
-              <div class="icon">S</div>
-              <div>
-                <h4>Skill: Spinal Cleave Buff</h4>
-                <p>Royal Guillotine scales better with HP lost and grants temporary lifesteal.</p>
-              </div>
-            </div>
-            <div style="margin-top:auto;text-align:right"><small style="color:var(--muted)">5 days ago</small></div>
-          </div>
-
-          <div class="card">
-            <div class="meta">
-              <div class="icon">E</div>
-              <div>
-                <h4>Event: Grand Quest</h4>
-                <p>Bergabunglah ke Grand Quest of Aetherlyn! Tunjukkan kelayakan mu bermain RP dan menangkan hadiah terbatas.</p>
-              </div>
-            </div>
-            <div style="margin-top:auto;text-align:right"><small style="color:var(--muted)">1 week ago</small></div>
+<div class="section">
+  <h3>Latest Patch Highlights</h3>
+  <div class="slider">
+    <button class="slider-btn prev">‹</button>
+    <div class="slider-track">
+      <div class="card">
+        <div class="meta">
+          <div class="icon">R</div>
+          <div>
+            <h4>New Race: Aelwyn</h4>
+            <p>Ancient wood-elves awakened with Aurora affinity and stealth bonuses.</p>
           </div>
         </div>
+        <div style="margin-top:auto;text-align:right"><small style="color:var(--muted)">2 days ago</small></div>
       </div>
 
-      <!-- Rules highlights -->
-      <div class="section">
-        <h3>Rules Highlights</h3>
-        <div class="rules-grid">
-          <div class="rule"><h5>General</h5><p>Dilarang RP berbau 18+, RP Over Tech.</p></div>
-          <div class="rule"><h5>OOC</h5><p>Hindari terlalu banyak OOC di grup RP. OOC lah di grup yang disediakan</p></div>
-          <div class="rule"><h5>RPB</h5><p>Menggunakan mekanik Turn-Base dalam battle.</p></div>
+      <div class="card">
+        <div class="meta">
+          <div class="icon">S</div>
+          <div>
+            <h4>Skill: Spinal Cleave Buff</h4>
+            <p>Royal Guillotine scales better with HP lost and grants temporary lifesteal.</p>
+          </div>
         </div>
-        <div style="margin-top:12px;text-align:right"><a href="#rules-general" class="cta secondary">See All Rules</a></div>
+        <div style="margin-top:auto;text-align:right"><small style="color:var(--muted)">5 days ago</small></div>
       </div>
+
+      <div class="card">
+        <div class="meta">
+          <div class="icon">E</div>
+          <div>
+            <h4>Event: Grand Quest</h4>
+            <p>Bergabunglah ke Grand Quest of Aetherlyn! Tunjukkan kelayakan mu bermain RP dan menangkan hadiah terbatas.</p>
+          </div>
+        </div>
+        <div style="margin-top:auto;text-align:right"><small style="color:var(--muted)">1 week ago</small></div>
+      </div>
+    </div>
+    <button class="slider-btn next">›</button>
+  </div>
+</div>
+
 
       <!-- Featured guilds -->
       <div class="section">
@@ -573,7 +569,7 @@ header {
 
   </main>
 
-  <footer>© World of Aetherlyn — Crafted with magic & pixels. • <a href="#" style="color:var(--muted)">Discord</a> • <a href="https://chat.whatsapp.com/GhkuUozCaeTG4PCfFFXwSo?mode=ac_t" style="color:var(--muted)">WhatsApp Comm</a></footer>
+  <footer class="footer">© World of Aetherlyn — Crafted with magic & pixels. • <a href="#" style="color:var(--muted)">Discord</a> • <a href="https://chat.whatsapp.com/GhkuUozCaeTG4PCfFFXwSo?mode=ac_t" style="color:var(--muted)">WhatsApp Comm</a></footer>
 
 <script>
 /* Lightweight particles (gold motes) */
@@ -761,6 +757,44 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+(function(){
+  const track = document.querySelector('.slider-track');
+  const cards = document.querySelectorAll('.slider .card');
+  const prevBtn = document.querySelector('.slider-btn.prev');
+  const nextBtn = document.querySelector('.slider-btn.next');
+  let index = 0;
+
+  function cardsPerView() {
+    return 1; // Desktop
+    if (window.innerWidth >= 600) return 2; // Tablet
+    return 1; // Mobile
+  }
+
+  function updateSlider() {
+    const perView = cardsPerView();
+    track.style.transform = `translateX(-${index * (100 / perView)}%)`;
+  }
+
+  nextBtn.addEventListener('click', ()=>{
+    index = (index + 1) % cards.length;
+    updateSlider();
+  });
+
+  prevBtn.addEventListener('click', ()=>{
+    index = (index - 1 + cards.length) % cards.length;
+    updateSlider();
+  });
+
+  // Auto-slide tiap 5 detik
+  setInterval(()=>{
+    index = (index + 1) % cards.length;
+    updateSlider();
+  }, 5000);
+
+  window.addEventListener('resize', updateSlider);
+  updateSlider();
+})();
 </script>   
 
 </body>
