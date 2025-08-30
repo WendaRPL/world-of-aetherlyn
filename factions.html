@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factions - World Of Aetherlyn</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/factions.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Background Elements -->
+    <div id="stars"></div>
+    <div id="mist"></div>
+    <div class="floating-crystals"></div>
+    <div class="animated-background"></div>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <h1 class="glow-text">World Of Aetherlyn</h1>
+                </a>
+            </div>
+            
+            <div class="nav-controls">
+                <!-- Hamburger Menu for Mobile -->
+                <div class="hamburger" id="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" class="magic-link"><i data-feather="home"></i> Home</a></li>
+                <li><a href="rank.html" class="magic-link"><i data-feather="star"></i> Rank</a></li>
+                <li><a href="races.html" class="magic-link"><i data-feather="users"></i> Races</a></li>
+                <li><a href="factions.html" class="magic-link active"><i data-feather="layers"></i> Factions</a></li>
+                <li><a href="classes.html" class="magic-link"><i data-feather="award"></i> Classes</a></li>
+                <li><a href="systems.html" class="magic-link"><i data-feather="book"></i> Systems</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <!-- Decorative corner ornaments -->
+            <div class="corner-ornament top-left"></div>
+            <div class="corner-ornament top-right"></div>
+            <div class="corner-ornament bottom-left"></div>
+            <div class="corner-ornament bottom-right"></div>
+
+            <div class="hero-content">
+                <div class="title-wrapper">
+                    <h2 class="hero-title">Elemental Factions</h2>
+                    <div class="title-ornament"></div>
+                </div>
+                
+                <blockquote class="hero-quote">
+                    <span class="quote-mark left">"</span>
+                    Di dalam dunia yang tanpa adanya sebuah batas, elemen-elemen alam dikelompokkan menjadi faksi-faksi yang mewakilinya. Alam memilih dengan sendirinya untuk setiap individu dan faksi apa yang akan mereka miliki.
+                    <span class="quote-mark right">"</span>
+                </blockquote>
+            </div>
+        </section>
+        <!-- Divider with fantasy style -->
+        <div class="section-divider">
+            <div class="divider-ornament"></div>
+        </div>
+
+        <!-- Factions Grid Section -->
+        <section class="factions-system">
+            <div class="container">
+                <div class="intro-text">
+                    <p>Setiap entitas yang terlahir di dunia Aetherlyn akan memiliki satu faksi alam. Faksi tersebut dapat bertambah kuat seiring bertambah kuatnya entitas, serta dapat ditingkatkan menjadi bentuk tertentu yang berbeda namun dalam satu jalur yang sama.</p>
+                </div>
+
+                <!-- Elemental Factions -->
+                <h3 class="faction-category">Elemental Factions</h3>
+                <div class="factions-grid">
+                    <!-- Fire - Hellenaris -->
+                    <div class="faction-card element-fire">
+                        <div class="faction-icon">
+                            <iconify-icon icon="mdi:fire"></iconify-icon>
+                        </div>
+                        <div class="faction-content">
+                            <h4>Hellenaris</h4>
+                            <div class="faction-quote">"with the name of 'fire'"</div>
+                            <p class="faction-desc">Perwujudan dari api yang membara panas tanpa henti layaknya api abadi. Api adalah elemen yang menyuarakan keberanian dan perubahan.</p>
+                            <div class="faction-levels">
+                                <div class="level-tier">
+                                    <h5>Tier I (A Rank)</h5>
+                                    <p>Lava, Explosion, Blaze, Emberkin, Ash, Flare Sprite, Sparkborn</p>
+                                </div>
+                                <div class="level-tier">
+                                    <h5>Tier II (S Rank)</h5>
+                                    <p>Ignis Novice, Volcano, Hellfire, Souffre, Dark Flame, Inferno, Blue Flame</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Water - Hydrateara -->
+                    <div class="faction-card element-water">
+                        <div class="faction-icon">
+                            <iconify-icon icon="mdi:water"></iconify-icon>
+                        </div>
+                        <div class="faction-content">
+                            <h4>Hydrateara</h4>
+                            <div class="faction-quote">"with the name of 'Water'"</div>
+                            <p class="faction-desc">Perwujudan dari air yang mengalir tanpa henti, tak terbendung membawa kekuatan dan ketenangan. Air adalah ingatan dan intuisi.</p>
+                            <div class="faction-levels">
+                                <div class="level-tier">
+                                    <h5>Tier I (A Rank)</h5>
+                                    <p>Ice, Mist, Snow, Ink, Oil, Bubble, Jelly / Gel</p>
+                                </div>
+                                <div class="level-tier">
+                                    <h5>Tier II (S Rank)</h5>
+                                    <p>Blizzard, Abyssal Ice, Corrosive Water, Crystal Ice, Mercury</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Wind - Sylpharim -->
+                    <div class="faction-card element-wind">
+                        <div class="faction-icon">
+                            <iconify-icon icon="mdi:wind"></iconify-icon>
+                        </div>
+                        <div class="faction-content">
+                            <h4>Sylpharim</h4>
+                            <div class="faction-quote">"with the name of 'Wind'"</div>
+                            <p class="faction-desc">Perwujudan dari angin yang terus berhembus membawa kenyamanan, namun juga dapat membawa kemurkaan. Angin adalah kebebasan.</p>
+                            <div class="faction-levels">
+                                <div class="level-tier">
+                                    <h5>Tier I (A Rank)</h5>
+                                    <p>Smoke, Cyclone, Hurricane, Cloud, Musical</p>
+                                </div>
+                                <div class="level-tier">
+                                    <h5>Tier II (S Rank)</h5>
+                                    <p>Vortex, Tornado, Air Pressure, Maelstrom, Sound</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Earth - Terraria -->
+                    <div class="faction-card element-earth">
+                        <div class="faction-icon">
+                            <iconify-icon icon="mdi:earth"></iconify-icon>
+                        </div>
+                        <div class="faction-content">
+                            <h4>Terraria</h4>
+                            <div class="faction-quote">"with the name of 'Earth'"</div>
+                            <p class="faction-desc">Perwujudan dari bumi yang akan selalu menjadi pondasi dari segala kehidupan. Bumi adalah kekuatan diam namun tak tergoyahkan.</p>
+                            <div class="faction-levels">
+                                <div class="level-tier">
+                                    <h5>Tier I (A Rank)</h5>
+                                    <p>Stone, Mud, Sand, Steel, Glass, Ruby</p>
+                                </div>
+                                <div class="level-tier">
+                                    <h5>Tier II (S Rank)</h5>
+                                    <p>Emerald, Terra, Bismut, Metalforce</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Plants - Floravern -->
+                    <div class="faction-card element-nature">
+                        <div class="faction-icon">
+                            <iconify-icon icon="mdi:leaf"></iconify-icon>
+                        </div>
+                        <div class="faction-content">
+                            <h4>Floravern</h4>
+                            <div class="faction-quote">"with the name of 'Plants'"</div>
+                            <p class="faction-desc">Perwujudan dari tumbuhan yang selalu berkembang dengan pasti namun tak pernah berhenti. Tumbuhan adalah kehendak hidup dan ketekunan.</p>
+                            <div class="faction-levels">
+                                <div class="level-tier">
+                                    <h5>Tier I (A Rank)</h5>
+                                    <p>Wood, Paper, Carnivorous Plant, Flower and Vines</p>
+                                </div>
+                                <div class="level-tier">
+                                    <h5>Tier II (S Rank)</h5>
+                                    <p>Nature Essence, Tree of Life, Forest, Celestial Garden</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lightning - Voltaris -->
+                    <div class="faction-card element-lightning">
+                        <div class="faction-icon">
+                            <iconify-icon icon="mdi:lightning-bolt"></iconify-icon>
+                        </div>
+                        <div class="faction-content">
+                            <h4>Voltaris</h4>
+                            <div class="faction-quote">"with the name of 'Lightning'"</div>
+                            <p class="faction-desc">Perwujudan dari petir yang menyambar dengan penuh kekuatan serta secepat kilatan. Petir adalah aliran dari langit yang tak terbendung.</p>
+                            <div class="faction-levels">
+                                <div class="level-tier">
+                                    <h5>Tier I (A Rank)</h5>
+                                    <p>Plasma, Electric, Thunderbolt, Blitz</p>
+                                </div>
+                                <div class="level-tier">
+                                    <h5>Tier II (S Rank)</h5>
+                                    <p>Lightning Spectrum, Thunderstorm, Ultra Voltage, Abyssal Lightning</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Light - Lumirecia -->
+                    <div class="faction-card element-light">
+                        <div class="faction-icon">
+                            <iconify-icon icon="mdi:white-balance-sunny"></iconify-icon>
+                        </div>
+                        <div class="faction-content">
+                            <h4>Lumirecia</h4>
+                            <div class="faction-quote">"with the name of 'Light'"</div>
+                            <p class="faction-desc">Perwujudan dari cahaya yang menyinari kegelapan dan memberikan harapan. Cahaya adalah pemandu dan pelindung bagi yang tersesat.</p>
+                            <div class="faction-levels">
+                                <div class="level-tier">
+                                    <h5>Tier I (A Rank)</h5>
+                                    <p>Solar, Flare, Sparkle, Holy Light</p>
+                                </div>
+                                <div class="level-tier">
+                                    <h5>Tier II (S Rank)</h5>
+                                    <p>Holy, Luminance, Radiance, Stellar, Nebula</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Darkness - Lunateara -->
+                    <div class="faction-card element-dark">
+                        <div class="faction-icon">
+                            <iconify-icon icon="mdi:moon-waning-crescent"></iconify-icon>
+                        </div>
+                        <div class="faction-content">
+                            <h4>Lunateara</h4>
+                            <div class="faction-quote">"with the name of 'Darkness'"</div>
+                            <p class="faction-desc">Perwujudan dari kegelapan yang menyimpan misteri dan rahasia. Kegelapan tak selalu berarti kejahatan, namun sebuah titik kedalaman.</p>
+                            <div class="faction-levels">
+                                <div class="level-tier">
+                                    <h5>Tier I (A Rank)</h5>
+                                    <p>Shadow, Moonlight, Starlight, Yin-Yang</p>
+                                </div>
+                                <div class="level-tier">
+                                    <h5>Tier II (S Rank)</h5>
+                                    <p>Obscura, Starfall, Nightmare, Abyss, Corruption, Hell, Chaos</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Blood - Sanguinera -->
+                    <div class="faction-card element-blood">
+                        <div class="faction-icon">
+                            <iconify-icon icon="mdi:blood-bag"></iconify-icon>
+                        </div>
+                        <div class="faction-content">
+                            <h4>Sanguinera</h4>
+                            <div class="faction-quote">"with the name of 'Blood'"</div>
+                            <p class="faction-desc">Perwujudan dari darah, sebuah elemen antara kehidupan, pengorbanan, dan rasa sakit. Darah tidak akan pernah mengkhianati pemiliknya.</p>
+                            <div class="faction-special">
+                                <p>⚠️ Khusus Vampire & Half-Vampire</p>
+                                <p>❌ Tidak ada Faksi lanjutan</p>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+                <!-- Eternal Faction -->
+                <h3 class="faction-category">Eternal Faction</h3>
+                <div class="factions-grid">
+                    <div class="faction-card element-eternal">
+                        <div class="faction-icon">
+                            <iconify-icon icon="mdi:infinity"></iconify-icon>
+                        </div>
+                        <div class="faction-content">
+                            <h4>Eternal</h4>
+                            <div class="faction-quote">"beyond elemental constraints"</div>
+                            <p class="faction-desc">Sebuah faksi yang selalu berdiri sendiri, menuntut kebebasan, haus akan kekuatan, dan setia berpangku pada satu takdir. Untuk mereka yang melepaskan ikatan dengan alam.</p>
+                            <div class="faction-special">
+                            <div class="eternal-options">
+                                <span class="eternal-option">Aurora</span>
+                                <span class="eternal-option">Compass</span>
+                                <span class="eternal-option">Bone</span>
+                                <span class="eternal-option">Resonance [Locked]</span>
+                                <span class="eternal-option">Glacier</span>
+                                <span class="eternal-option">Blood</span>
+                                <span class="eternal-option">Stardust</span>
+                                <span class="eternal-option">Zodiac [Choose 1]</span>
+                            </div>
+                            <p>⭐ Hanya untuk Rank Celestiara [S] ke atas</p>
+                            <p>⚡ Melepaskan faksi dasar</p>
+                            <p>🌀 Tidak memiliki tingkat lanjutan</p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progression Info -->
+                <div class="progression-info glow-box">
+                    <h3><i data-feather="trending-up"></i> Sistem Peningkatan Faksi</h3>
+                    <div class="progression-steps">
+                        <div class="progression-step">
+                            <div class="step-icon">⭐</div>
+                            <h4>Rank A [Lynvaros]</h4>
+                            <p>Dapat meningkatkan faksi ke <strong>Tingkat I</strong></p>
+                        </div>
+                        <div class="progression-step">
+                            <div class="step-icon">🌟</div>
+                            <h4>Rank S [Celestiara]</h4>
+                            <p>Dapat meningkatkan faksi ke <strong>Tingkat II</strong></p>
+                        </div>
+                        <div class="progression-step">
+                            <div class="step-icon">💫</div>
+                            <h4>Rank S [Celestiara]</h4>
+                            <p>Dapat bergabung ke <strong>Faksi Eternal</strong> (melepas faksi dasar)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Aetherlyn Kingdom Team. Semua hak dilindungi.</p>
+                <p>Dibuat dengan <i data-feather="heart" class="heart-icon"></i> untuk komunitas Role-Play Aetherlyn</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/background.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>

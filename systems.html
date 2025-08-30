@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Systems - World Of Aetherlyn</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/systems.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Background Elements -->
+    <div id="stars"></div>
+    <div id="mist"></div>
+    <div class="floating-crystals"></div>
+    <div class="animated-background"></div>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <h1 class="glow-text">World Of Aetherlyn</h1>
+                </a>
+            </div>
+            
+            <div class="nav-controls">
+                <!-- Hamburger Menu for Mobile -->
+                <div class="hamburger" id="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" class="magic-link"><i data-feather="home"></i> Home</a></li>
+                <li><a href="rank.html" class="magic-link"><i data-feather="star"></i> Rank</a></li>
+                <li><a href="races.html" class="magic-link"><i data-feather="users"></i> Races</a></li>
+                <li><a href="factions.html" class="magic-link"><i data-feather="layers"></i> Factions</a></li>
+                <li><a href="classes.html" class="magic-link"><i data-feather="award"></i> Classes</a></li>
+                <li><a href="systems.html" class="magic-link active"><i data-feather="book"></i> Systems</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+               <!-- Decorative corner ornaments -->
+            <div class="corner-ornament top-left"></div>
+            <div class="corner-ornament top-right"></div>
+            <div class="corner-ornament bottom-left"></div>
+            <div class="corner-ornament bottom-right"></div>
+
+            <div class="hero-content">
+                <div class="title-wrapper">
+                    <h2 class="hero-title">RP Systems</h2>
+                    <div class="title-ornament"></div>
+                </div>
+                
+                <blockquote class="hero-quote">
+                    <span class="quote-mark left">"</span>
+                    Petualang adalah jalan bagi mereka jiwa-jiwa yang menyukai tantangan, penuh dengan tekad serta kehendak, dan bagi mereka yang tidak mengenal rasa takut.
+                    <span class="quote-mark right">"</span>
+                </blockquote>
+            </div>
+        </section>
+        <!-- Divider with fantasy style -->
+        <div class="section-divider">
+            <div class="divider-ornament"></div>
+        </div>
+
+        <!-- Systems Navigation -->
+<nav class="systems-nav">
+  <div class="container">
+    <div class="nav-scroll">
+      <a href="#registration" class="nav-item">
+        <iconify-icon icon="mdi:clipboard-list"></iconify-icon>
+        <span>Registration</span>
+      </a>
+      <a href="#stats" class="nav-item">
+        <iconify-icon icon="mdi:chart-bar"></iconify-icon>
+        <span>Stats</span>
+      </a>
+      <a href="#skills" class="nav-item">
+        <iconify-icon icon="mdi:auto-awesome"></iconify-icon>
+        <span>Skills</span>
+      </a>
+      <a href="#leveling" class="nav-item">
+        <iconify-icon icon="mdi:trending-up"></iconify-icon>
+        <span>Level</span>
+      </a>
+      <a href="#quests" class="nav-item">
+        <iconify-icon icon="mdi:clipboard-text"></iconify-icon>
+        <span>Quests</span>
+      </a>
+      <a href="#inventory" class="nav-item">
+        <iconify-icon icon="mdi:backpack"></iconify-icon>
+        <span>Inventory</span>
+      </a>
+      <a href="#equipment" class="nav-item">
+        <iconify-icon icon="mdi:sword"></iconify-icon>
+        <span>Equipment</span>
+      </a>
+      <a href="#runes" class="nav-item">
+        <iconify-icon icon="mdi:rune"></iconify-icon>
+        <span>Runes</span>
+      </a>
+      <a href="#nobility" class="nav-item">
+        <iconify-icon icon="mdi:crown"></iconify-icon>
+        <span>Nobility</span>
+      </a>
+      <a href="#economy" class="nav-item">
+        <iconify-icon icon="mdi:coin"></iconify-icon>
+        <span>Economy</span>
+      </a>
+      <a href="#guilds" class="nav-item">
+        <iconify-icon icon="mdi:account-group"></iconify-icon>
+        <span>Guilds</span>
+      </a>
+      <a href="#professions" class="nav-item">
+        <iconify-icon icon="mdi:briefcase"></iconify-icon>
+        <span>Jobs</span>
+      </a>
+      <!-- More button for mobile -->
+      <a href="#" class="nav-item nav-more" id="nav-more">
+        <iconify-icon icon="mdi:dots-horizontal"></iconify-icon>
+        <span>More</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Navigation Dropdown for Mobile -->
+<div class="nav-overlay" id="nav-overlay"></div>
+<div class="nav-dropdown" id="nav-dropdown">
+  <div class="nav-close" id="nav-close">
+    <iconify-icon icon="mdi:close"></iconify-icon>
+  </div>
+  <div class="nav-dropdown-grid">
+    <a href="#runes" class="nav-dropdown-item">
+      <iconify-icon icon="mdi:rune"></iconify-icon>
+      <span>Runes</span>
+    </a>
+    <a href="#nobility" class="nav-dropdown-item">
+      <iconify-icon icon="mdi:crown"></iconify-icon>
+      <span>Nobility</span>
+    </a>
+    <a href="#economy" class="nav-dropdown-item">
+      <iconify-icon icon="mdi:coin"></iconify-icon>
+      <span>Economy</span>
+    </a>
+    <a href="#guilds" class="nav-dropdown-item">
+      <iconify-icon icon="mdi:account-group"></iconify-icon>
+      <span>Guilds</span>
+    </a>
+    <a href="#professions" class="nav-dropdown-item">
+      <iconify-icon icon="mdi:briefcase"></iconify-icon>
+      <span>Jobs</span>
+    </a>
+    <a href="#registration" class="nav-dropdown-item">
+      <iconify-icon icon="mdi:clipboard-list"></iconify-icon>
+      <span>Registration</span>
+    </a>
+  </div>
+</div>
+
+        <!-- Systems Content -->
+        <section class="systems-content">
+            <div class="container">
+                <!-- Registration System -->
+                <article id="registration" class="system-article">
+                    <h3><iconify-icon icon="mdi:clipboard-list"></iconify-icon> Sistem Registrasi</h3>
+                    <div class="system-card">
+                        <h4>Proses Menjadi Petualang</h4>
+                        <div class="steps-grid">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <h5>Daftar di Aula Pendaftaran</h5>
+                                <p>Mendaftar melalui [Aula Pendaftaran Petualang] atau pada Admin Penanggung jawab</p>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <h5>Baca Ketentuan</h5>
+                                <p>Membaca ketentuan patch yang berlaku sebelum melakukan pendaftaran</p>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <h5>Isi Formulir</h5>
+                                <p>Mengisi informasi character di dalam formulir yang tersedia</p>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <h5>Proses Verifikasi</h5>
+                                <p>Formulir melalui proses pengecekan oleh Admin Aula</p>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">5</div>
+                                <h5>Approval</h5>
+                                <p>Setelah mendapatkan acc, secara resmi menjadi petualang</p>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">6</div>
+                                <h5>Database</h5>
+                                <p>Formulir harus diletakkan di [Database Petualang]</p>
+                            </div>
+                        </div>
+                        
+                        <div class="reward-info">
+                            <h5>Hadiah Awal Petualang Baru:</h5>
+                            <ul>
+                                <li>⭐ Novus [F] Level 1 dengan semua stats 5.000</li>
+                                <li>💰 40 ATC (Aethercoin)</li>
+                                <li>⚔️ Senjata basic sesuai class</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Stats System -->
+                <article id="stats" class="system-article">
+                    <h3><iconify-icon icon="mdi:chart-bar"></iconify-icon> Stats System</h3>
+                    <div class="stats-grid">
+                        <!-- HP -->
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <iconify-icon icon="mdi:heart"></iconify-icon>
+                            </div>
+                            <div class="stat-content">
+                                <h4>HP (Health Point)</h4>
+                                <blockquote>"Tidak masalah jika kau gagal, asalkan kau tahu cara untuk bangkit"</blockquote>
+                                <p>Point nyawa yang menentukan kondisi petualang. Semakin baik kondisi HP maka semakin baik pula kondisi petualang.</p>
+                                <div class="stat-info">
+                                    <span class="stat-role">Primary: Tanker, Warrior</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MP -->
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <iconify-icon icon="mdi:magic-staff"></iconify-icon>
+                            </div>
+                            <div class="stat-content">
+                                <h4>MP (Mana Point)</h4>
+                                <blockquote>"Bintang telah bercahaya karena ia telah percaya pada cahayanya"</blockquote>
+                                <p>Sumber daya magis untuk mengaktifkan skill atau kemampuan. Diisi kembali dengan regenerasi atau Mana Potion.</p>
+                                <div class="stat-info">
+                                    <span class="stat-role">Primary: Mage, Support</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- STR -->
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <iconify-icon icon="mdi:arm-flex"></iconify-icon>
+                            </div>
+                            <div class="stat-content">
+                                <h4>STR (Strength)</h4>
+                                <blockquote>"Kekuatan sejati, terletak pada sebuah tekad yang tak tergoyahkan"</blockquote>
+                                <p>Sumber kekuatan baik fisik maupun magis. Dampak serangan akan semakin besar seiring bertambahnya STR.</p>
+                                <div class="stat-info">
+                                    <span class="stat-role">Primary: Warrior, Mage, Archer, Assassin</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DEF -->
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <iconify-icon icon="mdi:shield"></iconify-icon>
+                            </div>
+                            <div class="stat-content">
+                                <h4>DEF (Defense)</h4>
+                                <blockquote>"Tidak masalah beberapa banyak diri jatuh dan bangkit, asalkan diri tak akan pernah menyerah"</blockquote>
+                                <p>Sumber pertahanan untuk mengurangi kerusakan yang diterima dari serangan.</p>
+                                <div class="stat-info">
+                                    <span class="stat-role">Primary: Warrior, Tanker</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- AGI -->
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <iconify-icon icon="mdi:run-fast"></iconify-icon>
+                            </div>
+                            <div class="stat-content">
+                                <h4>AGI (Agility)</h4>
+                                <blockquote>"Kecepatan adalah sebuah seni untuk mengalahkan waktu"</blockquote>
+                                <p>Menentukan kecepatan gerak dan kelincahan. Memungkinkan untuk berpindah dengan cepat dan menghindari serangan.</p>
+                                <div class="stat-info">
+                                    <span class="stat-role">Primary: Assassin, Archer</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Skills System -->
+                <article id="skills" class="system-article">
+                    <h3><iconify-icon icon="mdi:auto-awesome"></iconify-icon> Skills & Magic System</h3>
+                    <!-- Skill Types -->
+                    <div class="sub-section">
+                        <h4>Jenis-jenis Skill</h4>
+                        <div class="skill-types">
+                            <div class="skill-type">
+                                <h5>Character's Traits</h5>
+                                <p>Kemampuan unik karakter yang aktif pada kondisi tertentu. Menjadi identitas karakter.</p>
+                            </div>
+                            <div class="skill-type">
+                                <h5>Normal Skill</h5>
+                                <p>Skill umum dengan cooldown berdasarkan turn/giliran. Dapat instant use atau memiliki durasi.</p>
+                            </div>
+                            <div class="skill-type">
+                                <h5>Special Skill</h5>
+                                <p>Skill dengan dampak besar yang berpotensi mengubah alur pertarungan.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Rules -->
+                    <div class="sub-section">
+                        <h4>Skill Rules & Limitations</h4>
+                        <div class="rules-grid">
+                            <!-- Scaling Rules -->
+                            <div class="rule-category">
+                                <h5>Scaling Damage</h5>
+                                <div class="rule-item">
+                                    <span class="rule-label">Normal Skill:</span>
+                                    <span class="rule-value">Max 150% STR (Single), 125% (AoE), 10-100% (Multi-hit)</span>
+                                </div>
+                                <div class="rule-item">
+                                    <span class="rule-label">Special Skill:</span>
+                                    <span class="rule-value">Max 200% STR</span>
+                                </div>
+                            </div>
+
+                            <!-- Buff Rules -->
+                            <div class="rule-category">
+                                <h5>Scaling Buffs</h5>
+                                <div class="rule-item">
+                                    <span class="rule-label">Team Buff:</span>
+                                    <span class="rule-value">Max 150%</span>
+                                </div>
+                                <div class="rule-item">
+                                    <span class="rule-label">Self Buff:</span>
+                                    <span class="rule-value">Max 200%</span>
+                                </div>
+                            </div>
+
+                            <!-- Regen Rules -->
+                            <div class="rule-category">
+                                <h5>Regeneration</h5>
+                                <div class="rule-item">
+                                    <span class="rule-label">Healer:</span>
+                                    <span class="rule-value">100% instant, 25% per turn</span>
+                                </div>
+                                <div class="rule-item">
+                                    <span class="rule-label">Support:</span>
+                                    <span class="rule-value">50% instant, 20% per turn</span>
+                                </div>
+                                <div class="rule-item">
+                                    <span class="rule-label">Non-Support:</span>
+                                    <span class="rule-value">40% instant, 15% per turn</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Banned Skills -->
+                    <div class="sub-section">
+                        <h4>Banned Skills & Mechanisms</h4>
+                        <div class="warning-box">
+                            <h5>🚫 Dilarang Digunakan:</h5>
+                            <div class="banned-list">
+                                <div class="banned-category">
+                                    <h6>Banned Skills:</h6>
+                                    <ul>
+                                        <li>Immortality</li>
+                                        <li>Time Control</li>
+                                        <li>Teleport / Warp</li>
+                                        <li>Nuclear</li>
+                                        <li>Clone</li>
+                                        <li>Reality Manipulation</li>
+                                        <li>Absolute Self / Godly</li>
+                                    </ul>
+                                </div>
+                                <div class="banned-category">
+                                    <h6>Banned Mechanisms:</h6>
+                                    <ul>
+                                        <li>Perfect Dodge/Parry</li>
+                                        <li>Godmodding</li>
+                                        <li>Enemy Controlling</li>
+                                        <li>Turn Order Manipulation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Leveling System -->
+<article id="leveling" class="system-article">
+    <h3><iconify-icon icon="mdi:trending-up"></iconify-icon> Level & Rank System</h3>
+    
+    <!-- Level Progression -->
+    <div class="sub-section">
+        <h4>Level Progression</h4>
+        <div class="system-card">
+            <p>Setiap petualang mulai dari <strong>Novus [F] Level 1</strong> dengan semua stats 5.000. Level dapat dinaikkan dengan mengikuti quest atau event.</p>
+            
+            <div class="level-table">
+                <div class="table-header">
+                    <span>Rank</span>
+                    <span>Level Range</span>
+                    <span>Inventory Slots</span>
+                </div>
+                <div class="table-row">
+                    <span class="rank-name">Novus [F]</span>
+                    <span>1 - 100</span>
+                    <span>5 slots</span>
+                </div>
+                <div class="table-row">
+                    <span class="rank-name">Aria [E]</span>
+                    <span>101 - 200</span>
+                    <span>5 slots</span>
+                </div>
+                <div class="table-row">
+                    <span class="rank-name">Zevaria [D]</span>
+                    <span>201 - 300</span>
+                    <span>5 slots</span>
+                </div>
+                <div class="table-row">
+                    <span class="rank-name">Elrion [C]</span>
+                    <span>301 - 450</span>
+                    <span>7 slots</span>
+                </div>
+                <div class="table-row">
+                    <span class="rank-name">Altairia [B]</span>
+                    <span>451 - 600</span>
+                    <span>7 slots</span>
+                </div>
+                <div class="table-row">
+                    <span class="rank-name">Lynvaros [A]</span>
+                    <span>601 - 750</span>
+                    <span>10 slots</span>
+                </div>
+                <div class="table-row">
+                    <span class="rank-name">Celestiara [S]</span>
+                    <span>751 - 900</span>
+                    <span>15 slots</span>
+                </div>
+                <div class="table-row">
+                    <span class="rank-name">Nyx [SS]</span>
+                    <span>901 - 1050</span>
+                    <span>15 slots</span>
+                </div>
+                <div class="table-row">
+                    <span class="rank-name">Stellaria [SSL]</span>
+                    <span>1051 - 1500</span>
+                    <span>15 slots</span>
+                </div>
+                <div class="table-row">
+                    <span class="rank-name">Astravaria [SSK]</span>
+                    <span>1501 - ∞</span>
+                    <span>15 slots</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rank Exams -->
+    <div class="sub-section">
+        <h4>Ujian Kenaikan Rank</h4>
+        <div class="exam-system">
+            <div class="exam-cards">
+                <div class="exam-card">
+                    <div class="exam-rank">Aria [E]</div>
+                    <div class="exam-type">
+                        <iconify-icon icon="mdi:file-document"></iconify-icon>
+                        Ujian Tertulis
+                    </div>
+                    <p>Pengetahuan dasar tentang petualang dan dunia Aetherlyn</p>
+                </div>
+                
+                <div class="exam-card">
+                    <div class="exam-rank">Zevaria [D]</div>
+                    <div class="exam-type">
+                        <iconify-icon icon="mdi:sword-cross"></iconify-icon>
+                        Ujian Pertarungan
+                    </div>
+                    <p>Penguasaan dasar teknik pertarungan dan strategi</p>
+                </div>
+                
+                <div class="exam-card">
+                    <div class="exam-rank">Elrion [C]</div>
+                    <div class="exam-type">
+                        <iconify-icon icon="mdi:book-open"></iconify-icon>
+                        Ujian RPB
+                    </div>
+                    <p>Pengetahuan tentang Rank Progression Battle system</p>
+                </div>
+                
+                <div class="exam-card">
+                    <div class="exam-rank">Altairia [B]</div>
+                    <div class="exam-type">
+                        <iconify-icon icon="mdi:elemental"></iconify-icon>
+                        Ujian Elemen Pertarungan
+                    </div>
+                    <p>Ujian tertulis mengenai elemen pertarungan</p>
+                </div>
+                
+                <div class="exam-card">
+                    <div class="exam-rank">Lynvaros [A]</div>
+                    <div class="exam-type">
+                        <iconify-icon icon="mdi:compass"></iconify-icon>
+                        Ujian Fleksibel
+                    </div>
+                    <p>Kombinasi pengetahuan umum dan ujian praktis</p>
+                </div>
+                
+                <div class="exam-card">
+                    <div class="exam-rank">Celestiara [S]</div>
+                    <div class="exam-type">
+                        <iconify-icon icon="mdi:crown"></iconify-icon>
+                        Ujian Mastery
+                    </div>
+                    <p>Penguasaan class dan Rank Progression Battle</p>
+                </div>
+                
+                <div class="exam-card">
+                    <div class="exam-rank">Nyx [SS] +</div>
+                    <div class="exam-type">
+                        <iconify-icon icon="mdi:shield-sword"></iconify-icon>
+                        RPB Lanjutan
+                    </div>
+                    <p>Rank Progression Battle tingkat tinggi</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Distribution -->
+    <div class="sub-section">
+        <h4>Distribusi Stats Points</h4>
+        <div class="stats-distribution">
+            <div class="distribution-info">
+                <p>Setelah menyelesaikan quest, petualang mendapatkan <strong>Stats Points</strong> yang dapat dibagi ke dalam stats yang diinginkan dengan kelipatan <strong>250 points</strong>.</p>
+                
+                <div class="distribution-rules">
+                    <h5>Aturan Distribusi:</h5>
+                    <ul>
+                        <li>✅ Points dapat dialokasikan ke semua stats (HP, MP, STR, DEF, AGI)</li>
+                        <li>✅ Minimal alokasi: 250 points per stat</li>
+                        <li>✅ Tidak ada batas maksimal alokasi ke satu stat</li>
+                        <li>✅ Points tidak bisa disimpan untuk level berikutnya</li>
+                        <li>✅ Harus langsung dialokasikan setelah mendapatkan reward</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="distribution-example">
+                <h5>Contoh Alokasi:</h5>
+                <div class="example-card">
+                    <p>Reward: <strong>1,000 Stats Points</strong></p>
+                    <div class="allocation">
+                        <span>STR: +500</span>
+                        <span>AGI: +250</span>
+                        <span>HP: +250</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- Quest System -->
+<article id="quests" class="system-article">
+    <h3><iconify-icon icon="mdi:quest-board"></iconify-icon> Quest System</h3>
+    
+    <!-- Quest Board -->
+    <div class="sub-section">
+        <h4>Quest Board & Registration</h4>
+        <div class="system-card">
+            <div class="quest-flow">
+                <div class="flow-step">
+                    <div class="flow-icon">📋</div>
+                    <h5>1. Lihat Quest</h5>
+                    <p>Petualang dapat melihat quest yang available di <strong>[Wall Quest]</strong></p>
+                </div>
+                
+                <div class="flow-arrow">→</div>
+                
+                <div class="flow-step">
+                    <div class="flow-icon">🏛️</div>
+                    <h5>2. Registrasi Quest</h5>
+                    <p>Datang ke <strong>[Serikat Petualang]</strong> untuk mendaftarkan quest</p>
+                </div>
+                
+                <div class="flow-arrow">→</div>
+                
+                <div class="flow-step">
+                    <div class="flow-icon">⚔️</div>
+                    <h5>3. Selesaikan Quest</h5>
+                    <p>Kerjakan quest sesuai dengan requirements yang diberikan</p>
+                </div>
+                
+                <div class="flow-arrow">→</div>
+                
+                <div class="flow-step">
+                    <div class="flow-icon">📝</div>
+                    <h5>4. Laporkan ke Serikat</h5>
+                    <p>Setelah menyelesaikan, laporkan kembali ke Serikat Petualang</p>
+                </div>
+                
+                <div class="flow-arrow">→</div>
+                
+                <div class="flow-step">
+                    <div class="flow-icon">🎁</div>
+                    <h5>5. Terima Reward</h5>
+                    <p>Dapatkan reward berupa Level, Stats Points, atau ATC</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quest Types -->
+    <div class="sub-section">
+        <h4>Jenis-jenis Quest</h4>
+        <div class="quest-types">
+            <div class="quest-type">
+                <div class="type-icon">⭐</div>
+                <h5>Beginner Quests</h5>
+                <p>Quest untuk petualang rank F-E. Biasanya berupa tugas sederhana seperti pengiriman item atau membasih monster rendah.</p>
+                <div class="quest-reward">
+                    <span>Reward: 1-5 Level</span>
+                    <span>500-2.000 Stats Points</span>
+                </div>
+            </div>
+            
+            <div class="quest-type">
+                <div class="type-icon">⚔️</div>
+                <h5>Combat Quests</h5>
+                <p>Quest membasmi monster atau musuh tertentu. Membutuhkan kemampuan pertarungan.</p>
+                <div class="quest-reward">
+                    <span>Reward: 3-10 Level</span>
+                    <span>2.000-5.000 Stats Points</span>
+                </div>
+            </div>
+            
+            <div class="quest-type">
+                <div class="type-icon">🔍</div>
+                <h5>Exploration Quests</h5>
+                <p>Quest menjelajahi dungeon atau area tertentu. Membutuhkan ketahanan dan pengetahuan.</p>
+                <div class="quest-reward">
+                    <span>Reward: 5-15 Level</span>
+                    <span>3.000-7.000 Stats Points</span>
+                </div>
+            </div>
+            
+            <div class="quest-type">
+                <div class="type-icon">🎯</div>
+                <h5>Bounty Quests</h5>
+                <p>Quest menangkap atau mengalahkan target spesifik. Reward biasanya lebih besar.</p>
+                <div class="quest-reward">
+                    <span>Reward: 10-20 Level</span>
+                    <span>5.000-10.000 Stats Points</span>
+                </div>
+            </div>
+            
+            <div class="quest-type">
+                <div class="type-icon">🏆</div>
+                <h5>Guild Quests</h5>
+                <p>Quest khusus untuk guild. Memerlukan kerjasama tim dan strategi.</p>
+                <div class="quest-reward">
+                    <span>Reward: 15-30 Level</span>
+                    <span>7.000-15.000 Stats Points</span>
+                    <span>Bonus Guild Funds</span>
+                </div>
+            </div>
+            
+            <div class="quest-type">
+                <div class="type-icon">💫</div>
+                <h5>Legendary Quests</h5>
+                <p>Quest epic dengan difficulty tinggi. Hanya untuk petualang rank S ke atas.</p>
+                <div class="quest-reward">
+                    <span>Reward: 25-50 Level</span>
+                    <span>10.000-25.000 Stats Points</span>
+                    <span>Unique Items</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quest Rewards -->
+    <div class="sub-section">
+        <h4>Sistem Reward</h4>
+        <div class="reward-system">
+            <div class="reward-cards">
+                <div class="reward-card">
+                    <div class="reward-icon">📈</div>
+                    <h5>Level Rewards</h5>
+                    <p>Dapat langsung ditambahkan ke UID setelah menyelesaikan quest</p>
+                    <div class="reward-detail">
+                        <span>Instant level up</span>
+                        <span>Auto stats adjustment</span>
+                    </div>
+                </div>
+                
+                <div class="reward-card">
+                    <div class="reward-icon">🔄</div>
+                    <h5>Stats Points</h5>
+                    <p>Dibagi-bagi ke stats yang diinginkan dengan kelipatan 250 points</p>
+                    <div class="reward-detail">
+                        <span>Minimal 250 points</span>
+                        <span>Bebas distribusi</span>
+                    </div>
+                </div>
+                
+                <div class="reward-card">
+                    <div class="reward-icon">💰</div>
+                    <h5>ATC Rewards</h5>
+                    <p>Mata uang Aethercoin untuk membeli equipment dan items</p>
+                    <div class="reward-detail">
+                        <span>Dapat digunakan di seluruh kerajaan</span>
+                        <span>Legal currency only</span>
+                    </div>
+                </div>
+                
+                <div class="reward-card">
+                    <div class="reward-icon">🎁</div>
+                    <h5>Item Rewards</h5>
+                    <p>Equipment, potions, atau materials khusus dari quest tertentu</p>
+                    <div class="reward-detail">
+                        <span>Unique items</span>
+                        <span>Crafting materials</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="reward-notes">
+                <div class="note-card important">
+                    <h6>⚠️ Important Note</h6>
+                    <p>Selalu update UID setelah mendapatkan reward tertentu. Pastikan semua perubahan dicatat dengan benar.</p>
+                </div>
+                
+                <div class="note-card">
+                    <h6>📝 Quest Log</h6>
+                    <p>Setiap petualang memiliki Quest Log untuk mencatat progress dan completed quests.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quest Difficulty -->
+    <div class="sub-section">
+        <h4>Quest Difficulty & Requirements</h4>
+        <div class="difficulty-system">
+            <div class="difficulty-levels">
+                <div class="difficulty-level">
+                    <span class="diff-name">Novice</span>
+                    <span class="diff-rank">Rank F-E</span>
+                    <div class="diff-bar">
+                        <div class="diff-fill" style="width: 20%"></div>
+                    </div>
+                </div>
+                
+                <div class="difficulty-level">
+                    <span class="diff-name">Easy</span>
+                    <span class="diff-rank">Rank D-C</span>
+                    <div class="diff-bar">
+                        <div class="diff-fill" style="width: 40%"></div>
+                    </div>
+                </div>
+                
+                <div class="difficulty-level">
+                    <span class="diff-name">Medium</span>
+                    <span class="diff-rank">Rank B-A</span>
+                    <div class="diff-bar">
+                        <div class="diff-fill" style="width: 60%"></div>
+                    </div>
+                </div>
+                
+                <div class="difficulty-level">
+                    <span class="diff-name">Hard</span>
+                    <span class="diff-rank">Rank S</span>
+                    <div class="diff-bar">
+                        <div class="diff-fill" style="width: 80%"></div>
+                    </div>
+                </div>
+                
+                <div class="difficulty-level">
+                    <span class="diff-name">Expert</span>
+                    <span class="diff-rank">Rank SS</span>
+                    <div class="diff-bar">
+                        <div class="diff-fill" style="width: 90%"></div>
+                    </div>
+                </div>
+                
+                <div class="difficulty-level">
+                    <span class="diff-name">Legendary</span>
+                    <span class="diff-rank">Rank SSL-SSK</span>
+                    <div class="diff-bar">
+                        <div class="diff-fill" style="width: 100%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="requirements-info">
+                <h5>Quest Requirements:</h5>
+                <ul>
+                    <li>✅ Minimum rank requirement</li>
+                    <li>✅ Party size limitations (solo/group)</li>
+                    <li>✅ Equipment requirements</li>
+                    <li>✅ Time limitations (untuk timed quests)</li>
+                    <li>✅ Special conditions (element restrictions, etc.)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- Inventory System -->
+<article id="inventory" class="system-article">
+    <h3><iconify-icon icon="mdi:backpack"></iconify-icon> Inventory System</h3>
+    
+    <div class="sub-section">
+        <h4>Magical Storage Locker</h4>
+        <div class="system-card">
+            <p>Setiap petualang yang terdaftar resmi akan mendapatkan inventory berbasis magis untuk menyimpan barang-barang petualangan mereka.</p>
+            
+            <div class="inventory-slots">
+                <div class="slot-tier">
+                    <div class="tier-header">
+                        <iconify-icon icon="mdi:locker-multiple"></iconify-icon>
+                        <span class="tier-name">Novus [F] - Zevaria [D]</span>
+                        <span class="tier-slots">5 slot inventory</span>
+                    </div>
+                </div>
+                <div class="slot-tier">
+                    <div class="tier-header">
+                        <iconify-icon icon="mdi:locker-multiple"></iconify-icon>
+                        <span class="tier-name">Elrion [C] - Altairia [B]</span>
+                        <span class="tier-slots">7 slot inventory</span>
+                    </div>
+                </div>
+                <div class="slot-tier">
+                    <div class="tier-header">
+                        <iconify-icon icon="mdi:locker-multiple"></iconify-icon>
+                        <span class="tier-name">Lynvaros [A]</span>
+                        <span class="tier-slots">10 slot inventory</span>
+                    </div>
+                </div>
+                <div class="slot-tier">
+                    <div class="tier-header">
+                        <iconify-icon icon="mdi:locker-multiple"></iconify-icon>
+                        <span class="tier-name">Celestiara [S] - Astravaria [SSK]</span>
+                        <span class="tier-slots">15 slot inventory</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="inventory-notes">
+                <div class="note-card">
+                    <h5><iconify-icon icon="mdi:information"></iconify-icon> Catatan Inventory:</h5>
+                    <ul>
+                        <li>1 slot inventory dapat menyimpan barang yang sama sebanyak 10 item</li>
+                        <li>Slot inventory dapat ditambah dengan membayar sejumlah ATC di Serikat Petualang</li>
+                        <li>Inventory bersifat personal dan hanya dapat diakses oleh pemiliknya</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- Equipment System -->
+<article id="equipment" class="system-article">
+    <h3><iconify-icon icon="mdi:sword"></iconify-icon> Equipment System</h3>
+    
+    <div class="sub-section">
+        <h4>Senjata dan Perlengkapan</h4>
+        <div class="system-card">
+            <blockquote>
+                "Persenjataan adalah sahabat dari petualang. Saksi bisu dari setiap langkah dan tetesan darah, serta bala bantuan yang tak dapat berbicara dalam keheningan."
+            </blockquote>
+            
+            <div class="equipment-types">
+                <div class="equipment-type">
+                    <h5><iconify-icon icon="mdi:sword-cross"></iconify-icon> Senjata Umum (Standard)</h5>
+                    <ul>
+                        <li>Dibuat oleh blacksmith dengan harga standar</li>
+                        <li>Desain dan kemampuan ditentukan sepenuhnya oleh penempa</li>
+                        <li>Bersifat tetap - tidak dapat di-upgrade kualitas atau mengubah stats</li>
+                        <li>Dapat disesuaikan oleh Admin Pendaftaran jika diperlukan</li>
+                    </ul>
+                </div>
+                
+                <div class="equipment-type">
+                    <h5><iconify-icon icon="mdi:hammer-wrench"></iconify-icon> Senjata Custom</h5>
+                    <ul>
+                        <li>Dibuat di Forge & Flask dengan harga lebih mahal</li>
+                        <li>Desain dan kemampuan dapat di-request oleh pembeli</li>
+                        <li>Memiliki label [Custom] sebelum nama senjata</li>
+                        <li>Dapat di-upgrade kualitas, stats, dan kemampuan menggunakan sistem RUNE</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="sub-section">
+        <h4>Tingkatan Kualitas Senjata</h4>
+        <div class="quality-levels">
+            <div class="quality-level">
+                <iconify-icon icon="mdi:circle" class="quality-icon common"></iconify-icon>
+                <div class="quality-name">Common</div>
+                <div class="quality-stats">1 slot stats + 1 slot traits</div>
+            </div>
+            <div class="quality-level">
+                <iconify-icon icon="mdi:circle" class="quality-icon rare"></iconify-icon>
+                <div class="quality-name">Rare</div>
+                <div class="quality-stats">2 slot stats + 1 slot traits</div>
+            </div>
+            <div class="quality-level">
+                <iconify-icon icon="mdi:circle" class="quality-icon epic"></iconify-icon>
+                <div class="quality-name">Epic</div>
+                <div class="quality-stats">2 slot stats + 2 slot traits</div>
+            </div>
+            <div class="quality-level">
+                <iconify-icon icon="mdi:circle" class="quality-icon legendary"></iconify-icon>
+                <div class="quality-name">Legendary</div>
+                <div class="quality-stats">3 slot stats + 3 slot traits</div>
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- Rune System -->
+<article id="runes" class="system-article">
+    <h3><iconify-icon icon="mdi:rune"></iconify-icon> Rune System</h3>
+    
+    <div class="sub-section">
+        <h4>Penguatan Senjata Custom</h4>
+        <div class="system-card">
+            <p>Rune adalah batuan berharga dengan simbol terukir yang membawa kekuatan sihir besar. Hanya可用于 untuk senjata custom.</p>
+            
+            <div class="rune-acquisition">
+                <h5><iconify-icon icon="mdi:map-marker"></iconify-icon> Memperoleh Rune:</h5>
+                <ul>
+                    <li>Hanya bisa didapatkan di Forge & Flask</li>
+                    <li>Tidak bisa didapat melalui drop quest atau diperjualbelikan</li>
+                    <li>Rune Fragments (pecahan rune) bisa didapat dari quest/event</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="sub-section">
+        <h4>Jenis-jenis Rune</h4>
+        <div class="rune-types">
+            <div class="rune-type">
+                <iconify-icon icon="mdi:arrow-up" class="rune-icon"></iconify-icon>
+                <h5>Rune Upgrade</h5>
+                <p>Meningkatkan kualitas senjata custom</p>
+                <div class="rune-requirements">
+                    <span>Rare: 1 rune</span>
+                    <span>Epic: 2 rune</span>
+                    <span>Legendary: 3 rune</span>
+                </div>
+            </div>
+            
+            <div class="rune-type">
+                <iconify-icon icon="mdi:fire" class="rune-icon"></iconify-icon>
+                <h5>Rune Element</h5>
+                <p>Membuka elemen pada senjata</p>
+                <div class="rune-requirements">
+                    <span>Dapat request elemen tertentu</span>
+                    <span>Fragment needed: 3</span>
+                </div>
+            </div>
+            
+            <div class="rune-type">
+                <iconify-icon icon="mdi:chart-bar" class="rune-icon"></iconify-icon>
+                <h5>Rune Stats</h5>
+                <p>Menambah 500 poin bonus stats</p>
+                <div class="rune-colors">
+                    <span class="color-str"><iconify-icon icon="mdi:circle"></iconify-icon> STR: Merah</span>
+                    <span class="color-def"><iconify-icon icon="mdi:circle"></iconify-icon> DEF: Biru</span>
+                    <span class="color-hp"><iconify-icon icon="mdi:circle"></iconify-icon> HP: Hijau</span>
+                    <span class="color-agi"><iconify-icon icon="mdi:circle"></iconify-icon> AGI: Orange</span>
+                    <span class="color-mp"><iconify-icon icon="mdi:circle"></iconify-icon> MP: Ungu</span>
+                </div>
+                <div class="rune-requirements">
+                    <span>Fragment needed: 5</span>
+                </div>
+            </div>
+            
+            <div class="rune-type">
+                <iconify-icon icon="mdi:star" class="rune-icon"></iconify-icon>
+                <h5>Rune Traits</h5>
+                <p>Menambah/memperkuat traits senjata</p>
+                <div class="rune-requirements">
+                    <span>Berdasarkan slot traits yang terbuka</span>
+                    <span>Fragment needed: 5</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- Economy System -->
+<article id="economy" class="system-article">
+    <h3><iconify-icon icon="mdi:coin"></iconify-icon> Economy System</h3>
+    
+    <div class="sub-section">
+        <h4>Mata Uang Aetherlyn</h4>
+        <div class="system-card">
+            <div class="currency-system">
+                <div class="currency-info">
+                    <h5>Aethercoin (ATC)</h5>
+                    <p>Mata uang resmi Kerajaan Aetherlyn yang digunakan untuk semua transaksi ekonomi, jual-beli, dan sistem reward.</p>
+                    
+                    <div class="currency-rules">
+                        <h6><iconify-icon icon="mdi:alert-circle"></iconify-icon> Aturan Penggunaan ATC:</h6>
+                        <ul>
+                            <li>Nilai tetap per kepingan (tidak berubah berdasarkan kelipatan)</li>
+                            <li>Harus update money pocket setelah setiap transaksi</li>
+                            <li>Harus memiliki asal usul yang jelas dan dapat dipertanggungjawabkan</li>
+                            <li>Tidak bisa muncul begitu saja tanpa sumber yang valid</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="currency-visual">
+                    <div class="coin-display">
+                        <div class="coin">
+                            <iconify-icon icon="mdi:currency-usd"></iconify-icon>
+                        </div>
+                        <span>ATC</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- Nobility System -->
+<article id="nobility" class="system-article">
+    <h3><iconify-icon icon="mdi:crown"></iconify-icon> Sistem Kebangsawanan</h3>
+    
+    <div class="sub-section">
+        <h4>Struktur Pemerintahan Kerajaan</h4>
+        <div class="nobility-hierarchy">
+            <div class="nobility-rank">
+                <iconify-icon icon="mdi:crown" class="rank-icon"></iconify-icon>
+                <div class="rank-info">
+                    <h5>King / Queen</h5>
+                    <p>Pemimpin kerajaan yang bertugas mengatur seluruh kerajaan</p>
+                </div>
+            </div>
+            
+            <div class="nobility-rank">
+                <iconify-icon icon="mdi:shield-account" class="rank-icon"></iconify-icon>
+                <div class="rank-info">
+                    <h5>King/Queen's Guardian</h5>
+                    <p>Penjaga dan pengawal pribadi Raja/Ratu</p>
+                </div>
+            </div>
+            
+            <div class="nobility-rank">
+                <iconify-icon icon="mdi:medal" class="rank-icon"></iconify-icon>
+                <div class="rank-info">
+                    <h5>Duke</h5>
+                    <p>Bangsawan tinggi yang membantu menjalankan sistem kerajaan</p>
+                </div>
+            </div>
+            
+            <div class="nobility-rank">
+                <iconify-icon icon="mdi:sword-cross" class="rank-icon"></iconify-icon>
+                <div class="rank-info">
+                    <h5>Viscount</h5>
+                    <p>Bawahan Duke yang membantu tugas-tugas kerajaan</p>
+                </div>
+            </div>
+            
+            <div class="nobility-rank">
+                <iconify-icon icon="mdi:castle" class="rank-icon"></iconify-icon>
+                <div class="rank-info">
+                    <h5>Baron</h5>
+                    <p>Penanggung jawab tempat/lokasi tertentu dalam kerajaan</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- Guild System -->
+<article id="guilds" class="system-article">
+    <h3><iconify-icon icon="mdi:account-group"></iconify-icon> Guild System</h3>
+    
+    <div class="sub-section">
+        <h4>Organisasi Petualang</h4>
+        <div class="system-card">
+            <div class="guild-privileges">
+                <h5><iconify-icon icon="mdi:check-circle"></iconify-icon> Hak dan Wewenang Guild:</h5>
+                <ul>
+                    <li>Berdiri di bawah otoritas Kerajaan Aetherlyn</li>
+                    <li>Dapat mengatur anggota dan sistem internal guild</li>
+                    <li>Dapat mengajukan proposal eksplorasi dungeon</li>
+                    <li>Dapat mengajukan dana bulanan untuk pembangunan</li>
+                    <li>Dapat mengajukan misi jangka panjang (1 bulan jeda)</li>
+                    <li>Dapat mengajukan misi jangka pendek (1 minggu jeda)</li>
+                </ul>
+            </div>
+            
+            <div class="guild-responsibilities">
+                <h5><iconify-icon icon="mdi:alert-circle"></iconify-icon> Tanggung Jawab Guild:</h5>
+                <ul>
+                    <li>Anggota harus menjaga nama baik guild</li>
+                    <li>Mematuhi peraturan kerajaan</li>
+                    <li>Bertanggung jawab atas tindakan anggota guild</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- Profession System -->
+<article id="professions" class="system-article">
+    <h3><iconify-icon icon="mdi:briefcase"></iconify-icon> Sistem Profesi</h3>
+    
+    <div class="sub-section">
+        <h4>Jenis-jenis Profesi di Aetherlyn</h4>
+        
+        <!-- Honored Profession -->
+        <div class="profession-category">
+            <h5><iconify-icon icon="mdi:castle"></iconify-icon> Honored Profession</h5>
+            <div class="profession-list">
+                <div class="profession-item">
+                    <h6><iconify-icon icon="mdi:account-star"></iconify-icon> Guild Master</h6>
+                    <p>Pemimpin guild dengan tanggung jawab penuh atas visi dan strategi</p>
+                </div>
+                <div class="profession-item">
+                    <h6><iconify-icon icon="mdi:account-supervisor"></iconify-icon> Vice Guild Master</h6>
+                    <p>Wakil pemimpin guild yang membantu operasional</p>
+                </div>
+                <div class="profession-item">
+                    <h6><iconify-icon icon="mdi:police-badge"></iconify-icon> Military General</h6>
+                    <p>Pemimpin militer kerajaan dan penyusun strategi tempur</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Special Profession -->
+        <div class="profession-category">
+            <h5><iconify-icon icon="mdi:star"></iconify-icon> Special Profession</h5>
+            <div class="profession-list">
+                <div class="profession-item">
+                    <h6><iconify-icon icon="mdi:church"></iconify-icon> Pastor</h6>
+                    <p>Pemuka agama yang dapat menikahkan pasangan</p>
+                </div>
+                <div class="profession-item">
+                    <h6><iconify-icon icon="mdi:flask"></iconify-icon> Alchemist</h6>
+                    <p>Peracik ramuan dan potion legal</p>
+                </div>
+                <div class="profession-item">
+                    <h6><iconify-icon icon="mdi:hammer"></iconify-icon> Blacksmith</h6>
+                    <p>Penempa senjata dan equipment</p>
+                </div>
+                <div class="profession-item">
+                    <h6><iconify-icon icon="mdi:school"></iconify-icon> Academy Teacher</h6>
+                    <p>Pengajar di akademi kerajaan</p>
+                </div>
+                <div class="profession-item">
+                    <h6><iconify-icon icon="mdi:shield-search"></iconify-icon> ATU (Anomalus Termination Unit)</h6>
+                    <p>Pemberantas anomali dan penyelidik kasus</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Regular Profession -->
+        <div class="profession-category">
+            <h5><iconify-icon icon="mdi:store"></iconify-icon> Regular Profession</h5>
+            <div class="profession-grid">
+                <span class="profession-tag"><iconify-icon icon="mdi:glass-cocktail"></iconify-icon> Bartender</span>
+                <span class="profession-tag"><iconify-icon icon="mdi:coffee"></iconify-icon> Barista</span>
+                <span class="profession-tag"><iconify-icon icon="mdi:account"></iconify-icon> Pelayan Bar</span>
+                <span class="profession-tag"><iconify-icon icon="mdi:chef-hat"></iconify-icon> Koki</span>
+                <span class="profession-tag"><iconify-icon icon="mdi:account-tie"></iconify-icon> Maid</span>
+                <span class="profession-tag"><iconify-icon icon="mdi:account-tie"></iconify-icon> Butler</span>
+                <span class="profession-tag"><iconify-icon icon="mdi:sprout"></iconify-icon> Farmer</span>
+                <span class="profession-tag"><iconify-icon icon="mdi:fish"></iconify-icon> Fisherman/woman</span>
+                <span class="profession-tag"><iconify-icon icon="mdi:shield-account"></iconify-icon> Satpam/Penjaga</span>
+                <span class="profession-tag"><iconify-icon icon="mdi:store"></iconify-icon> Business Owner</span>
+                <span class="profession-tag"><iconify-icon icon="mdi:hammer-wrench"></iconify-icon> Constructionman/woman</span>
+            </div>
+        </div>
+    </div>
+</article>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Aetherlyn Kingdom Team. Semua hak dilindungi.</p>
+                <p>Dibuat dengan <i data-feather="heart" class="heart-icon"></i> untuk komunitas Role-Play Aetherlyn</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/background.js"></script>
+    <script>
+        feather.replace();
+        
+        // Smooth scroll untuk navigation
+        document.querySelectorAll('.systems-nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

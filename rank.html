@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Rank - World Of Aetherlyn</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/rank.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Background Elements -->
+    <div id="stars"></div>
+    <div id="mist"></div>
+    <div class="floating-crystals"></div>
+    <div class="animated-background"></div>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <h1 class="glow-text">World Of Aetherlyn</h1>
+                </a>
+            </div>
+            
+            <div class="nav-controls">
+                <!-- Hamburger Menu for Mobile -->
+                <div class="hamburger" id="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" class="magic-link"><i data-feather="home"></i> Home</a></li>
+                <li><a href="rank.html" class="magic-link active"><i data-feather="star"></i> Rank</a></li>
+                <li><a href="races.html" class="magic-link"><i data-feather="users"></i> Races</a></li>
+                <li><a href="factions.html" class="magic-link"><i data-feather="layers"></i> Factions</a></li>
+                <li><a href="classes.html" class="magic-link"><i data-feather="award"></i> Classes</a></li>
+                <li><a href="systems.html" class="magic-link"><i data-feather="book"></i> Systems</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <!-- Decorative corner ornaments -->
+            <div class="corner-ornament top-left"></div>
+            <div class="corner-ornament top-right"></div>
+            <div class="corner-ornament bottom-left"></div>
+            <div class="corner-ornament bottom-right"></div>
+
+            <div class="hero-content">
+                <div class="title-wrapper">
+                    <h2 class="hero-title">Sistem Rank Petualang</h2>
+                    <div class="title-ornament"></div>
+                </div>
+                
+                <blockquote class="hero-quote">
+                    <span class="quote-mark left">"</span>
+                    Untuk kekuatan tiada batas. Di dalam sistem dunia Aetherlyn yang penuh dengan tantangan dan petualangan tanpa batas, terdapat sistem yang pada umumnya menentukan kekuatan dari seorang petualang.
+                    <span class="quote-mark right">"</span>
+                </blockquote>
+            </div>
+        </section>
+        <!-- Divider with fantasy style -->
+        <div class="section-divider">
+            <div class="divider-ornament"></div>
+        </div>
+
+        <!-- Rank Grid Section -->
+        <section class="rank-system">
+            <div class="container">
+                <div class="rank-grid">
+                    <!-- Novus [F] -->
+                    <div class="rank-card element-fire">
+                        <div class="rank-header">
+                            <h3>Novus [F]</h3>
+                            <div class="rank-level">Level 1-100</div>
+                        </div>
+                        <div class="rank-quote">
+                            "Cahaya baru telah terlahir, yang akan menjadi sebuah penerang..."
+                        </div>
+                        <div class="rank-stats">
+                            <div class="stat-item">
+                                <span class="stat-label">Stats Awal</span>
+                                <span class="stat-value">5.000</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Inventory</span>
+                                <span class="stat-value">5 Slot</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Aria [E] -->
+                    <div class="rank-card element-water">
+                        <div class="rank-header">
+                            <h3>Aria [E]</h3>
+                            <div class="rank-level">Level 101-200</div>
+                        </div>
+                        <div class="rank-quote">
+                            "Cahaya mulai bersinar, masih kecil dan rapuh. Terdapat sebuah tekad yang belajar untuk meluwati kegelapan..."
+                        </div>
+                        <div class="rank-requirement">
+                            <i data-feather="file-text"></i>
+                            Ujian Tertulis Petualang
+                        </div>
+                    </div>
+
+                    <!-- Zevaria [D] -->
+                    <div class="rank-card element-wind">
+                        <div class="rank-header">
+                            <h3>Zevaria [D]</h3>
+                            <div class="rank-level">Level 201-300</div>
+                        </div>
+                        <div class="rank-quote">
+                            "Pengalaman pertama mulai menempa sang cahaya, setiap kegagalan dan luka membentuk pondasi yang kokoh..."
+                        </div>
+                        <div class="rank-requirement">
+                            <i data-feather="file-text"></i>
+                            Ujian Tertulis Pertarungan
+                        </div>
+                    </div>
+
+                    <!-- Elrion [C] -->
+                    <div class="rank-card element-earth">
+                        <div class="rank-header">
+                            <h3>Elrion [C]</h3>
+                            <div class="rank-level">Level 301-450</div>
+                        </div>
+                        <div class="rank-quote">
+                            "Kekuatan mulai terukir, cahaya semakin berpendar terang..."
+                        </div>
+                        <div class="rank-requirement">
+                            <i data-feather="book"></i>
+                            Ujian Pengetahuan RPB
+                        </div>
+                    </div>
+
+                    <!-- Altairia [B] -->
+                    <div class="rank-card element-fire">
+                        <div class="rank-header">
+                            <h3>Altairia [B]</h3>
+                            <div class="rank-level">Level 451-600</div>
+                        </div>
+                        <div class="rank-quote">
+                            "Tekad mulai terbentuk dan perlahan tak tergoyahkan, menemani kekuatan menuju kebijaksanaan..."
+                        </div>
+                        <div class="rank-requirement">
+                            <i data-feather="zap"></i>
+                            Ujian Elemen Pertarungan
+                        </div>
+                    </div>
+
+                    <!-- Lynvaros [A] -->
+                    <div class="rank-card element-water">
+                        <div class="rank-header">
+                            <h3>Lynvaros [A]</h3>
+                            <div class="rank-level">Level 601-750</div>
+                        </div>
+                        <div class="rank-quote">
+                            "Cahaya mulai berjalan sebagai sebuah penerang, yang menuntun langkah banyak orang..."
+                        </div>
+                        <div class="rank-requirement">
+                            <i data-feather="compass"></i>
+                            Ujian Umum + Fleksibel
+                        </div>
+                        <div class="rank-feature">
+                            <i data-feather="star"></i>
+                            Dapat meningkatkan Faksi ke Tingkat I
+                        </div>
+                    </div>
+
+                    <!-- Celestiara [S] -->
+                    <div class="rank-card element-wind">
+                        <div class="rank-header">
+                            <h3>Celestiara [S]</h3>
+                            <div class="rank-level">Level 751-900</div>
+                        </div>
+                        <div class="rank-quote">
+                            "Cahaya bersinar semakin terang, yang menjadi simbol dari kekuatan besar yang tak akan pernah padam..."
+                        </div>
+                        <div class="rank-requirement">
+                            <i data-feather="award"></i>
+                            Ujian Pengetahuan Class + RPB
+                        </div>
+                        <div class="rank-feature">
+                            <i data-feather="layers"></i>
+                            Dapat meningkatkan Faksi ke Tingkat II
+                        </div>
+                        <div class="rank-feature">
+                            <i data-feather="infinity"></i>
+                            Dapat bergabung ke Faksi Eternal
+                        </div>
+                    </div>
+
+                    <!-- Nyx [SS] -->
+                    <div class="rank-card element-earth">
+                        <div class="rank-header">
+                            <h3>Nyx [SS]</h3>
+                            <div class="rank-level">Level 901-1050</div>
+                        </div>
+                        <div class="rank-quote">
+                            "Terkadang, semakin terang sang cahaya maka bayangan akan semakin gelap..."
+                        </div>
+                        <div class="rank-requirement">
+                            <i data-feather="shield"></i>
+                            Ujian RPB
+                        </div>
+                        <div class="rank-stats">
+                            <div class="stat-item">
+                                <span class="stat-label">Inventory</span>
+                                <span class="stat-value">15 Slot</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stellaria [SSL] -->
+                    <div class="rank-card element-fire">
+                        <div class="rank-header">
+                            <h3>Stellaria [SSL]</h3>
+                            <div class="rank-level">Level 1051-1500</div>
+                        </div>
+                        <div class="rank-quote">
+                            "Namanya menjulang tinggi di angkasa, langkahnya menggetarkan tanah, sinarnya menggema di langit..."
+                        </div>
+                        <div class="rank-requirement">
+                            <i data-feather="shield"></i>
+                            Ujian RPB
+                        </div>
+                    </div>
+
+                    <!-- Astravaria [SSK] -->
+                    <div class="rank-card element-water">
+                        <div class="rank-header">
+                            <h3>Astravaria [SSK]</h3>
+                            <div class="rank-level">Level 1501 - ∞</div>
+                        </div>
+                        <div class="rank-quote">
+                            "Bersinar layaknya sebuah bintang di kegelapan yang pekat, sang cahaya akan dikenal sebagai sebuah legenda..."
+                        </div>
+                        <div class="rank-requirement">
+                            <i data-feather="shield"></i>
+                            Ujian RPB
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exam Information -->
+                <div class="exam-info glow-box">
+                    <h3><i data-feather="clipboard"></i> Informasi Ujian Kenaikan Rank</h3>
+                    <div class="exam-grid">
+                        <div class="exam-item">
+                            <h4>Aria [E]</h4>
+                            <p>Ujian tertulis mengenai petualang</p>
+                        </div>
+                        <div class="exam-item">
+                            <h4>Zevaria [D]</h4>
+                            <p>Ujian tertulis mengenai pertarungan</p>
+                        </div>
+                        <div class="exam-item">
+                            <h4>Elrion [C]</h4>
+                            <p>Ujian tertulis mengenai pengetahuan RPB</p>
+                        </div>
+                        <div class="exam-item">
+                            <h4>Altairia [B]</h4>
+                            <p>Ujian tertulis mengenai elemen pertarungan</p>
+                        </div>
+                        <div class="exam-item">
+                            <h4>Lynvaros [A]</h4>
+                            <p>Ujian pengetahuan umum + ujian fleksibel</p>
+                        </div>
+                        <div class="exam-item">
+                            <h4>Celestiara [S]</h4>
+                            <p>Ujian pengetahuan class + ujian RPB</p>
+                        </div>
+                        <div class="exam-item">
+                            <h4>Nyx [SS] +</h4>
+                            <p>Ujian RPB (Rank Progression Battle)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Aetherlyn Kingdom Team. Semua hak dilindungi.</p>
+                <p>Dibuat dengan <i data-feather="heart" class="heart-icon"></i> untuk komunitas Role-Play Aetherlyn</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/background.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
