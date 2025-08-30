@@ -331,16 +331,41 @@
                         <div class="rules-grid">
                             <!-- Scaling Rules -->
                             <div class="rule-category">
-                                <h5>Scaling Damage</h5>
+                            <h5><iconify-icon icon="mdi:sword"></iconify-icon> Scaling Damage</h5>
                                 <div class="rule-item">
-                                    <span class="rule-label">Normal Skill:</span>
-                                    <span class="rule-value">Max 150% STR (Single), 125% (AoE), 10-100% (Multi-hit)</span>
+                                    <span class="rule-label">Normal Skill (Single):</span>
+                                 <span class="rule-value">Max 150-170% STR</span>
                                 </div>
+                                <div class="rule-item">
+                                    <span class="rule-label">Normal Skill (AoE):</span>
+                                    <span class="rule-value">Max 150% STR</span>
+                                </div>
+                                <div class="rule-item">
+                                    <span class="rule-label">Normal Skill (Multi-hit):</span>
+                                    <span class="rule-value">Max 10-120% STR</span>
+                            </div>
                                 <div class="rule-item">
                                     <span class="rule-label">Special Skill:</span>
                                     <span class="rule-value">Max 200% STR</span>
                                 </div>
                             </div>
+
+                            <div class="rule-category">
+                                <h5><iconify-icon icon="mdi:target-multiple"></iconify-icon> Aturan Multi Hit</h5>
+                                <div class="rule-item">
+                                    <span class="rule-label">Basic Attack:</span>
+                                    <span class="rule-value">Max 5x hit dasar</span>
+                                </div>
+                                <div class="rule-item">
+                                    <span class="rule-label">AGI Bonus:</span>
+                                    <span class="rule-value">+1 hit per 50.000 AGI</span>
+                                </div>
+                                <div class="rule-item">
+                                    <span class="rule-label">Damage Reduction:</span>
+                                    <span class="rule-value">-10% per tambahan hit (max -80%)</span>
+                                </div>
+                            </div>
+
 
                             <!-- Buff Rules -->
                             <div class="rule-category">
@@ -374,11 +399,43 @@
                         </div>
                     </div>
 
+                    <!-- Skill Registration & Revamp -->
+                        <div class="sub-section">
+                            <h4>Skill Registration & Revamp System</h4>
+                            <div class="system-card">
+                                <div class="skill-management">
+                                    <div class="management-item">
+                                        <iconify-icon icon="mdi:clipboard-check"></iconify-icon>
+                                        <div class="management-content">
+                                            <h5>Skill Registration</h5>
+                                            <p>Petualang dapat membuat skill lengkap saat registrasi awal. Admin akan melakukan pengecekan dan berwenang melakukan nerf jika skill terlalu kuat.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="management-item">
+                                        <iconify-icon icon="mdi:refresh"></iconify-icon>
+                                        <div class="management-content">
+                                            <h5>Skill Revamp</h5>
+                                            <p>Dapat melakukan revamp skill dengan jeda 30 hari. Naik rank memungkinkan revamp segera. Perubahan kecil dapat dilakukan tanpa cooldown panjang.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="management-item">
+                                        <iconify-icon icon="mdi:account-convert"></iconify-icon>
+                                        <div class="management-content">
+                                            <h5>Reset Character</h5>
+                                            <p>Sistem reset character memungkinkan redistribusi stats dan skill points dengan ketentuan tertentu yang diatur oleh Admin.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     <!-- Banned Skills -->
                     <div class="sub-section">
                         <h4>Banned Skills & Mechanisms</h4>
                         <div class="warning-box">
-                            <h5>🚫 Dilarang Digunakan:</h5>
+                            <h5>Dilarang Digunakan:</h5>
                             <div class="banned-list">
                                 <div class="banned-category">
                                     <h6>Banned Skills:</h6>
@@ -386,20 +443,62 @@
                                         <li>Immortality</li>
                                         <li>Time Control</li>
                                         <li>Teleport / Warp</li>
+                                        <li>Portal</li>
                                         <li>Nuclear</li>
+                                        <li>Technology</li>
                                         <li>Clone</li>
-                                        <li>Reality Manipulation</li>
-                                        <li>Absolute Self / Godly</li>
+                                        <li>Rift / Multi-Dimensional</li>
+                                        <li>Reality / Ignore Reality</li>
+                                        <li>Fate Manipulation</li>
+                                        <li>Absolute Self / Godly / Invincible</li>
+                                        <li>Armageddon</li>
+                                        <li>Instant Execution</li>
                                     </ul>
                                 </div>
                                 <div class="banned-category">
                                     <h6>Banned Mechanisms:</h6>
                                     <ul>
-                                        <li>Perfect Dodge/Parry</li>
+                                        <li>Parrying Perfect / Chance</li>
+                                        <li>Dodge Perfect / Chance</li>
                                         <li>Godmodding</li>
                                         <li>Enemy Controlling</li>
+                                        <li>Evade Perfect / Chance</li>
+                                        <li>Going Out of Battle</li>
+                                        <li>Perfect Disappear / Invincibility</li>
                                         <li>Turn Order Manipulation</li>
+                                        <li>Future Reading</li>
                                     </ul>
+                                </div>
+                                <div class="banned-category">
+                                    <h6>Monitored Mechanisms:</h6>
+                                    <ul>
+                                        <li>Copy Ability (max 50% effect)</li>
+                                        <li>Enemy's Cooldown Controlling</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Mechanism Guidelines -->
+                    <div class="sub-section">
+                        <h4>Skill Mechanism Guidelines</h4>
+                        <div class="system-card">
+                            <div class="guidelines">
+                                <div class="guideline-item">
+                                    <iconify-icon icon="mdi:text-box-check"></iconify-icon>
+                                    <h5>Deskripsi Jelas</h5>
+                                    <p>Berikan deskripsi yang detail dan masuk akal tentang bagaimana karakter melakukan skill tersebut.</p>
+                                </div>
+                                <div class="guideline-item">
+                                    <iconify-icon icon="mdi:scale-balance"></iconify-icon>
+                                    <h5>Keseimbangan</h5>
+                                    <p>Pastikan skill seimbang antara power dan limitations sesuai aturan yang berlaku.</p>
+                                </div>
+                                <div class="guideline-item">
+                                    <iconify-icon icon="mdi:lightbulb-on"></iconify-icon>
+                                    <h5>Kreativitas Terkendali</h5>
+                                    <p>Kreativitas dalam membuat skill didorong, namun harus dalam batasan rules system.</p>
                                 </div>
                             </div>
                         </div>
@@ -557,11 +656,11 @@
                 <div class="distribution-rules">
                     <h5>Aturan Distribusi:</h5>
                     <ul>
-                        <li>✅ Points dapat dialokasikan ke semua stats (HP, MP, STR, DEF, AGI)</li>
-                        <li>✅ Minimal alokasi: 250 points per stat</li>
-                        <li>✅ Tidak ada batas maksimal alokasi ke satu stat</li>
-                        <li>✅ Points tidak bisa disimpan untuk level berikutnya</li>
-                        <li>✅ Harus langsung dialokasikan setelah mendapatkan reward</li>
+                        <li> Points dapat dialokasikan ke semua stats (HP, MP, STR, DEF, AGI)</li>
+                        <li> Minimal alokasi: 250 points per stat</li>
+                        <li> Tidak ada batas maksimal alokasi ke satu stat</li>
+                        <li> Points tidak bisa disimpan untuk level berikutnya</li>
+                        <li> Harus langsung dialokasikan setelah mendapatkan reward</li>
                     </ul>
                 </div>
             </div>
