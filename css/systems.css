@@ -1190,7 +1190,6 @@
 }
 
 .rune-acquisition li::before {
-  content: '📍';
   position: absolute;
   left: -1.5rem;
   top: 0.1rem;
@@ -1434,14 +1433,12 @@
 }
 
 .guild-privileges li::before {
-  content: '✅';
   position: absolute;
   left: -1.5rem;
   top: 0.1rem;
 }
 
 .guild-responsibilities li::before {
-  content: '📍';
   position: absolute;
   left: -1.5rem;
   top: 0.1rem;
@@ -2027,3 +2024,4 @@
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-secondary);
 }
+
