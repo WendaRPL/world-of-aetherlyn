@@ -1,0 +1,418 @@
+/* styles/factions.css */
+/* === FACTIONS SYSTEM STYLES === */
+.factions-system {
+  padding: 4rem 0;
+  background: linear-gradient(to bottom, var(--bg-primary), var(--bg-secondary));
+}
+
+.intro-text {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 0 2rem;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.faction-category {
+  text-align: center;
+  margin: 4rem 0 2rem;
+  font-size: 2.2rem;
+  background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent-primary);
+}
+
+.factions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+.faction-card {
+  background: linear-gradient(145deg, var(--bg-card), var(--bg-secondary));
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+}
+
+.faction-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+  transition: left 0.8s ease;
+}
+
+.faction-card:hover::before {
+  left: 100%;
+}
+
+.faction-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+.faction-icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(145deg, var(--bg-primary), var(--bg-secondary));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.faction-icon iconify-icon {
+  font-size: 48px;
+  color: currentColor;
+  transition: all 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: icon-pulse 3s ease-in-out infinite;
+}
+
+.faction-card:hover .faction-icon {
+  transform: scale(1.15);
+  box-shadow: 0 0 35px;
+}
+
+.faction-card:hover .faction-icon iconify-icon {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 8px currentColor);
+}
+
+.faction-content {
+  text-align: center;
+}
+
+.faction-content h4 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.faction-quote {
+  font-style: italic;
+  color: var(--accent-primary);
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.faction-desc {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.faction-levels {
+  text-align: left;
+  margin: 1.5rem 0;
+}
+
+.level-tier {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius);
+  border-left: 3px solid var(--accent-primary);
+}
+
+.level-tier h5 {
+  color: var(--accent-primary);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.level-tier p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.faction-special {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 1.5rem;
+}
+
+.faction-special h5 {
+  color: var(--accent-primary);
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.faction-special p {
+  color: var(--text-secondary);
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+/* Eternal Options Styling */
+.eternal-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.eternal-option {
+  padding: 0.4rem 0.7rem;
+  background: rgba(76, 201, 240, 0.1);
+  border-radius: 12px;
+  font-size: 0.8rem;
+  color: var(--accent-primary);
+  border: 1px solid rgba(76, 201, 240, 0.2);
+  text-align: center;
+  transition: var(--transition);
+}
+
+.eternal-option:hover {
+  background: rgba(76, 201, 240, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Element Colors dengan warna yang match */
+.element-fire { border-color: #ff6b35; }
+.element-fire .faction-icon { 
+  border-color: #ff6b35; 
+  box-shadow: 0 0 25px rgba(255, 107, 53, 0.4);
+  color: #ff6b35;
+}
+
+.element-water { border-color: #4cc9f0; }
+.element-water .faction-icon { 
+  border-color: #4cc9f0; 
+  box-shadow: 0 0 25px rgba(76, 201, 240, 0.4);
+  color: #4cc9f0;
+}
+
+.element-wind { border-color: #90e0ef; }
+.element-wind .faction-icon { 
+  border-color: #90e0ef; 
+  box-shadow: 0 0 25px rgba(144, 224, 239, 0.4);
+  color: #90e0ef;
+}
+
+.element-earth { border-color: #9d6c34; }
+.element-earth .faction-icon { 
+  border-color: #9d6c34; 
+  box-shadow: 0 0 25px rgba(157, 108, 52, 0.4);
+  color: #9d6c34;
+}
+
+.element-nature { border-color: #2e8b57; }
+.element-nature .faction-icon { 
+  border-color: #2e8b57; 
+  box-shadow: 0 0 25px rgba(46, 139, 87, 0.4);
+  color: #2e8b57;
+}
+
+.element-lightning { border-color: #ffdd78; }
+.element-lightning .faction-icon { 
+  border-color: #ffdd78; 
+  box-shadow: 0 0 25px rgba(255, 221, 120, 0.4);
+  color: #ffdd78;
+}
+
+.element-light { border-color: #ff8c00; }
+.element-light .faction-icon { 
+  border-color: #ff8c00; 
+  box-shadow: 0 0 25px rgba(255, 140, 0, 0.4);
+  color: #ff8c00;
+}
+
+.element-dark { border-color: #7b4bcf; }
+.element-dark .faction-icon { 
+  border-color: #7b4bcf; 
+  box-shadow: 0 0 25px rgba(123, 75, 207, 0.4);
+  color: #7b4bcf;
+}
+
+.element-blood { border-color: #dc143c; }
+.element-blood .faction-icon { 
+  border-color: #dc143c; 
+  box-shadow: 0 0 25px rgba(220, 20, 60, 0.4);
+  color: #dc143c;
+}
+
+.element-eternal { border-color: #9368ff; }
+.element-eternal .faction-icon { 
+  border-color: #9368ff; 
+  box-shadow: 0 0 25px rgba(147, 104, 255, 0.4);
+  color: #9368ff;
+}
+
+/* Progression Info */
+.progression-info {
+  padding: 2.5rem;
+  background: var(--bg-card);
+  border-radius: var(--border-radius);
+  max-width: 900px;
+  margin: 4rem auto 0;
+}
+
+.progression-info h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  color: var(--accent-primary);
+  text-align: center;
+  justify-content: center;
+}
+
+.progression-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.progression-step {
+  text-align: center;
+  padding: 1.5rem;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: var(--transition);
+}
+
+.progression-step:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-primary);
+}
+
+.step-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.progression-step h4 {
+  color: var(--accent-primary);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.progression-step p {
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* Animasi untuk icons */
+@keyframes icon-pulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 5px currentColor);
+  }
+  50% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 10px currentColor);
+  }
+}
+
+/* Different animation timing */
+.faction-card:nth-child(1) .faction-icon iconify-icon { animation-delay: 0s; }
+.faction-card:nth-child(2) .faction-icon iconify-icon { animation-delay: 0.3s; }
+.faction-card:nth-child(3) .faction-icon iconify-icon { animation-delay: 0.6s; }
+.faction-card:nth-child(4) .faction-icon iconify-icon { animation-delay: 0.9s; }
+.faction-card:nth-child(5) .faction-icon iconify-icon { animation-delay: 1.2s; }
+.faction-card:nth-child(6) .faction-icon iconify-icon { animation-delay: 1.5s; }
+.faction-card:nth-child(7) .faction-icon iconify-icon { animation-delay: 1.8s; }
+.faction-card:nth-child(8) .faction-icon iconify-icon { animation-delay: 2.1s; }
+.faction-card:nth-child(9) .faction-icon iconify-icon { animation-delay: 2.4s; }
+.faction-card:nth-child(10) .faction-icon iconify-icon { animation-delay: 2.7s; }
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .factions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .eternal-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .factions-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .faction-card {
+    padding: 2rem;
+  }
+  
+  .progression-steps {
+    grid-template-columns: 1fr;
+  }
+  
+  .eternal-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .faction-card {
+    padding: 1.5rem;
+  }
+  
+  .faction-icon {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .faction-icon iconify-icon {
+    font-size: 36px;
+  }
+  
+  .faction-content h4 {
+    font-size: 1.5rem;
+  }
+  
+  .level-tier {
+    padding: 0.75rem;
+  }
+  
+  .eternal-options {
+    grid-template-columns: 1fr;
+  }
+  
+  .faction-special {
+    padding: 1rem;
+  }
+  
+  .progression-info {
+    padding: 1.5rem;
+  }
+}
