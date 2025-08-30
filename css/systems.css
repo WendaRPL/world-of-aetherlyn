@@ -2249,18 +2249,23 @@
 
 @media (max-width: 480px) {
   .systems-nav {
-    top: 55px;
-    padding: 0.6rem 0;
+    left: 0 !important;
+  right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  transform: none !important;
   }
   
   .nav-scroll {
-    gap: 0.3rem;
-    padding: 0.2rem 0.8rem;
+    max-width: 100vw !important;
+  padding: 0.5rem 1rem !important;
   }
   
   .nav-item {
-    padding: 0.5rem 0.6rem;
     min-width: 60px;
+    padding: 0.5rem 0.6rem;
   }
   
   .nav-item iconify-icon {
@@ -2270,6 +2275,21 @@
   .nav-item span {
     font-size: 0.65rem;
   }
+
+  /* Fix for container class if it's causing issues */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+/* Ensure no horizontal overflow anywhere */
+body, html {
+  overflow-x: hidden;
+  max-width: 100vw;
+  position: relative;
+}
 }
 
 /* Navigation dropdown for mobile */
