@@ -103,6 +103,10 @@
         <iconify-icon icon="mdi:backpack"></iconify-icon>
         <span>Inventory</span>
       </a>
+      <a href="#adventurer-notes" class="nav-item">
+        <iconify-icon icon="mdi:notes"></iconify-icon>
+        <span>Adventurer Notes</span>
+      </a>
       <a href="#equipment" class="nav-item">
         <iconify-icon icon="mdi:sword"></iconify-icon>
         <span>Equipment</span>
@@ -416,7 +420,7 @@
                                         <iconify-icon icon="mdi:refresh"></iconify-icon>
                                         <div class="management-content">
                                             <h5>Skill Revamp</h5>
-                                            <p>Dapat melakukan revamp skill dengan jeda 30 hari. Naik rank memungkinkan revamp segera. Perubahan kecil dapat dilakukan tanpa cooldown panjang.</p>
+                                            <p>Dapat melakukan revamp skill dengan jeda 30 hari. Jika naik rank, maka akan bisa segera melakukan revamp skill. Sementara melakukan perubahan kecil akan memiliki jeda 7 hari</p>
                                         </div>
                                     </div>
                                     
@@ -424,7 +428,7 @@
                                         <iconify-icon icon="mdi:account-convert"></iconify-icon>
                                         <div class="management-content">
                                             <h5>Reset Character</h5>
-                                            <p>Sistem reset character memungkinkan redistribusi stats dan skill points dengan ketentuan tertentu yang diatur oleh Admin.</p>
+                                            <p>Setiap dari petualang bebas untuk melakukan revamp dari skill mereka tanpa harus reset character. Namun, apabila petualang akan mengganti identitas karakter secara besar seperti mengubah ras atau mengubah identitas keseluruhan maka karakter harus mengalami reset yang artinya akan memulai kembali progress dari awal</p>
                                         </div>
                                     </div>
                                 </div>
@@ -453,6 +457,7 @@
                                         <li>Absolute Self / Godly / Invincible</li>
                                         <li>Armageddon</li>
                                         <li>Instant Execution</li>
+                                        <li>Revival / Resurrection (hanya dapat dilakukan dengan cara tertentu.)</li>
                                     </ul>
                                 </div>
                                 <div class="banned-category">
@@ -980,6 +985,122 @@
     </div>
 </article>
 
+<!-- Adventurer Notes -->
+<article id="adventurer-notes" class="system-article">
+    <h3><iconify-icon icon="mdi:scroll-text"></iconify-icon> Adventurer's Notes</h3>
+    
+    <div class="sub-section">
+        <h4>Informasi penting untuk petualang yang mendaftar.</h4>
+        <div class="system-card">
+            <div class="notes-grid">
+                <!-- Registration Notes -->
+                <div class="note-category">
+                    <h5><iconify-icon icon="mdi:clipboard-check"></iconify-icon> After Registration</h5>
+                    <ul class="notes-list">
+                        <li>Setelah disahkan oleh admin, petualang harus menuju ke <strong>Gedung Serikat</strong> untuk menerima pesangon dan senjata dasar mereka.</li>
+                        <li>Senjata dasar bisa request sesuai dengan class yang dipilih.</li>
+                    </ul>
+                </div>
+
+                <!-- Rank Progression -->
+                <div class="note-category">
+                    <h5><iconify-icon icon="mdi:trending-up"></iconify-icon> Rank Progression</h5>
+                    <ul class="notes-list">
+                        <li>Setelah menjalani ujian kenaikan rank, petualang harus mengikuti serangkaian prosesi
+untuk kenaikan rank</li>
+                        <li><strong>Rank E - B:</strong> ujian di <strong>Gedung Serikat.</strong></li>
+                        <li><strong>Rank A and above:</strong> Ujian di <strong>Altar Change of Vow.</strong></li>
+                    </ul>
+                </div>
+
+                <!-- Equipment & Items -->
+                <div class="note-category">
+                    <h5><iconify-icon icon="mdi:backpack"></iconify-icon> Equipment & Storage</h5>
+                    <ul class="notes-list">
+                        <li>Backpacks bisa dibeli di <strong>Whispering Market</strong></li>
+                        <li>Backpacks berfungsi untuk menampung berbagai item kecil dengan jumlah banyak di luat Inventory.</li>
+                    </ul>
+                </div>
+
+                <!-- Faction Changes -->
+                <div class="note-category">
+                    <h5><iconify-icon icon="mdi:account-switch"></iconify-icon> Mengubah Faksi</h5>
+                    <ul class="notes-list">
+                        <li>Pergantian Factionn dapat di lakukan di <strong>Altar Change of Vow</strong> dengan ketentuan berupa:</li>
+                        <li><strong>Rank F - D:</strong> All Stats -10%</li>
+                        <li><strong>Rank C and above:</strong> All Stats -15% + Level -10</li>
+                        <li>Otomatis me reset seluruh skill setelah pergantian Faksi atau Class.</li>
+                        <li>Mengubah Faksi akan secara otomatis memberi jeda upgrade faksi selama 1 minggu.</li>
+                    </ul>
+                </div>
+
+                <!-- Class Changes -->
+                <div class="note-category">
+                    <h5><iconify-icon icon="mdi:auto-awesome"></iconify-icon> Mengubah Class</h5>
+                    <ul class="notes-list">
+                        <li>Mengubah Class dapat dilakukan di <strong>Altar Change of Vow.</strong> dengan penalti berupa:</li>
+                        <li><strong>Main Class Stats:</strong> -35% penalty</li>
+                        <li><strong>Stats lainnya:</strong> -20% penalty</li>
+                        <li>Otomatis me reset seluruh skill setelah pergantian Faksi atau Class.</li>
+                    </ul>
+                </div>
+
+                <!-- Eternal Faction Rules -->
+                <div class="note-category">
+                    <h5><iconify-icon icon="mdi:infinity"></iconify-icon> Aturan Faksi Eternal.</h5>
+                    <ul class="notes-list">
+                        <li>Pengguna Faksi Eternal tidak akan bisa mengganti ke faksi eternal lainnya, selain ke
+faksi alam.</li>
+                        <li> Jika ingin kembali ke faksi eternal, harus menunggu jeda selama 2 bulan.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Important Notice -->
+            <div class="important-notice">
+                <h6><iconify-icon icon="mdi:lightbulb-on"></iconify-icon> Future Updates</h6>
+                <p>Akan hadir banyak sistem petualang yang baru di masa depan!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Building Locations -->
+    <div class="sub-section">
+        <h4>Lokasi penting</h4>
+        <div class="location-cards">
+            <div class="location-card">
+                <div class="location-icon">
+                    <iconify-icon icon="mdi:castle"></iconify-icon>
+                </div>
+                <div class="location-info">
+                    <h5>Gedung Serikat Petualang</h5>
+                    <p>Tempat dimana petualang menerima pesangon dan melakukan Rank Up. Juga berfungsi sebagai tempat pendaftaran Quest.</p>
+                </div>
+            </div>
+
+            <div class="location-card">
+                <div class="location-icon">
+                    <iconify-icon icon="mdi:temple"></iconify-icon>
+                </div>
+                <div class="location-info">
+                    <h5>Altar Change of Vow</h5>
+                    <p>Untuk Rank Up TIer A ke atas, juga untuk perubahan Faksi dan Class.</p>
+                </div>
+            </div>
+
+            <div class="location-card">
+                <div class="location-icon">
+                    <iconify-icon icon="mdi:store"></iconify-icon>
+                </div>
+                <div class="location-info">
+                    <h5>Whispering Market</h5>
+                    <p>Tempat dimana petualang dapat membeli berbagai barang seperti Backpack, senajata, dan perbekalan lainnya.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
 <!-- Equipment System -->
 <article id="equipment" class="system-article">
     <h3><iconify-icon icon="mdi:sword"></iconify-icon> Equipment System</h3>
@@ -1049,7 +1170,7 @@
     <div class="sub-section">
         <h4>Penguatan Senjata Custom</h4>
         <div class="system-card">
-            <p>Rune adalah batuan berharga dengan simbol terukir yang membawa kekuatan sihir besar. Hanya untuk senjata custom.</p>
+            <p>Rune adalah batuan berharga dengan simbol terukir yang membawa kekuatan sihir besar. Hanya可用于 untuk senjata custom.</p>
             
             <div class="rune-acquisition">
                 <h5><iconify-icon icon="mdi:map-marker"></iconify-icon> Memperoleh Rune:</h5>
@@ -1336,4 +1457,3 @@
     </script>
 </body>
 </html>
-
