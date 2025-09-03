@@ -1062,6 +1062,210 @@
   border-radius: 15px;
 }
 
+/* Adventurer Notes Styles */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.note-category {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.note-category::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    var(--accent-primary), 
+    transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.note-category:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-primary);
+  box-shadow: 0 8px 25px rgba(76, 201, 240, 0.15);
+}
+
+.note-category:hover::before {
+  opacity: 1;
+}
+
+.note-category h5 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--accent-primary);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.notes-list {
+  color: var(--text-secondary);
+  padding-left: 1.5rem;
+  margin: 0;
+}
+
+.notes-list li {
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  position: relative;
+}
+
+.notes-list li::before {
+  content: '•';
+  color: var(--accent-primary);
+  font-weight: bold;
+  position: absolute;
+  left: -1rem;
+}
+
+.notes-list strong {
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+.important-notice {
+  background: linear-gradient(135deg, 
+    rgba(255, 193, 7, 0.15) 0%,
+    rgba(255, 193, 7, 0.1) 100%);
+  padding: 1.5rem;
+  border-radius: var(--border-radius-lg);
+  border-left: 4px solid #ffc107;
+  margin-top: 2rem;
+  backdrop-filter: blur(5px);
+}
+
+.important-notice h6 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ffc107;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.important-notice p {
+  color: var(--text-secondary);
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Location Cards */
+.location-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.location-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.location-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-primary);
+  box-shadow: 0 8px 25px rgba(76, 201, 240, 0.15);
+}
+
+.location-icon {
+  width: 50px;
+  height: 50px;
+  background: rgba(76, 201, 240, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--accent-primary);
+  flex-shrink: 0;
+}
+
+.location-icon iconify-icon {
+  font-size: 1.8rem;
+  color: var(--accent-primary);
+}
+
+.location-info h5 {
+  color: var(--accent-primary);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.location-info p {
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .notes-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  
+  .note-category {
+    padding: 1.2rem;
+  }
+  
+  .location-cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .location-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .location-icon {
+    align-self: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .notes-list {
+    padding-left: 1.2rem;
+  }
+  
+  .notes-list li {
+    font-size: 0.9rem;
+  }
+  
+  .important-notice {
+    padding: 1.2rem;
+  }
+}
+
 /* Equipment system */
 .equipment-types {
   display: grid;
@@ -1433,6 +1637,7 @@
 }
 
 .guild-privileges li::before {
+  content: '✅';
   position: absolute;
   left: -1.5rem;
   top: 0.1rem;
@@ -1692,10 +1897,6 @@
     font-size: 0.7rem;
   }
   
-  /* Hide some nav items on mobile */
-  .nav-item:nth-child(n+7) {
-    display: none;
-  }
   
   .nav-more {
     display: flex;
@@ -2024,4 +2225,3 @@
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-secondary);
 }
-
