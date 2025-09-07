@@ -340,6 +340,129 @@
                                 <p>Merupakan efek tambahan damage pada basic attack. Bisa dari stats lain sesuai class (≤7%), atau tipe BA tertentu dengan tambahan damage ≤7%.</p>
                             </div>
                         </div>
+                        <!-- Stacking Rules -->
+                        <div class="sub-section">
+                        <h4>Aturan Umum</h4>
+                        <div class="skill-types">
+                            <div class="skill-type">
+                                <h5>Aturan durasi & cooldown</h5>
+                                <p>Cooldown diwajibkan lebih lama dari durasi (minimal
+sama dengan syarat tertentu). Menambah efek CC akan menambah cooldown lebih
+lama.</p>
+                            </div>
+                            <div class="skill-type">
+                                <h5>Aturan Mana Cost</h5>
+                                <p>Mana Cost akan bertambah seiring dengan kenaikan rank, Admin
+Penguji kenaikan yang akan menaikkan mana cost skill petualang.</p>
+                            </div>
+                        </div>
+                        <div class="sub-section">
+                        <h4>Effect Stacking</h4>
+                        <div class="skill-types">
+                            <div class="skill-type">
+                                <h5>Buff</h5>
+                                <p>Buff sejenis yang didapat dari pihak luar hanya dapat diakumulasi
+maksimal 2x.</p>
+                            </div>
+                            <div class="skill-type">
+                                <h5>Debuff</h5>
+                                <p>Debuff apapun yang berlaku di dalam character hanya dapat
+diakumulasi maksimal 1x (unstackable).</p>
+                            </div>
+                            <div class="skill-type">
+                                <h5>Damage Reduce</h5>
+                                <p>Hanya bisa di akumulasikan 1x (Unstackable).</p>
+                            </div>
+                            <div class="skill-type">
+                                <h5>CC (Crowd Control)</h5>
+                                <p>Hanya bisa di akumulasikan 1x dalam 1 turn (Unstackable).</p>
+                            </div>
+                            <div class="skill-type">
+                                <h5>Shield</h5>
+                                <p>Hanya bisa di akumulasikan 1x (Unstackable).</p>
+                            </div>
+                            <div class="skill-type">
+                                <h5>Healing (instant)</h5>
+                                <p>Tidak Ada Batasan.</p>
+                            </div>
+                            <div class="skill-type">
+                                <h5>Healing (Over Turn)</h5>
+                                <p>Hanya bisa di akumulasikan maksimal 1x (Unstackable).</p>
+                            </div>
+                        </div>
+                        
+                        <div class="sub-section">
+                        <h4>Duration Stacking</h4>
+                        <div class="skill-types">
+                            <div class="skill-type">
+                                <h5>Aturan durasi & cooldown</h5>
+                                <p>Cooldown diwajibkan lebih lama dari durasi (minimal
+sama dengan syarat tertentu). Menambah efek CC akan menambah cooldown lebih
+lama.</p>
+                            </div>
+                            <div class="skill-type">
+                                <h5>Aturan Mana Cost</h5>
+                                <p>SMana Cost akan bertambah seiring dengan kenaikan rank, Admin
+Penguji kenaikan yang akan menaikkan mana cost skill petualang.</p>
+                            </div>
+                        </div>
+                        <div class="sub-section">
+                        <h4>Aturan Umum</h4>
+                        <div class="skill-types">
+                            <div class="skill-type">
+                                <h5>Buff</h5>
+                                <p>Apabila mendapatkan buff yang lebih kuat dengan durasi lebih tinggi,
+maka efek terendah akan terganti dengan efek tertinggi, dan durasi akan
+menyesuaikan masing-masing buff.</p>
+                            </div>
+                            <div class="skill-type">
+                                <h5>Debuff</h5>
+                                <p>Apabila mendapatkan debuff yang lebih kuat dengan durasi lebih tinggi,
+maka efek terendah akan terganti dengan efek tertinggi, dan durasi akan
+menyesuaikan debuff tersebut.</p>
+                            </div>
+                            <div class="skill-type">
+                                <h5>Damage Reduce</h5>
+                                <p>Apabila mendapatkan damage reduce yang lebih kuat
+dengan durasi lebih tinggi, maka efek terendah akan terganti dengan efek
+tertinggi, dan durasi akan menyesuaikan buff tersebut.</p>
+                            </div>
+                            <div class="skill-type">
+                                <h5>CC (Crowd Control)</h5>
+                                <p>Tidak dapat menumpuk durasi di turn yang sama.</p>
+                            </div>
+                            <div class="skill-type">
+                                <h5>Shield</h5>
+                                <p>Apabila mendapatkan shield yang lebih kuat dengan durasi lebih tinggi,
+maka efek terendah akan terganti dengan efek tertinggi, dan durasi akan
+menyesuaikan buff tersebut.</p>
+                            </div>
+                            <div class="skill-type">
+                                <h5>Healing (instant)</h5>
+                                <p>Tidak berdurasi.</p>
+                            </div>
+                            <div class="skill-type">
+                                <h5>Healing (Over Turn)</h5>
+                                <p>Apabila mendapatkan healing over turn yang lebih kuat
+dengan durasi lebih tinggi, maka efek terendah akan terganti dengan efek
+tertinggi, dan durasi akan menyesuaikan buff tersebut</p>
+                            </div>
+                        </div>
+                         <!-- Note -->
+                        <div class="sub-section">
+                        <h4>Note</h4>
+                        <div class="skill-types">
+                            <div class="skill-type">
+                                <p>Apabila mendapatkan suatu effect sejenis dengan efek yang sama besarnya atau lebih
+lemah di saat stack sudah maksimal, meskipun durasi lebih panjang, effect tersebut akan
+ditolak sepenuhnya. Maka perhatikan hal ini sebagai bagian dari sebuah strategi.</p>
+                            </div>
+                            <div class="skill-type">
+                                <p>Effect buff dari diri sendiri tidak akan masuk dalam hitungan akumulasi, terkecuali
+damage reduce, shield, healing over turn yang hanya bisa diakumulasi 1x dari sumber
+manapun.</p>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Skill Rules -->
@@ -396,6 +519,9 @@
                                     <span class="rule-value">Max 200%</span>
                                 </div>
                             </div>
+
+                            
+
 
                             <!-- Regen Rules -->
                             <div class="rule-category">
