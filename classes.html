@@ -6,10 +6,11 @@
     <title>Classes - World Of Aetherlyn</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/classes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 </head>
-<body>
+<body class="homepage">
     <!-- Custom Cursor -->
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
@@ -17,37 +18,58 @@
     <!-- Background Elements -->
     <div id="stars"></div>
     <div id="mist"></div>
-    <div class="floating-crystals"></div>
-    <div class="animated-background"></div>
+    <div class="floating-crystals"></div> <!-- New decorative element -->
 
     <header>
         <nav>
             <div class="logo">
-                <a href="index.html">
-                    <h1 class="glow-text">World Of Aetherlyn</h1>
-                </a>
+                <h1 class="glow-text">World Of Aetherlyn</h1>
             </div>
             
-            <div class="nav-controls">
-                <!-- Hamburger Menu for Mobile -->
-                <div class="hamburger" id="hamburger-menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+            <!-- Hamburger Menu for Mobile -->
+            <div class="hamburger" id="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
 
             <ul class="nav-links" id="nav-links">
-                <li><a href="index.html" class="magic-link"><i data-feather="home"></i> Home</a></li>
-                <li><a href="rank.html" class="magic-link"><i data-feather="star"></i> Rank</a></li>
-                <li><a href="races.html" class="magic-link"><i data-feather="users"></i> Races</a></li>
-                <li><a href="factions.html" class="magic-link"><i data-feather="layers"></i> Factions</a></li>
-                <li><a href="classes.html" class="magic-link active"><i data-feather="award"></i> Classes</a></li>
-                <li><a href="systems.html" class="magic-link"><i data-feather="book"></i> Systems</a></li>
-            </ul>
+    <li><a href="https://worldofaetherlyn.web.id"><i class="fas fa-home"></i> Home</a></li>
+    
+    <!-- Dropdown Patch Notes -->
+    <li class="dropdown mobile-dropdown">
+        <a href="javascript:void(0)" class="dropdown-toggle active">
+            <i class="fas fa-code-branch"></i> Patch Notes</i>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a href="https://patch.worldofaetherlyn.web.id" class="magic-link">
+                <i class="fas fa-code-branch"></i> Notes Utama
+            </a></li>
+            <li class="divider"></li>
+            <li><a href="rank.html" class="magic-link">
+                <i data-feather="star"></i> Rank
+            </a></li>
+            <li><a href="races.html" class="magic-link">
+                <i data-feather="users"></i> Races
+            </a></li>
+            <li><a href="factions.html" class="magic-link">
+                <i data-feather="layers"></i> Factions
+            </a></li>
+            <li><a href="classes.html" class="active">
+                <i data-feather="award"></i> Classes
+            </a></li>
+            <li><a href="systems.html" class="magic-link">
+                <i data-feather="book"></i> Systems
+            </a></li>
+        </ul>
+    </li>
+    <!-- End Dropdown -->
+    
+    <li><a href="worldbuilding.html"><i class="fas fa-globe-asia"></i> Worldbuilding</a></li>
+    <li><a href="https://codex.worldofaetherlyn.web.id"><i class="fas fa-archive"></i> Codex</a></li>
+</ul>
         </nav>
     </header>
-
     <main>
         <!-- Hero Section -->
         <section class="hero">
@@ -378,10 +400,10 @@ memainkan alat musik.</span>
     <footer>
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2025 Aetherlyn Kingdom Team. Semua hak dilindungi.</p>
-                <p>Dibuat dengan <i data-feather="heart" class="heart-icon"></i> untuk komunitas Role-Play Aetherlyn</p>
+                <p>&copy; 2025 World of Aetherlyn. You have readed the System of this World.</p>
+                <p>Website Expansion Project v4.0 - The Gatekeeper's Edition</p>
             </div>
-        </div>
+            </div>
     </footer>
 
     <script src="js/background.js"></script>

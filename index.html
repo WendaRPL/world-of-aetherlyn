@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selamat Datang - World Of Aetherlyn</title>
+    <title>Patch Notes - World Of Aetherlyn</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Feather Icons for decorative icons -->
     <script src="https://unpkg.com/feather-icons"></script>
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 </head>
 <body class="homepage">
     <!-- Custom Cursor -->
@@ -33,13 +33,40 @@
             </div>
 
             <ul class="nav-links" id="nav-links">
-                <li><a href="index.html" class="magic-link active"><i data-feather="home"></i> Home</a></li>
-                <li><a href="rank.html" class="magic-link"><i data-feather="star"></i> Rank</a></li>
-                <li><a href="races.html" class="magic-link"><i data-feather="users"></i> Races</a></li>
-                <li><a href="factions.html" class="magic-link"><i data-feather="layers"></i> Factions</a></li>
-                <li><a href="classes.html" class="magic-link"><i data-feather="award"></i> Classes</a></li>
-                <li><a href="systems.html" class="magic-link"><i data-feather="book"></i> Systems</a></li>
-            </ul>
+    <li><a href="https://worldofaetherlyn.web.id"><i class="fas fa-home"></i> Home</a></li>
+    
+    <!-- Dropdown Patch Notes -->
+    <li class="dropdown mobile-dropdown">
+        <a href="javascript:void(0)" class="dropdown-toggle active">
+            <i class="fas fa-code-branch"></i> Patch Notes</i>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a href="https://patch.worldofaetherlyn.web.id" class="active">
+                <i class="fas fa-code-branch"></i> Notes Utama
+            </a></li>
+            <li class="divider"></li>
+            <li><a href="rank.html" class="magic-link">
+                <i data-feather="star"></i> Rank
+            </a></li>
+            <li><a href="races.html" class="magic-link">
+                <i data-feather="users"></i> Races
+            </a></li>
+            <li><a href="factions.html" class="magic-link">
+                <i data-feather="layers"></i> Factions
+            </a></li>
+            <li><a href="classes.html" class="magic-link">
+                <i data-feather="award"></i> Classes
+            </a></li>
+            <li><a href="systems.html" class="magic-link">
+                <i data-feather="book"></i> Systems
+            </a></li>
+        </ul>
+    </li>
+    <!-- End Dropdown -->
+    
+    <li><a href="worldbuilding.html"><i class="fas fa-globe-asia"></i> Worldbuilding</a></li>
+    <li><a href="https://codex.worldofaetherlyn.web.id"><i class="fas fa-archive"></i> Codex</a></li>
+</ul>
         </nav>
     </header>
 
@@ -59,16 +86,12 @@
                 </div>
                 
                 <blockquote class="hero-quote">
-                    <span class="quote-mark left">“</span>
+                    <span class="quote-mark left">"</span>
                     Kingdom of Aetherlyn, a beautiful and peaceful place where there is always a reason to live and stay, to enjoy your own pathway of your adventurer life.
-                    <span class="quote-mark right">”</span>
+                    <span class="quote-mark right">"</span>
                 </blockquote>
                 
                 <div class="hero-actions">
-                    <a href="https://chat.whatsapp.com/JGeEj5cXCeeC0s0XzcnCCh?mode=wwt" class="cta-button pulse-button">
-                        <span>Mulai Petualangan</span>
-                        <i data-feather="arrow-right"></i>
-                    </a>
                     <a href="#patch-notes" class="cta-button secondary">
                         <span>Baca Patch Notes</span>
                         <i data-feather="book-open"></i>
@@ -180,23 +203,15 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2025 Aetherlyn Kingdom Team. Semua hak dilindungi.</p>
-                <p>Dibuat dengan <i data-feather="heart" class="heart-icon"></i> untuk komunitas Role-Play Aetherlyn</p>
+                <p>&copy; 2025 World of Aetherlyn. You have readed the System of this World.</p>
+                <p>Website Expansion Project v4.0 - The Gatekeeper's Edition</p>
             </div>
-        </div>
+            </div>
     </footer>
-
     <script src="js/background.js"></script>
     <script>
         // Initialize Feather Icons
         feather.replace();
     </script>
 </body>
-
 </html>
-
-
-
-
-
-
