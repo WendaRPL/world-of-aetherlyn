@@ -9,32 +9,135 @@ document.addEventListener('DOMContentLoaded', function() {
 function initializeMobileMenu() {
     const hamburger = document.getElementById('hamburger-menu');
     const navLinks = document.getElementById('nav-links');
+    const mobileDropdown = document.querySelector('.mobile-dropdown');
+    const body = document.body;
     
     if (hamburger && navLinks) {
         hamburger.addEventListener('click', function() {
+            const isOpening = !navLinks.classList.contains('active');
+            
             hamburger.classList.toggle('active');
             navLinks.classList.toggle('active');
             
+            // Toggle body class untuk CSS control
+            body.classList.toggle('menu-open', navLinks.classList.contains('active'));
+            
             // Toggle body scroll when menu is open
-            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+            const isMenuOpen = navLinks.classList.contains('active');
+            body.style.overflow = isMenuOpen ? 'hidden' : '';
+            
+            // Automatically open dropdown on mobile when menu opens
+            if (window.innerWidth <= 768) {
+                if (isMenuOpen) {
+                    // Open the dropdown when menu opens
+                    setTimeout(() => {
+                        if (mobileDropdown) {
+                            mobileDropdown.classList.add('active');
+                        }
+                    }, 100); // Small delay for smooth animation
+                } else {
+                    // Close dropdown when menu closes
+                    if (mobileDropdown) {
+                        mobileDropdown.classList.remove('active');
+                    }
+                }
+            }
         });
         
         // Close menu when clicking on links
         const links = navLinks.querySelectorAll('a');
         links.forEach(link => {
-            link.addEventListener('click', function() {
+            link.addEventListener('click', function(e) {
+                // Don't close dropdown if clicking inside dropdown
+                if (this.closest('.dropdown-menu')) {
+                    e.stopPropagation();
+                    return;
+                }
+                
                 hamburger.classList.remove('active');
                 navLinks.classList.remove('active');
-                document.body.style.overflow = '';
+                body.classList.remove('menu-open');
+                body.style.overflow = '';
+                
+                // Close dropdown too
+                if (mobileDropdown) {
+                    mobileDropdown.classList.remove('active');
+                }
             });
         });
         
         // Close menu when clicking outside
         document.addEventListener('click', function(event) {
-            if (!event.target.closest('nav') && navLinks.classList.contains('active')) {
+            const isClickInsideNav = event.target.closest('nav');
+            const isClickInsideSidebar = event.target.closest('.nav-links');
+            const isClickOnHamburger = event.target.closest('.hamburger');
+            
+            if (!isClickInsideNav && !isClickInsideSidebar && !isClickOnHamburger && navLinks.classList.contains('active')) {
                 hamburger.classList.remove('active');
                 navLinks.classList.remove('active');
-                document.body.style.overflow = '';
+                body.classList.remove('menu-open');
+                body.style.overflow = '';
+                
+                // Close dropdown too
+                if (mobileDropdown) {
+                    mobileDropdown.classList.remove('active');
+                }
+            }
+        });
+        
+        // Handle dropdown toggle on mobile
+        if (mobileDropdown && window.innerWidth <= 768) {
+            const dropdownToggle = mobileDropdown.querySelector('.dropdown-toggle');
+            
+            dropdownToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // Toggle dropdown
+                mobileDropdown.classList.toggle('active');
+                
+                // Scroll to dropdown if it's opening
+                if (mobileDropdown.classList.contains('active')) {
+                    setTimeout(() => {
+                        mobileDropdown.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }, 100);
+                }
+            });
+            
+            // Close dropdown when clicking outside of it (but inside nav)
+            navLinks.addEventListener('click', function(e) {
+                if (!e.target.closest('.mobile-dropdown') && mobileDropdown.classList.contains('active')) {
+                    mobileDropdown.classList.remove('active');
+                }
+            });
+        }
+        
+        // Handle Escape key to close sidebar
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                body.classList.remove('menu-open');
+                body.style.overflow = '';
+                
+                if (mobileDropdown) {
+                    mobileDropdown.classList.remove('active');
+                }
+            }
+        });
+        
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                // Reset mobile states when resizing to desktop
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                body.classList.remove('menu-open');
+                body.style.overflow = '';
+                
+                if (mobileDropdown) {
+                    mobileDropdown.classList.remove('active');
+                }
             }
         });
     }
