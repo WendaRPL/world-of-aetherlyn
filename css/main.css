@@ -724,6 +724,7 @@ footer {
     display: flex;
   }
   
+  /* MOBILE SIDEBAR - SCROLLABLE */
   .nav-links {
     position: fixed;
     top: 0;
@@ -732,20 +733,110 @@ footer {
     width: 280px;
     background: var(--bg-secondary);
     flex-direction: column;
-    padding: 6rem 2rem 2rem;
+    padding: 5rem 1.5rem 2rem; /* Kurangi padding top biar ada ruang scroll */
     transition: right 0.3s ease;
+    z-index: 1000 !important;
     box-shadow: -5px 0 25px rgba(0, 0, 0, 0.5);
     border-left: 1px solid rgba(76, 201, 240, 0.1);
+    overflow-y: auto; /* Tambahkan scroll vertikal */
+    overflow-x: hidden; /* Sembunyikan scroll horizontal */
+    
+    /* Custom scrollbar untuk sidebar */
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-primary) rgba(76, 201, 240, 0.1);
+  }
+  
+  /* Custom scrollbar untuk Webkit browsers (Chrome, Safari) */
+  .nav-links::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .nav-links::-webkit-scrollbar-track {
+    background: rgba(76, 201, 240, 0.1);
+    border-radius: 3px;
+  }
+  
+  .nav-links::-webkit-scrollbar-thumb {
+    background: var(--accent-primary);
+    border-radius: 3px;
+  }
+  
+  .nav-links::-webkit-scrollbar-thumb:hover {
+    background: rgba(76, 201, 240, 0.8);
   }
   
   .nav-links.active {
     right: 0;
   }
   
-  .nav-links li a {
-    justify-content: center;
-    padding: 1rem;
+  .nav-links li {
     width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  
+  .nav-links li a {
+    justify-content: flex-start;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  /* MOBILE DROPDOWN STYLES - AUTO OPEN */
+  .nav-links.active .mobile-dropdown .dropdown-menu {
+    display: block !important;
+    max-height: 300px; /* Limit tinggi maksimal */
+    overflow-y: auto; /* Tambahkan scroll jika konten panjang */
+    animation: slideDown 0.4s ease forwards;
+    
+    /* Custom scrollbar untuk dropdown */
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-primary) rgba(76, 201, 240, 0.1);
+  }
+  
+  .nav-links.active .mobile-dropdown .dropdown-menu::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .nav-links.active .mobile-dropdown .dropdown-menu::-webkit-scrollbar-track {
+    background: rgba(76, 201, 240, 0.1);
+  }
+  
+  .nav-links.active .mobile-dropdown .dropdown-menu::-webkit-scrollbar-thumb {
+    background: var(--accent-primary);
+    border-radius: 2px;
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      max-height: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      max-height: 300px;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Add indicator for active dropdown */
+  .nav-links.active .mobile-dropdown .dropdown-toggle {
+    background: rgba(76, 201, 240, 0.15);
+    position: relative;
+  }
+  
+  .nav-links.active .mobile-dropdown .dropdown-toggle::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: var(--accent-primary);
+  }
+  
+  .nav-links.active .mobile-dropdown .fa-chevron-down {
+    transform: rotate(180deg);
   }
   
   /* Hero adjustments */
@@ -836,6 +927,12 @@ footer {
   .card-icon i {
     width: 24px;
     height: 24px;
+  }
+  
+  /* Mobile sidebar lebih kecil di screen kecil */
+  .nav-links {
+    width: 250px;
+    padding: 4.5rem 1rem 1.5rem;
   }
 }
 
@@ -1029,3 +1126,252 @@ html {
 .hamburger.active span:nth-child(3) {
   transform: rotate(-45deg) translate(7px, -6px);
 }
+
+/* === DROPDOWN STYLES === */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; 
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: var(--transition);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    content: '\f078';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.dropdown.active .dropdown-toggle::after {
+    transform: rotate(180deg);
+}
+
+.dropdown-toggle:hover,
+.dropdown-toggle.active {
+    color: var(--accent-primary);
+    background: rgba(76, 201, 240, 0.1);
+}
+
+.dropdown-toggle .fa-chevron-down {
+    font-size: 0.8rem;
+    margin-left: 0.25rem;
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover .dropdown-toggle .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    min-width: 240px;
+    background: var(--bg-card);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(76, 201, 240, 0.1);
+    padding: 0.75rem 0;
+    z-index: 1001;
+    list-style: none;
+    backdrop-filter: blur(10px);
+    animation: dropdownFade 0.3s ease forwards;
+    opacity: 0;
+}
+
+@keyframes dropdownFade {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: var(--transition);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.dropdown-menu a:hover {
+    color: var(--accent-primary);
+    background: rgba(76, 201, 240, 0.08);
+    padding-left: 1.75rem;
+}
+
+.dropdown-menu a.active {
+    color: var(--accent-primary);
+    background: rgba(76, 201, 240, 0.1);
+    border-left: 3px solid var(--accent-primary);
+}
+
+.dropdown-menu .divider {
+    height: 1px;
+    background: rgba(136, 146, 176, 0.1);
+    margin: 0.5rem 1.5rem;
+}
+
+/* Magic link styles in dropdown */
+.dropdown-menu .magic-link {
+    position: relative;
+    overflow: hidden;
+}
+
+.dropdown-menu .magic-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(76, 201, 240, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.dropdown-menu .magic-link:hover::before {
+    left: 100%;
+}
+
+/* Feather icons in dropdown */
+.dropdown-menu a i[data-feather] {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Dropdown bracket decoration */
+.dropdown-menu::before,
+.dropdown-menu::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 1px solid var(--accent-primary);
+    opacity: 0.3;
+}
+
+.dropdown-menu::before {
+    top: 5px;
+    left: 5px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.dropdown-menu::after {
+    bottom: 5px;
+    right: 5px;
+    border-left: none;
+    border-top: none;
+}
+
+/* Mobile responsiveness for dropdown */
+@media (max-width: 768px) {
+    .dropdown {
+        width: 100%;
+    }
+    
+    .dropdown-toggle {
+        width: 100%;
+        justify-content: flex-start;
+        padding: 0.75rem 1rem;
+    }
+    
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        min-width: auto;
+        background: rgba(76, 201, 240, 0.05);
+        box-shadow: none;
+        border: 1px solid rgba(76, 201, 240, 0.1);
+        border-radius: 8px;
+        padding: 0.5rem 0;
+        margin: 0.5rem 0 1rem 0;
+        display: none;
+        animation: none;
+        max-height: none;
+    }
+    
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+    
+    .dropdown-menu a {
+        padding: 0.65rem 1rem 0.65rem 2rem;
+        justify-content: flex-start;
+        font-size: 0.9rem;
+    }
+    
+    .dropdown-menu .divider {
+        margin: 0.5rem 1rem;
+    }
+    
+    /* Remove brackets on mobile */
+    .dropdown-menu::before,
+    .dropdown-menu::after {
+        display: none;
+    }
+    
+    /* Sticky header untuk dropdown yang panjang */
+    .nav-links {
+        padding-top: 4rem; /* Beri ruang untuk sticky header */
+    }
+    
+    /* Logo tetap di atas saat scroll */
+    .logo {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+}
+
+/* For touch devices, add active state */
+@media (hover: hover) and (pointer: fine) {
+    .dropdown-menu {
+        display: none;
+    }
+    
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
+
+/* For touch devices */
+@media (hover: none) and (pointer: coarse) {
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+}
+
