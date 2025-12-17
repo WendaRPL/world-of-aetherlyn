@@ -733,20 +733,18 @@ footer {
     width: 280px;
     background: var(--bg-secondary);
     flex-direction: column;
-    padding: 5rem 1.5rem 2rem; /* Kurangi padding top biar ada ruang scroll */
+    padding: 6rem 2rem 2rem; /* Sama dengan landing.css */
     transition: right 0.3s ease;
     z-index: 1000 !important;
     box-shadow: -5px 0 25px rgba(0, 0, 0, 0.5);
     border-left: 1px solid rgba(76, 201, 240, 0.1);
-    overflow-y: auto; /* Tambahkan scroll vertikal */
-    overflow-x: hidden; /* Sembunyikan scroll horizontal */
+    overflow-y: auto;
     
-    /* Custom scrollbar untuk sidebar */
+    /* Custom scrollbar untuk Webkit browsers (Chrome, Safari) */
     scrollbar-width: thin;
     scrollbar-color: var(--accent-primary) rgba(76, 201, 240, 0.1);
   }
   
-  /* Custom scrollbar untuk Webkit browsers (Chrome, Safari) */
   .nav-links::-webkit-scrollbar {
     width: 6px;
   }
@@ -781,64 +779,35 @@ footer {
     border-radius: 8px;
   }
   
-  /* MOBILE DROPDOWN STYLES - AUTO OPEN */
-  .nav-links.active .mobile-dropdown .dropdown-menu {
-    display: block !important;
-    max-height: 300px; /* Limit tinggi maksimal */
-    overflow-y: auto; /* Tambahkan scroll jika konten panjang */
-    animation: slideDown 0.4s ease forwards;
+  /* Mobile dropdown - SIMPLE VERSION seperti landing.css */
+  .dropdown-menu {
+    position: static;
+    width: 100%;
+    background: rgba(10, 10, 26, 0.3);
+    box-shadow: none;
+    border: 1px solid rgba(76, 201, 240, 0.1);
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+  }
+  
+  .mobile-dropdown.active .dropdown-menu {
+    opacity: 1;
+    max-height: 400px;
+  }
+  
+  .dropdown-menu a {
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    border-left: none;
+  }
+  
+  .dropdown-menu a:hover {
+    padding-left: 3rem;
+  }
     
-    /* Custom scrollbar untuk dropdown */
-    scrollbar-width: thin;
-    scrollbar-color: var(--accent-primary) rgba(76, 201, 240, 0.1);
-  }
-  
-  .nav-links.active .mobile-dropdown .dropdown-menu::-webkit-scrollbar {
-    width: 4px;
-  }
-  
-  .nav-links.active .mobile-dropdown .dropdown-menu::-webkit-scrollbar-track {
-    background: rgba(76, 201, 240, 0.1);
-  }
-  
-  .nav-links.active .mobile-dropdown .dropdown-menu::-webkit-scrollbar-thumb {
-    background: var(--accent-primary);
-    border-radius: 2px;
-  }
-  
-  @keyframes slideDown {
-    from {
-      opacity: 0;
-      max-height: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      max-height: 300px;
-      transform: translateY(0);
-    }
-  }
-  
-  /* Add indicator for active dropdown */
-  .nav-links.active .mobile-dropdown .dropdown-toggle {
-    background: rgba(76, 201, 240, 0.15);
-    position: relative;
-  }
-  
-  .nav-links.active .mobile-dropdown .dropdown-toggle::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 3px;
-    background: var(--accent-primary);
-  }
-  
-  .nav-links.active .mobile-dropdown .fa-chevron-down {
-    transform: rotate(180deg);
-  }
-  
   /* Hero adjustments */
   .hero {
     padding: 8rem 1rem 4rem;
@@ -1146,18 +1115,6 @@ html {
     position: relative;
 }
 
-.dropdown-toggle::after {
-    content: '\f078';
-    font-family: 'Font Awesome 6 Free';
-    font-weight: 900;
-    font-size: 0.8rem;
-    margin-left: 0.5rem;
-    transition: transform 0.3s ease;
-}
-
-.dropdown.active .dropdown-toggle::after {
-    transform: rotate(180deg);
-}
 
 .dropdown-toggle:hover,
 .dropdown-toggle.active {
@@ -1343,18 +1300,6 @@ html {
     .dropdown-menu::after {
         display: none;
     }
-    
-    /* Sticky header untuk dropdown yang panjang */
-    .nav-links {
-        padding-top: 4rem; /* Beri ruang untuk sticky header */
-    }
-    
-    /* Logo tetap di atas saat scroll */
-    .logo {
-        position: sticky;
-        top: 0;
-        z-index: 10;
-    }
 }
 
 /* For touch devices, add active state */
@@ -1374,4 +1319,3 @@ html {
         display: block;
     }
 }
-
