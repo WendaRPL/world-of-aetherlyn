@@ -181,11 +181,6 @@
 .race-card:nth-child(10) .race-icon { border-color: #ff8c00; } /* Angel */
 .race-card:nth-child(11) .race-icon { border-color: #7b4bcf; } /* Demon */
 
-/* Race-specific animations */
-@keyframes race-float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-5px) rotate(2deg); }
-}
 
 .race-card {
   animation: race-float 6s ease-in-out infinite;
