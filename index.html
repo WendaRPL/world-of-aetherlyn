@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patch Notes - World Of Aetherlyn</title>
     <link rel="stylesheet" href="css/main.css">
-    <link rel="icon" type="image/x-icon" href="logo.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
@@ -78,6 +77,14 @@
                         <span>Baca Patch Notes</span>
                         <i data-feather="book-open"></i>
                     </a>
+                </div>
+                
+                <div class="uid-template-section">
+                    <button class="uid-copy-btn" id="copyUidBtn">
+                        <i data-feather="clipboard"></i>
+                        <span>Copy Template UID</span>
+                    </button>
+                    <span class="copy-feedback" id="copyFeedback">Template tersalin!</span>
                 </div>
             </div>
         </section>
@@ -236,7 +243,121 @@
     <script src="js/background.js"></script>
     <script>
         feather.replace();
+        
+        // Copy UID Template functionality
+        document.getElementById('copyUidBtn').addEventListener('click', function() {
+            const uidTemplate = `┈─────┈━═⏣═━┈─────┈
+         *| ADVENTURER ID |*
+┈─────┈━═⏣═━┈─────┈
+
+
+*┉ꕥ✧⃝   Character Information*
+*⏤͟͟͞͞╺╾╼╾╼╾╼╾╼╾╼╾╼╾╼╾┈*
+
+┊❏ Name :
+┊❏ Gender :
+┊❏ Race :
+┊❏ Age :
+┊❏ Faction :
+      ╰ Element :
+┊❏ Class :
+      ╰ Role :
+┊❏ Guild / Clan :
+┊❏ Job :
+┊❏ Title [Equip] : _Max 3_
+┊❏ Title :
+
+*┉ꕥ✧⃝   Character Status*
+*⏤͟͟͞͞╺╾╼╾╼╾╼╾╼╾╼╾╼╾╼╾┈*
+
+┊❏ EXP : … / 1.500
+┊❏ Level : 1
+┊❏ Rank : Novus [F]
+
+*[ Stats ]*
+
+┊❏ HP : 5.000
+┊❏ STR : 5.000
+┊❏ INT : 5.000
+┊❏ P.DEF : 5.000
+┊❏ M.DEF : 5.000
+┊❏ AGI : 5.000
+┊❏ MANA : 5.000
+
+*┉ꕥ✧⃝   Equipment List*
+*⏤͟͟͞͞╺╾╼╾╼╾╼╾╼╾╼╾╼╾╼╾┈*
+
+*[ Equipments ]*
+
+┊❏ Hand [1] :
+┊❏ Hand [2] :
+┊❏ Hand [3] : _Zevaria [D]_
+┊❏ Head :
+┊❏ Body :
+┊❏ Foot :
+
+*[ Accessories ]*
+
+┊❏ Item 1 :
+┊❏ Item 2 : _Zevaria [D]_
+
+*[ Additional Item ]*
+
+┊❏ Item 1 :
+┊❏ Item 2 : _Elrion [C]_
+
+*┉ꕥ✧⃝   Character Ability*
+*⏤͟͟͞͞╺╾╼╾╼╾╼╾╼╾╼╾╼╾╼╾┈*
+
+*[ Traits ]*
+_Unique Passive / Signature Effect_
+
+*[ Normal Skill ]*
+1. 
+2. 
+3. 
+
+*[ Ultimate ]*
+1. 
+
+*┉ꕥ✧⃝   Characterism*
+*⏤͟͟͞͞╺╾╼╾╼╾╼╾╼╾╼╾╼╾╼╾┈*
+
+┊❏ Appearance :
+┊❏ Personality :
+┊❏ Likes :
+┊❏ Dislikes :
+┊❏ Personal Item : _No Effect_
+
+┊❏ Character Quotes : _[...]_
+
+*┉ꕥ✧⃝   Character Inventory*
+*⏤͟͟͞͞╺╾╼╾╼╾╼╾╼╾╼╾╼╾╼╾┈*
+
+1. 
+2. 
+[ Max. 5]
+
+*┉ꕥ✧⃝   Form Apporoval*
+*⏤͟͟͞͞╺╾╼╾╼╾╼╾╼╾╼╾╼╾╼╾┈*
+
+┊❏ Acc by : …`;
+
+            // Copy to clipboard
+            navigator.clipboard.writeText(uidTemplate).then(() => {
+                // Show feedback
+                const feedback = document.getElementById('copyFeedback');
+                feedback.classList.add('show');
+                
+                // Hide after 2 seconds
+                setTimeout(() => {
+                    feedback.classList.remove('show');
+                }, 2000);
+            }).catch(err => {
+                alert('Gagal menyalin template. Silakan coba lagi.');
+                console.error('Copy failed:', err);
+            });
+        });
     </script>
 </body>
-
 </html>
