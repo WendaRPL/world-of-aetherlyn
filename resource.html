@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - World Of Aetherlyn</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/resources.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</head>
+<body class="homepage">
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Background Elements -->
+    <div id="stars"></div>
+    <div id="mist"></div>
+    <div class="floating-crystals"></div>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <h1 class="glow-text">World Of Aetherlyn</h1>
+            </div>
+            
+            <!-- Hamburger Menu for Mobile -->
+            <div class="hamburger" id="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="https://worldofaetherlyn.web.id"><i class="fas fa-home"></i> Home</a></li>
+                
+                <!-- Dropdown Patch Notes -->
+                <li class="dropdown mobile-dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle active">
+                        <i class="fas fa-code-branch"></i> Patch Notes</i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://patch.worldofaetherlyn.web.id" class="magic-link">
+                            <i class="fas fa-code-branch"></i> Notes Utama
+                        </a></li>
+                        <li class="divider"></li>
+                        <li><a href="rank.html" class="magic-link">
+                            <i data-feather="star"></i> Rank
+                        </a></li>
+                        <li><a href="races.html" class="magic-link">
+                            <i data-feather="users"></i> Races
+                        </a></li>
+                        <li><a href="factions.html" class="magic-link">
+                            <i data-feather="layers"></i> Factions
+                        </a></li>
+                        <li><a href="classes.html" class="magic-link">
+                            <i data-feather="award"></i> Classes
+                        </a></li>
+                        <li><a href="systems.html" class="magic-link">
+                            <i data-feather="book"></i> Systems
+                        </a></li>
+                        <li><a href="resource.html" class="active magic-link">
+                            <iconify-icon icon="mdi:leaf"></iconify-icon> Natural Resources
+                        </a></li>
+                    </ul>
+                </li>
+                <!-- End Dropdown -->
+                
+                <li><a href="https://worldbuilding.worldofaetherlyn.web.id"><i class="fas fa-globe-asia"></i> Worldbuilding</a></li>
+                <li><a href="https://codex.worldofaetherlyn.web.id"><i class="fas fa-archive"></i> Codex</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <!-- Decorative corner ornaments -->
+            <div class="corner-ornament top-left"></div>
+            <div class="corner-ornament top-right"></div>
+            <div class="corner-ornament bottom-left"></div>
+            <div class="corner-ornament bottom-right"></div>
+
+            <div class="hero-content">
+                <div class="title-wrapper">
+                    <h2 class="hero-title">Natural Resources</h2>
+                    <div class="title-ornament"></div>
+                </div>
+                
+                <blockquote class="hero-quote">
+                    <span class="quote-mark left">"</span>
+                    Kerajaan Aetherlyn berdiri di atas anugerah alam yang hidup bersama penghuninya. Dari danau yang berkilau di bawah cahaya rembulan, pegunungan yang tertutup oleh kekuatan kuno, hutan yang berbisik perlahan, serta lautan yang menyimpan begitu banyak misteri.
+                    <span class="quote-mark right">"</span>
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- Divider with fantasy style -->
+        <div class="section-divider">
+            <div class="divider-ornament"></div>
+        </div>
+
+        <!-- Resources Navigation -->
+        <nav class="resources-nav">
+            <div class="container">
+                <div class="nav-scroll">
+                    <a href="#freshwater" class="nav-item">
+                        <iconify-icon icon="mdi:lake"></iconify-icon>
+                        <span>Freshwater</span>
+                    </a>
+                    <a href="#saltwater" class="nav-item">
+                        <iconify-icon icon="mdi:waves"></iconify-icon>
+                        <span>Saltwater</span>
+                    </a>
+                    <a href="#cave" class="nav-item">
+                        <iconify-icon icon="mdi:terrain"></iconify-icon>
+                        <span>Cave</span>
+                    </a>
+                    <a href="#forest" class="nav-item">
+                        <iconify-icon icon="mdi:forest"></iconify-icon>
+                        <span>Forest</span>
+                    </a>
+                    <a href="#crafting" class="nav-item">
+                        <iconify-icon icon="mdi:hammer-wrench"></iconify-icon>
+                        <span>Crafting</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Resources Content -->
+        <section class="resources-content">
+            <div class="container">
+                <!-- Freshwater Section -->
+                <article id="freshwater" class="resource-article">
+                    <h3><iconify-icon icon="mdi:lake"></iconify-icon> Freshwater Resources</h3>
+                    <div class="system-card">
+                        <div class="resource-intro">
+                            <p>Di sebuah tempat di Kerajaan Aetherlyn, sebuah danau besar yang diselimuti oleh kabut menyimpan kekayaan sumber daya air tawar yang begitu melimpah. Petualang dapat mengambil hasil alam berupa ikan air tawar di tempat ini dengan cara memancing.</p>
+                        </div>
+
+                        <div class="resource-section">
+                            <h4><iconify-icon icon="mdi:fishing"></iconify-icon> Fishing System</h4>
+                            <div class="resource-note">
+                                <p>Memancing dapat dilakukan dengan menggunakan alat pancing dan menunggu hingga umpan termakan oleh ikan. <strong>Batas maksimal: 10x per hari</strong>. Hasil tangkapan dapat dikonsumsi ataupun dijual.</p>
+                            </div>
+
+                            <!-- Small Catch Table -->
+                            <div class="resource-table-section">
+                                <h5><iconify-icon icon="mdi:fish"></iconify-icon> Tangkapan Kecil (5 menit)</h5>
+                                <div class="resource-table">
+                                    <div class="table-header">
+                                        <span>Ikan</span>
+                                        <span>Durasi</span>
+                                        <span>Reward</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="resource-name">Belut</span>
+                                        <span>5 menit</span>
+                                        <span class="resource-reward">ATC</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="resource-name">Ikan Kecil Sungai</span>
+                                        <span>5 menit</span>
+                                        <span class="resource-reward">5 ATC</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="resource-name">Ikan Mas Kecil</span>
+                                        <span>5 menit</span>
+                                        <span class="resource-reward">5 ATC</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="resource-name">Ikan Nila</span>
+                                        <span>5 menit</span>
+                                        <span class="resource-reward">6 ATC</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="resource-name">Ikan Lele Kecil</span>
+                                        <span>5 menit</span>
+                                        <span class="resource-reward">6 ATC</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Medium Catch Table -->
+                            <div class="resource-table-section">
+                                <h5><iconify-icon icon="mdi:fish"></iconify-icon> Tangkapan Menengah (10 menit)</h5>
+                                <div class="resource-table">
+                                    <div class="table-header">
+                                        <span>Ikan</span>
+                                        <span>Durasi</span>
+                                        <span>Reward</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="resource-name">Ikan Mas Biru</span>
+                                        <span>10 menit</span>
+                                        <span class="resource-reward">7 ATC</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="resource-name">Ikan Lake Bass</span>
+                                        <span>10 menit</span>
+                                        <span class="resource-reward">7 ATC</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="resource-name">Ikan Perch Silver</span>
+                                        <span>10 menit</span>
+                                        <span class="resource-reward">8 ATC</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="resource-name">Ikan Lele Besar</span>
+                                        <span>10 menit</span>
+                                        <span class="resource-reward">8 ATC</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="resource-name">Ikan Patin</span>
+                                        <span>10 menit</span>
+                                        <span class="resource-reward">8 ATC</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="resource-name">Ikan Mas Besar</span>
+                                        <span>10 menit</span>
+                                        <span class="resource-reward">8 ATC</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Large Catch Table -->
+                            <div class="resource-table-section">
+                                <h5><iconify-icon icon="mdi:fish"></iconify-icon> Tangkapan Besar (15 menit)</h5>
+                                <div class="resource-table">
+                                    <div class="table-header">
+                                        <span>Ikan</span>
+                                        <span>Durasi</span>
+                                        <span>Reward</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="resource-name">Ikan Gabus</span>
+                                        <span>15 menit</span>
+                                        <span class="resource-reward">9 ATC</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="resource-name">Ikan Arwana</span>
+                                        <span>15 menit</span>
+                                        <span class="resource-reward">10 ATC</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="resource-name">Ikan Mountain Trout</span>
+                                        <span>15 menit</span>
+                                        <span class="resource-reward">10 ATC</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="resource-name">Ikan Longfin Pike</span>
+                                        <span>15 menit</span>
+                                        <span class="resource-reward">10 ATC</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Saltwater Section -->
+                <article id="saltwater" class="resource-article">
+                    <h3><iconify-icon icon="mdi:waves"></iconify-icon> Saltwater Resources</h3>
+                    <div class="system-card">
+                        <div class="resource-intro">
+                            <p>Di luar daratan Aetherlyn, hamparan air laut membentang tanpa batas, menyimpan kekayaan sekaligus ketidakpastian. Lautan yang indah di permukaannya namun seakan menyembunyikan sesuatu di kedalamannya. Ombak dan angin samudera membentuk ekosistem yang begitu berlimpah.</p>
+                        </div>
+
+                        <div class="resource-section">
+                            <h4><iconify-icon icon="mdi:fishing"></iconify-icon> Fishing System</h4>
+                            <div class="resource-note">
+                                <p>Menggunakan perahu atau duduk di dermaga, memancing ikan akan menenangkan ditemani burung camar yang saling berterbangan.</p>
+                            </div>
+
+                            <!-- Small Catch Table -->
+                            <div class="resource-table-section">
+                                <h5><iconify-icon icon="mdi:fish"></iconify-icon> Tangkapan Kecil (5 menit)</h5>
+                                <div class="resource-table">
+                                    <div class="table-header">
+                                        <span>Ikan</span>
+                                        <span>Durasi</span>
+                                        <span>Reward</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="resource-name">Ikan Sardin</span>
+                                        <span>5 menit</span>
+                                        <span class="resource-reward">6 ATC</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="resource-name">Ikan Tongkol</span>
+                                        <span>5 menit</span>
+                                        <span class="resource-reward">6 ATC</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="resource-name">Ikan Kembung</span>
+                                        <span>5 menit</span>
+                                        <span class="resource-reward">7 ATC</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="resource-name">Ikan Small Tuna</span>
+                                        <span>5 menit</span>
+                                        <span class="resource-reward">8 ATC</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="resource-name">Ikan Cakalang</span>
+                                        <span>5 menit</span>
+                                        <span class="resource-reward">8 ATC</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Medium Catch Table -->
+                            <div class="resource-table-section">
+                                <h5><iconify-icon icon="mdi:fish"></iconify-icon> Tangkapan Menengah (10 menit)</h5>
+                                <div class="resource-table">
+                                    <div class="table-header">
+                                        <span>Ikan</span>
+                                        <span>Durasi</span>
+                                        <span>Reward</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="resource-name">Ikan Kakap Merah</span>
+                                        <span>10 menit</span>
+                                        <span class="resource-reward">9 ATC</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="resource-name">Ikan Kerapu</span>
+                                        <span>10 menit</span>
+                                        <span class="resource-reward">9 ATC</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="resource-name">Ikan Barracuda</span>
+                                        <span>10 menit</span>
+                                        <span class="resource-reward">10 ATC</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="resource-name">Ikan Ekor Kuning</span>
+                                        <span>10 menit</span>
+                                        <span class="resource-reward">10 ATC</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="resource-name">Ikan Salmon</span>
+                                        <span>10 menit</span>
+                                        <span class="resource-reward">10 ATC</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Large Catch Table -->
+                            <div class="resource-table-section">
+                                <h5><iconify-icon icon="mdi:fish"></iconify-icon> Tangkapan Besar (15 menit)</h5>
+                                <div class="resource-table">
+                                    <div class="table-header">
+                                        <span>Ikan</span>
+                                        <span>Durasi</span>
+                                        <span>Reward</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="resource-name">Ikan Bluefin Tuna</span>
+                                        <span>15 menit</span>
+                                        <span class="resource-reward">11 ATC</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="resource-name">Ikan Swordfish</span>
+                                        <span>15 menit</span>
+                                        <span class="resource-reward">11 ATC</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="resource-name">Ikan Mahi-Mahi</span>
+                                        <span>15 menit</span>
+                                        <span class="resource-reward">12 ATC</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="resource-name">Ikan Marlin</span>
+                                        <span>15 menit</span>
+                                        <span class="resource-reward">12 ATC</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="resource-name">Ikan Giant Trevally</span>
+                                        <span>15 menit</span>
+                                        <span class="resource-reward">12 ATC</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Net Fishing -->
+                        <div class="resource-section">
+                            <h4><iconify-icon icon="mdi:net"></iconify-icon> Net Fishing System</h4>
+                            <div class="resource-note">
+                                <p>Menangkap ikan laut menggunakan jaring. <strong>Batas: 1x per hari</strong>.</p>
+                            </div>
+
+                            <div class="resource-table">
+                                <div class="table-header">
+                                    <span>Hasil Tangkapan</span>
+                                    <span>Durasi</span>
+                                    <span>Jumlah</span>
+                                    <span>Reward</span>
+                                </div>
+                                <div class="table-row">
+                                    <span class="resource-name">Ikan Teri</span>
+                                    <span>20 menit</span>
+                                    <span>5 kg</span>
+                                    <span class="resource-reward">30 ATC</span>
+                                </div>
+                                <div class="table-row">
+                                    <span class="resource-name">Udang</span>
+                                    <span>25 menit</span>
+                                    <span>3 kg</span>
+                                    <span class="resource-reward">40 ATC</span>
+                                </div>
+                                <div class="table-row">
+                                    <span class="resource-name">Cumi-cumi</span>
+                                    <span>25 menit</span>
+                                    <span>4 kg</span>
+                                    <span class="resource-reward">40 ATC</span>
+                                </div>
+                                <div class="table-row">
+                                    <span class="resource-name">Kerang</span>
+                                    <span>25 menit</span>
+                                    <span>3 kg</span>
+                                    <span class="resource-reward">40 ATC</span>
+                                </div>
+                                <div class="table-row">
+                                    <span class="resource-name">Gurita Webfoot</span>
+                                    <span>30 menit</span>
+                                    <span>3 kg</span>
+                                    <span class="resource-reward">45 ATC</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Cave Section -->
+                <article id="cave" class="resource-article">
+                    <h3><iconify-icon icon="mdi:terrain"></iconify-icon> Cave Resources</h3>
+                    <div class="system-card">
+                        <div class="resource-intro">
+                            <p>Di bawah permukaan dunia Aetherlyn, terbentang dunia yang jarang disentuh oleh cahaya. Gua-gua kuno dan lorong batu yang menyimpan jejak waktu, di mana logam dan kristal terbentuk melalui kesabaran ribuan tahun menghasilkan sumber daya tambang yang dapat dimanfaatkan untuk berbagai macam hal.</p>
+                        </div>
+
+                        <div class="resource-section">
+                            <h4><iconify-icon icon="mdi:pickaxe"></iconify-icon> Mining System</h4>
+                            <div class="resource-note">
+                                <p>Menambang gua-gua gelap yang penuh dengan sumber daya dengan menggunakan pickaxe. <strong>Batas: 5x per hari</strong>.</p>
+                            </div>
+
+                            <div class="resource-table">
+                                <div class="table-header">
+                                    <span>Material</span>
+                                    <span>Durasi</span>
+                                    <span>Jumlah</span>
+                                    <span>Harga/unit</span>
+                                </div>
+                                <div class="table-row">
+                                    <span class="resource-name">Stone Chunk</span>
+                                    <span>5 menit</span>
+                                    <span>4 unit</span>
+                                    <span class="resource-reward">2 ATC</span>
+                                </div>
+                                <div class="table-row">
+                                    <span class="resource-name">Copper Ore</span>
+                                    <span>5 menit</span>
+                                    <span>3 unit</span>
+                                    <span class="resource-reward">3 ATC</span>
+                                </div>
+                                <div class="table-row">
+                                    <span class="resource-name">Iron Ore</span>
+                                    <span>8 menit</span>
+                                    <span>3 unit</span>
+                                    <span class="resource-reward">4 ATC</span>
+                                </div>
+                                <div class="table-row">
+                                    <span class="resource-name">Tin Ore</span>
+                                    <span>8 menit</span>
+                                    <span>3 unit</span>
+                                    <span class="resource-reward">4 ATC</span>
+                                </div>
+                                <div class="table-row">
+                                    <span class="resource-name">Silver Ore</span>
+                                    <span>10 menit</span>
+                                    <span>2 unit</span>
+                                    <span class="resource-reward">6 ATC</span>
+                                </div>
+                                <div class="table-row">
+                                    <span class="resource-name">Steel Ore</span>
+                                    <span>10 menit</span>
+                                    <span>2 unit</span>
+                                    <span class="resource-reward">6 ATC</span>
+                                </div>
+                                <div class="table-row">
+                                    <span class="resource-name">Mythril Ore</span>
+                                    <span>10 menit</span>
+                                    <span>1 unit</span>
+                                    <span class="resource-reward">15 ATC</span>
+                                </div>
+                                <div class="table-row">
+                                    <span class="resource-name">Obsidian Ore</span>
+                                    <span>15 menit</span>
+                                    <span>1 unit</span>
+                                    <span class="resource-reward">15 ATC</span>
+                                </div>
+                                <div class="table-row">
+                                    <span class="resource-name">Mana Stone</span>
+                                    <span>15 menit</span>
+                                    <span>1 unit</span>
+                                    <span class="resource-reward">10 ATC</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Forest Section -->
+                <article id="forest" class="resource-article">
+                    <h3><iconify-icon icon="mdi:forest"></iconify-icon> Forest Resources</h3>
+                    <div class="system-card">
+                        <div class="resource-intro">
+                            <p>Di wilayah terdalam Aetherlyn, terdapat tempat yang selalu berbisik di dalam keheningan seolah menyimpan sesuatu yang tak diketahui. Semakin dalam rasa penasaranmu, maka akan semakin besar rasa takutmu. Sebuah hutan belantara yang dipenuhi oleh pepohonan rindang hingga sinar matahari sulit menembus ke dalamnya. Di dalam hutan banyak sekali hewan-hewan liar yang legal untuk diburu.</p>
+                        </div>
+
+                        <div class="resource-section">
+                            <h4><iconify-icon icon="mdi:crosshairs"></iconify-icon> Hunting System</h4>
+                            <div class="resource-note">
+                                <p>Sebuah kegiatan untuk memburu hewan liar di dalam hutan. Hewan buruan dikelompokkan berdasarkan ukuran dan kesulitannya.</p>
+                            </div>
+
+                            <!-- Group I -->
+                            <div class="resource-table-section">
+                                <h5><iconify-icon icon="mdi:rabbit"></iconify-icon> Kelompok I (Max: 10 ekor/hari)</h5>
+                                <div class="resource-table">
+                                    <div class="table-header">
+                                        <span>Hewan</span>
+                                        <span>Hasil</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="resource-name">Horned Rabbit</span>
+                                        <span>2 raw meat</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="resource-name">Wild Fowl</span>
+                                        <span>2 raw meat</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Group II -->
+                            <div class="resource-table-section">
+                                <h5><iconify-icon icon="mdi:deer"></iconify-icon> Kelompok II (Max: 2 ekor/hari)</h5>
+                                <div class="resource-table">
+                                    <div class="table-header">
+                                        <span>Hewan</span>
+                                        <span>Hasil</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="resource-name">Fox</span>
+                                        <span>3 raw meat</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="resource-name">Deer</span>
+                                        <span>4 raw meat</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="resource-name">Boar</span>
+                                        <span>4 raw meat</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Crafting Section -->
+                <article id="crafting" class="resource-article">
+                    <h3><iconify-icon icon="mdi:hammer-wrench"></iconify-icon> Crafting System</h3>
+                    <div class="system-card">
+                        <div class="resource-intro">
+                            <p>Proses untuk membuat sebuah item berdasarkan material yang dimiliki. Proses ini akan membuat biaya crafting lebih murah karena membawa material sendiri.</p>
+                        </div>
+
+                        <div class="crafting-system">
+                            <!-- Material Usage -->
+                            <div class="resource-section">
+                                <h4><iconify-icon icon="mdi:package"></iconify-icon> Material Requirements</h4>
+                                
+                                <div class="crafting-grid">
+                                    <div class="crafting-item">
+                                        <div class="crafting-icon">🪨</div>
+                                        <div class="crafting-content">
+                                            <h5>Stone Chunk</h5>
+                                            <p>Material bangunan dasar</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="crafting-item">
+                                        <div class="crafting-icon">🟠</div>
+                                        <div class="crafting-content">
+                                            <h5>Copper Equipment</h5>
+                                            <p>Membutuhkan 6-12 Copper Ore</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="crafting-item">
+                                        <div class="crafting-icon">⚙️</div>
+                                        <div class="crafting-content">
+                                            <h5>Iron Equipment</h5>
+                                            <p>Membutuhkan 6-12 Iron Ore</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="crafting-item">
+                                        <div class="crafting-icon">⬜</div>
+                                        <div class="crafting-content">
+                                            <h5>Tin Equipment</h5>
+                                            <p>Membutuhkan 6-12 Tin Ore</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="crafting-item">
+                                        <div class="crafting-icon">✨</div>
+                                        <div class="crafting-content">
+                                            <h5>Silver Equipment</h5>
+                                            <p>Membutuhkan 8-16 Silver Ore</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="crafting-item">
+                                        <div class="crafting-icon">💎</div>
+                                        <div class="crafting-content">
+                                            <h5>Mythril Equipment</h5>
+                                            <p>Membutuhkan 15-20 Mythril Ore</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="crafting-item">
+                                        <div class="crafting-icon">🖤</div>
+                                        <div class="crafting-content">
+                                            <h5>Obsidian Equipment</h5>
+                                            <p>Membutuhkan 20+ Obsidian Ore</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="crafting-item">
+                                        <div class="crafting-icon">🧪</div>
+                                        <div class="crafting-content">
+                                            <h5>Mana Potion</h5>
+                                            <p>Membutuhkan 10+ Mana Stone</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Crafting Benefits -->
+                            <div class="resource-section">
+                                <h4><iconify-icon icon="mdi:currency-usd"></iconify-icon> Crafting Benefits</h4>
+                                <div class="benefits-list">
+                                    <div class="benefit-item">
+                                        <iconify-icon icon="mdi:percent"></iconify-icon>
+                                        <div class="benefit-content">
+                                            <h5>Biaya Lebih Murah</h5>
+                                            <p>Membawa material sendiri mengurangi biaya crafting hingga 50%</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="benefit-item">
+                                        <iconify-icon icon="mdi:quality-high"></iconify-icon>
+                                        <div class="benefit-content">
+                                            <h5>Kualitas Terjamin</h5>
+                                            <p>Crafting sendiri memastikan kualitas equipment sesuai kebutuhan</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="benefit-item">
+                                        <iconify-icon icon="mdi:customization"></iconify-icon>
+                                        <div class="benefit-content">
+                                            <h5>Customization</h5>
+                                            <p>Dapat menambahkan spesifikasi khusus sesuai request</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- General Rules -->
+                <article class="resource-article">
+                    <h3><iconify-icon icon="mdi:clipboard-text"></iconify-icon> General Rules</h3>
+                    <div class="system-card">
+                        <div class="rules-grid">
+                            <div class="rule-category">
+                                <h5><iconify-icon icon="mdi:timer"></iconify-icon> Time Limits</h5>
+                                <div class="rule-item">
+                                    <span class="rule-label">Fishing (Rod):</span>
+                                    <span class="rule-value">Max 10x/hari</span>
+                                </div>
+                                <div class="rule-item">
+                                    <span class="rule-label">Fishing (Net):</span>
+                                    <span class="rule-value">Max 1x/hari</span>
+                                </div>
+                                <div class="rule-item">
+                                    <span class="rule-label">Mining:</span>
+                                    <span class="rule-value">Max 5x/hari</span>
+                                </div>
+                                <div class="rule-item">
+                                    <span class="rule-label">Hunting Group I:</span>
+                                    <span class="rule-value">Max 10 ekor</span>
+                                </div>
+                                <div class="rule-item">
+                                    <span class="rule-label">Hunting Group II:</span>
+                                    <span class="rule-value">Max 2 ekor</span>
+                                </div>
+                            </div>
+                            
+                            <div class="rule-category">
+                                <h5><iconify-icon icon="mdi:currency-usd"></iconify-icon> Economy Rules</h5>
+                                <div class="rule-item">
+                                    <span class="rule-label">Selling Resources:</span>
+                                    <span class="rule-value">Harga pasar berlaku</span>
+                                </div>
+                                <div class="rule-item">
+                                    <span class="rule-label">Crafting Discount:</span>
+                                    <span class="rule-value">Hingga 50%</span>
+                                </div>
+                                <div class="rule-item">
+                                    <span class="rule-label">Resource Trading:</span>
+                                    <span class="rule-value">Diperbolehkan</span>
+                                </div>
+                                <div class="rule-item">
+                                    <span class="rule-label">Black Market:</span>
+                                    <span class="rule-value">Dilarang keras</span>
+                                </div>
+                            </div>
+                            
+                            <div class="rule-category">
+                                <h5><iconify-icon icon="mdi:shield-check"></iconify-icon> Safety Rules</h5>
+                                <div class="rule-item">
+                                    <span class="rule-label">Equipment Required:</span>
+                                    <span class="rule-value">Wajib untuk semua aktivitas</span>
+                                </div>
+                                <div class="rule-item">
+                                    <span class="rule-label">Group Activities:</span>
+                                    <span class="rule-value">Disarankan untuk mining/hunting</span>
+                                </div>
+                                <div class="rule-item">
+                                    <span class="rule-label">Protected Species:</span>
+                                    <span class="rule-value">Dilarang diburu/ditangkap</span>
+                                </div>
+                                <div class="rule-item">
+                                    <span class="rule-label">Environmental Damage:</span>
+                                    <span class="rule-value">Akan dikenakan denda</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 World of Aetherlyn. Nature's bounty belongs to all.</p>
+                <p>Natural Resources System v1.0 - The Gatherer's Guide</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/background.js"></script>
+    <script>
+        feather.replace();
+        
+        // Smooth scroll untuk navigation
+        document.querySelectorAll('.resources-nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
